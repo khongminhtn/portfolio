@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Comforter&family=Raleway:wght@100;300;400;600;900&display=swap');
+
+.Wrapper {
+  display:grid;
+  margin: auto;
+  width: 100%;
+  height: 100vh; /*viewport height*/
+  grid-template-columns: 1fr; /*1 column*/
+  grid-template-rows: 1fr auto; /*2 column*/
+}
+
+.Designer, .Self, .IG, .Button, .Description {
+  grid-column: 1;
+  grid-row: 1
+}
+
+.Designer {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 200px;
+  color: white;
+  letter-spacing: 6pc;
+  text-shadow: 10px 10px 25px rgba(0, 0, 0, 0.2); /*Using rgba opacity will only apply to selected property*/
+  /* opacity: 20%; */
+
+  /*Grid Spacing*/
+  align-self: center; /* adjusts columns*/
+  justify-self: center; /* adjusts rows*/
+}
+
+.Self {
+  margin-top: 150px;
+  /*Grid Spacing*/
+  align-self: end; /* adjusts columns*/
+  justify-self: center; /* adjusts rows*/
+}
+
+.IG {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 200px;
+  color: white;
+  letter-spacing: 6pc;
+
+  /*Grid Spacing*/
+  align-self: center; /* adjusts columns*/
+  justify-self: center; /* adjusts rows*/
+}
+
+.Button {
+  /*Spacing*/
+  align-self: end;
+  margin-bottom: 120px;
+  margin-left: 190px; 
+}
+
+/* === Description ===*/
+.Description {
+  /* Spacing */
+  justify-self: end;
+  align-self: end;
+  /* border: 1px solid black; */
+  margin-right: 80px;
+  margin-bottom: 30px;
+}
+
+.TuyenKhong {
+  font-family: 'Raleway';
+  font-weight: 100;
+  font-size: 20px;
+  letter-spacing: 5px;
+
+}
+
+.SubHeading {
+  font-family: 'Raleway';
+  font-weight: 600;
+  font-size: 45px;
+  color: #9C9C9C;
+
+}
+
+.Design {
+  color: black;
+}
+
+.Programming {
+  color: #495390;
+}
+
+.Paragraph {
+  font-family: 'Raleway';
+  letter-spacing: 2px;
+  font-size: 20px;
+  color: #9C9C9C;
+}
+
+.Email {
+  font-family: 'Raleway';
+  letter-spacing: 5px;
+}
