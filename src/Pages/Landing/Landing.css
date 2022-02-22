@@ -11,7 +11,7 @@
 
 .Designer, .Self, .IG, .Button, .Description {
   grid-column: 1;
-  grid-row: 1
+  grid-row: 1;
 }
 
 .Designer {
@@ -29,10 +29,10 @@
 }
 
 .Self {
-  margin-top: 150px;
   /*Grid Spacing*/
   align-self: end; /* adjusts columns*/
   justify-self: center; /* adjusts rows*/
+  margin-top: 150px;
 }
 
 .IG {
@@ -59,9 +59,9 @@
   /* Spacing */
   justify-self: end;
   align-self: end;
-  /* border: 1px solid black; */
-  margin-right: 80px;
+  margin-right: 50px;
   margin-bottom: 30px;
+
 }
 
 .TuyenKhong {
@@ -69,7 +69,6 @@
   font-weight: 100;
   font-size: 20px;
   letter-spacing: 5px;
-
 }
 
 .SubHeading {
@@ -77,7 +76,6 @@
   font-weight: 600;
   font-size: 45px;
   color: #9C9C9C;
-
 }
 
 .Design {
@@ -98,4 +96,10 @@
 .Email {
   font-family: 'Raleway';
   letter-spacing: 5px;
+}
+
+/*### GROUP SPACING ###*/
+
+.Self, .Designer, .IG, .Description {
+  margin-left: 50px;
 }
