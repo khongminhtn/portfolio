@@ -1,6 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Comforter&family=Raleway:wght@100;300;400;600;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comforter&family=Raleway:wght@100;200;300;400;600;900&display=swap');
+/* 
+  Raleway font:  
+  Thin 100
+  Extra-Light 200
+  Light 300
+  Regular 400
+  Semi-bold 600
+  Black 900
+*/
 
-.Wrapper {
+.wrapper {
   display:grid;
   margin: auto;
   width: 100%;
@@ -10,12 +19,12 @@
 }
 
 /*=== Background ===*/
-.Designer, .Self, .IG, .ButtonContainer, .Description {
+.designer, .self, .IG, .button-container, .description {
   grid-column: 1;
   grid-row: 1;
 }
 
-.Designer {
+.designer {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
   font-size: 200px;
@@ -29,7 +38,7 @@
   justify-self: center; /* adjusts rows*/
 }
 
-.Self {
+.self {
   /*Grid Spacing*/
   align-self: end; /* adjusts columns*/
   justify-self: center; /* adjusts rows*/
@@ -50,7 +59,7 @@
 
 
 /*=== Button ===*/
-.ButtonContainer {
+.button-container {
   width: 34%;
   height: 34%;
   margin-left: 50px;
@@ -66,7 +75,7 @@
 
 
 /*=== Description ===*/
-.Description {
+.description {
   /* Spacing */
   justify-self: end;
   align-self: end;
@@ -75,42 +84,52 @@
 
 }
 
-.TuyenKhong {
+.tuyen-khong {
   font-family: 'Raleway';
-  font-weight: 100;
+  font-weight: 200;
   font-size: 20px;
   letter-spacing: 5px;
 }
 
-.SubHeading {
+.subheading {
   font-family: 'Raleway';
   font-weight: 600;
   font-size: 45px;
   color: #9C9C9C;
 }
 
-.Design {
+.design {
   color: black;
 }
 
-.Programming {
+.programming {
   color: #495390;
 }
 
-.Paragraph {
+.paragraph {
   font-family: 'Raleway';
   letter-spacing: 2px;
   font-size: 20px;
   color: #9C9C9C;
 }
 
-.Email {
+.email {
+  /*=== Spacing ===*/
+  display: flex;
+  align-items: center;
+  height: 20px;
+  padding: 0;
+
+  list-style-type: none;
   font-family: 'Raleway';
   letter-spacing: 5px;
+
+  /* border: 1px solid black; */
+  
 }
 
 /*### GROUP SPACING ###*/
 
-.Self, .Designer, .IG, .Description {
+.self, .designer, .IG, .description {
   margin-left: 50px;
 }

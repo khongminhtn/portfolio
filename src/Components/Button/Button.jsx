@@ -4,7 +4,7 @@ import './Button.css'
 const Button = ({content}) => {
   return(
     <>
-      <button className='Button'>{content}</button>
+      <button className='button'>{content}</button>
     </>
     )
 }

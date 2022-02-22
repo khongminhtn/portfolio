@@ -10,7 +10,7 @@ import Description from './Description'
 const SelfImage = () => {
   return (
     <>
-      <img src={selfImage} alt="Self" width="30%" className='Self'/>
+      <img src={selfImage} alt="Self" width="30%" className='self'/>
     </>
   )
 }
@@ -23,18 +23,18 @@ const IG = () => {
 
 const Designer = () => {
   return (
-    <div className="Designer">DESIGNER</div>)
+    <div className="designer">DESIGNER</div>)
 }
 
 const ButtonContainer = () => {
   return (
-    <div className="ButtonContainer"><Button content="Explore"/></div>
+    <div className="button-container"><Button content="Explore"/></div>
   )
 }
 
 const Landing = () => {
   return (
-    <div className='Wrapper'>
+    <div className='wrapper'>
       <Designer/>
       <SelfImage/>
       <IG/>
