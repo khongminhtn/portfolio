@@ -1,4 +1,5 @@
-import React from "react";
+import React from "react"
+import Email from './Email'
 
 const Name = () => {
   return (
@@ -23,45 +24,13 @@ const Paragraph = () => {
   )
 }
 
-const Email = () => {
-  return(
-    <ul className="email">
-      <li className="t">t</li>
-      <li className="u">u</li>
-      <li className="y">y</li>
-      <li className="e">e</li>
-      <li className="n">n</li>
-      <li className="m">m</li>
-      <li className="i">i</li>
-      <li className="n2">n</li>
-      <li className="h">h</li>
-      <li className="k">k</li>
-      <li className="h2">h</li>
-      <li className="o">o</li>
-      <li className="n3">n</li>
-      <li className="g">g</li>
-      <li className="at">@</li>
-      <li className="l">l</li>
-      <li className="i2">i</li>
-      <li className="v">v</li>
-      <li className="e2">e</li>
-      <li>.</li>
-      <li className="c">c</li>
-      <li className="o2">o</li>
-      <li>.</li>
-      <li className="u2">u</li>
-      <li className="k2">k</li>
-    </ul>
-  )
-}
-
 const Description = () => {
   return (
     <article className="description">
       <Name/>
-      <SubHeading/>
+      <SubHeading />
       <Paragraph/>
-      <Email/>
+      <Email email='tuyenminhkhong@live.co.uk'/>
     </article>
   )
 }

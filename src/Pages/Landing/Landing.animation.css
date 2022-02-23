@@ -30,10 +30,11 @@
 2.7s Delay
 */
 
+/*EMAIL-IDLED*/
 .t, .u, .y, .e, .n, .m, .i, .n2, .h, .k, .h2, .o, .n3, .g, .at, .l, .i2, .v, .e2, .c, .o2, .u2, .k2 {
   position: relative;
   animation-name: jump;
-  animation-duration: 5000ms, 5000ms; 
+  animation-duration: 15000ms, 15000ms; 
   animation-iteration-count: infinite;
   animation-timing-function: ease-in;
 }
@@ -110,24 +111,31 @@
     bottom: 0px;
   }
   
-  5% {
+  2% {
     bottom: 5px;
     font-size: 50px;
     font-weight: 600;
-    text-decoration: underline black 1px;
   }
   
-  10% { 
+  5% { 
     bottom: 0px;
     font-size: 20px;
-    font-weight: 300;
-  }
-  
-  20% {
-    text-decoration: none;
+    font-weight: 400;
   }
   
   to {
     bottom: 0px;
   }
 } 
+
+/*EMAIL-BUTTON*/
+.email .hovered:hover {
+  font-weight: 600;
+  font-size: 20px;
+  letter-spacing: 4.7px;
+}
+
+.email .hovered:active {
+  color: white;
+  font-weight: 200;
+}
