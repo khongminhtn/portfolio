@@ -1,11 +1,17 @@
 import React from 'react'
+
+// CSS: Tells webpack Button.js uses these styles
+import './ui/style.modules.scss'
+import './ui/animation.modules.scss'
 import selfImage from './assets/self2.png'
 
-import './Landing.css' // Tells webpack Button.js uses these styles
-import './Landing.animation.css'
+// Component
 import { Button } from '../../Components/index'
 import Description from './Description'
 
+// Context & Actions
+import { useStateValue } from '../../state/context'
+import { changeDisplay } from '../../state/reducer'
 
 const SelfImage = () => {
   return (
@@ -27,14 +33,25 @@ const Designer = () => {
 }
 
 const ButtonContainer = () => {
+  const {state, dispatch} = useStateValue()
+
+  const handleClick = () => {
+    dispatch(changeDisplay('projects'))
+  }
+
   return (
-    <div className="button-container"><Button content="Explore"/></div>
+    <div 
+    className="button-container">
+      <Button 
+        content="Explore"
+        handleClick={handleClick}/>
+    </div>
   )
 }
 
 const Landing = () => {
   return (
-    <div className='wrapper'>
+    <div className="landing">
       <Designer/>
       <SelfImage/>
       <IG/>

@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Comforter&family=Raleway:wght@100;200;300;400;600;900&display=swap');
+/* 
+  Raleway font:  
+  Thin 100
+  Extra-Light 200
+  Light 300
+  Regular 400
+  Semi-bold 600
+  Black 900
+*/
+
+body {
+  /* Sizing body */
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  font-family: 'raleway';
+}

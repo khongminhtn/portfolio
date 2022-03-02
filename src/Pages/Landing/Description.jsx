@@ -10,8 +10,8 @@ const Name = () => {
 const SubHeading = () => {
   return(
     <h1 className="subheading">
-      I love <b className="design">Design</b> <br/>
-      and <b className="programming">Programming</b>
+      Website <b className="design">Designer</b> <br/>
+      and <b className="programming">Developer</b>
     </h1>
   )
 }

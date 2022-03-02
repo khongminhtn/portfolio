@@ -1,0 +1,12 @@
+#projects {
+  /* Spacing */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  
+  /* Properties */
+  background-color: red;
+  font-size: 50px;
+}
