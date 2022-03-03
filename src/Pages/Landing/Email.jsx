@@ -6,34 +6,13 @@ const Copied = () => {
   )
 }
 
-const IdledEmail = () => {
+const IdledEmail = ({email}) => {
+  const letters = [...email]
   return(
     <ul className="idled">
-      <li>t</li>
-      <li>u</li>
-      <li>y</li>
-      <li>e</li>
-      <li>n</li>
-      <li>m</li>
-      <li>i</li>
-      <li>n</li>
-      <li>h</li>
-      <li>k</li>
-      <li>h</li>
-      <li>o</li>
-      <li>n</li>
-      <li>g</li>
-      <li>@</li>
-      <li>l</li>
-      <li>i</li>
-      <li>v</li>
-      <li>e</li>
-      <li>.</li>
-      <li>c</li>
-      <li>o</li>
-      <li>.</li>
-      <li>u</li>
-      <li>k</li>
+      {
+        letters.map(letter => <li>{letter}</li>)
+      }
     </ul>
   )
 }
@@ -49,10 +28,8 @@ const Email = ({ email }) => {
   const [clicked, setClicked] = useState(false)
 
   const handleClick = (e) => {
+    setClicked(true)
     navigator.clipboard.writeText(e.currentTarget.getAttribute('value'))
-    setTimeout(() => {
-      setClicked(true)
-    }, 100)
 
     setTimeout(() => {
       setClicked(false)

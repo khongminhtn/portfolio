@@ -2,23 +2,20 @@ import {
   Routes,
   Route
 } from "react-router-dom"
-import { Landing, Projects } from './Pages/index'
-import './App.css'
-
-const Display = () => {
-  return (
-    <div
-    className="app-display">
-      <Landing/>
-      <Projects/>
-    </div>
-  )
-}
+import { Display } from './Components/index'
+import { Landing, Projects} from './Pages/index'
 
 function App() {
   return (
     <Routes className="App">
-      <Route path="/" element={<Display/>}/>
+
+      <Route path="/" element={
+        <Display>
+          <Landing/>
+          <Projects/>
+        </Display>}
+      />
+      
     </Routes>
   );
 }
