@@ -2,7 +2,7 @@ import React from 'react'
 // import PropTypes from 'prop-types'
 
 // Hooks
-import { useCycleImg, useOpacityCycle, useTimeString } from '../../hooks/index'
+import { useInterval,  useTimeString } from '../../hooks/index'
 
 // Components
 import { Description3 } from '../../components/index'
@@ -19,8 +19,25 @@ const imageArray = [journey, journey2, journey3, journey4]
 
 const About = () => {
   const time = useTimeString()
-  const img = useCycleImg(imageArray, 5000)
-  const opacity = useOpacityCycle(img)
+  const [index, setIndex] = React.useState(1)
+  const [img, setImg] = React.useState(imageArray[0])
+  const [opacity, setOpacity] = React.useState(1)
+
+  useInterval(() => {
+    setImg(imageArray[index])
+
+    index === imageArray.length - 1 
+    ? setIndex(0)
+    : setIndex(index + 1)
+    
+    setTimeout(() => {
+      setOpacity(1)
+    }, 100)
+
+    setTimeout(() => {
+      setOpacity(0)
+    }, 4900)
+  }, 5000)
 
   return (
     <section className={sass.about}>

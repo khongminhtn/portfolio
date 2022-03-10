@@ -30,27 +30,6 @@
   opacity: 0%;
   animation: appearIn 1000ms ease-out 1s 1 normal forwards;
 
-  .idled, .hovered {
-    /*=== Spacing ===*/
-    @include flexContentAlignJustify(center, none);
-    height: 20px;
-    padding: 0;
-    margin: 0;
-  
-    /*fonts*/
-    font-size: 20px;
-    font-weight: 200;
-  
-    /*lists*/
-    list-style-type: none;
-    cursor: pointer;
-  
-    /*button*/
-    border: none;
-    background-color: transparent;
-    transition: 100ms ease-in-out;
-  }
-
   .tuyenKhong, .subheading, .paragraph {
     margin: 0;
   }
@@ -87,18 +66,41 @@
   .email {
     /* border: 1px solid black; */
     width: max-content;
+    
+    .idled, .hovered {
+      /*=== Spacing ===*/
+      @include flexContentAlignJustify(center, none);
+      height: 20px;
+      padding: 0;
+      margin: 0;
+    
+      /*fonts*/
+      font-size: 20px;
+      font-weight: 200;
+    
+      /*lists*/
+      list-style-type: none;
+      cursor: pointer;
+    
+      /*button*/
+      border: none;
+      background-color: transparent;
+      transition: 100ms ease-in-out;
+    }
+
+    .copied {
+      /*=== Spacing ===*/
+      @include flexContentAlignJustify(center, none);
+      height: 20px;
+    
+      /*fonts*/
+      letter-spacing: 1px;
+      font-size: 20px;
+      font-weight: 200;
+    }  
   }
   
-  .copied {
-    /*=== Spacing ===*/
-    @include flexContentAlignJustify(center, none);
-    height: 20px;
-  
-    /*fonts*/
-    letter-spacing: 1px;
-    font-size: 20px;
-    font-weight: 200;
-  }  
+
 }
 
 /* =============================================================================*/
@@ -152,10 +154,10 @@ $delays: 1000ms 1100ms 1200ms 1300ms 1400ms 1500ms 1600ms 1700ms 1800ms 1900ms 2
 
 /*EMAIL BUTTON ANIMATION*/
 .email .hovered {
+  transition: '500ms ease-out 200ms';
+  font-size: 10px;
   &:hover {
-    font-weight: 600;
-    font-size: 20px;
-    letter-spacing: 5.5px;
+    font-size: 25px;
   }
   &:active {
     color: white;

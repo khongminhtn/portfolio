@@ -4,7 +4,6 @@
   align-items: center;
   justify-content: space-between;
 
-
   // Sizing
   width: 100vw;
   height: 100vh;
@@ -12,17 +11,14 @@
   // Properties
   background-color: black;
   color: white;
-
   
   .detail {
     // border: 1px solid white;
     margin-left: 10%;
   }
-  
+
   .image {
-    // border: 1px solid white;
-    opacity: 0%;
     margin-right: 5%;
-    width: 50%;
+    width: 50vw;
   }
 }

@@ -19,9 +19,9 @@ const IdledEmail = ({email}) => {
   )
 }
 
-const HoveredEmail = () => {
+const HoveredEmail = ({email}) => {
   return (
-    <button className={sass.hovered}>tuyenminhkhong@live.co.uk</button>
+    <button className={sass.hovered}>{email}</button>
   )
 }
 

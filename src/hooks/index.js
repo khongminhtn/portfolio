@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useStateValue } from '../state/context'
 import { 
   setScrollPause, 
@@ -44,28 +44,25 @@ export const useScrollY = () => {
 
 
 
-export const useCycleImg = (imageArray, duration) => {
-  const [img, setImg] = useState(imageArray[0])
-  const [index, setIndex] = useState(1)
+export const useInterval = (callback, delay) => {
+  // Create a ref
+  const callbackRef = useRef()
+
+  // Save callback to ref
+  useEffect(() => {
+    // Saved every time there changes to the call back
+    callbackRef.current = callback
+  }, [callback])
+
 
   useEffect(() => {
-      const imgCycle = setTimeout(() => {
-      setImg(imageArray[index])
-      if (index === imageArray.length - 1){
-        // Reset on last image
-        setIndex(0)
-      } else {
-        // Select next image
-        setIndex(index + 1)
-      }
-    }, duration)
+    // Access callback from ref
+    const tick = () => callbackRef.current()
 
-    
-    return () => {
-      clearTimeout(imgCycle)
-    }
-  }, [img, index, duration, imageArray])
-  return img
+    // Run saved call back every tick
+    let id = setInterval(tick, delay)
+    return () => clearInterval(id)
+  }, [delay])
 }
 
 
@@ -84,24 +81,4 @@ export const useTimeString = () => {
   }, [])
 
   return time
-}
-
-
-
-export const useOpacityCycle = (img) => {
-  const [opacity, setOpacity] = useState(1)
-
-  useEffect(() => {
-    const opacityOff = setTimeout(() => {
-      setOpacity(0)
-    }, 4900)
-
-    const opacityOn = setTimeout(() => {
-      setOpacity(1)
-    }, 5100)
-
-    return () => clearTimeout([opacityOff, opacityOn])
-  },[img])
-
-  return opacity
 }
