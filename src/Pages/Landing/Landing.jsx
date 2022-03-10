@@ -1,7 +1,7 @@
 import React from 'react'
 import sass from './landing.module.scss';
 import { animation } from './style.js'
-import selfImage from './assets/self2.png'
+import selfImage from './assets/selfCompressed.png'
 
 // Component
 import { Button, Description } from '../../components/index'

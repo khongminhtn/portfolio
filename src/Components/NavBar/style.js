@@ -61,7 +61,7 @@ export const navBarStyle = (mainPages, currentPage) => {
     gridTemplateRows: gridRows,
     
     // Animation Properties
-    transition: `500ms ease-out ${currentPage === 0 ? '0ms': '500ms'}`,
+    transition: `500ms ease-out ${currentPage === 0 ? '0ms': '200ms'}`,
     opacity: currentPage === 0 ? '0%' : '100%',
     transform: currentPage === 0 ? 'translateY(-10vw)': 'translateX(0)',
 
