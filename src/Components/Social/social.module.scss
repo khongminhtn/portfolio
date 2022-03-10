@@ -1,0 +1,25 @@
+.social {
+  // Display
+  display: flex;
+  flex-direction: column;
+
+  // Positioning
+  position: fixed;
+  z-index: 1;
+  top: 65%;
+  left: 1.4%;
+}
+
+.email, .github, .linkedin, .codepen {
+  // Sizing
+  width: 30px;
+  height: 30px;
+  margin-bottom: 15px;
+
+  // Animation
+  cursor: pointer;
+  transition: 300ms ease-out;
+  &:hover {
+    opacity: 30%;
+  }
+}

@@ -1,0 +1,172 @@
+@mixin widthHeight($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin gridSelfAlignJustify($align, $justify) {
+  align-self: $align; /* vertical */
+  justify-self: $justify; /* horizontal */
+}
+
+@mixin flexContentAlignJustify($align, $justify) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+/* =============================================================================*/
+/* =                            DESCRIPTION                                    =*/
+/* =============================================================================*/
+.description {
+  /* Spacing */
+  @include gridSelfAlignJustify(end, end);
+  grid-column: 1;
+  grid-row: 1;
+  margin-right: 3%;
+  margin-bottom: 30px;
+  width: 30%;
+
+  /* Animation Properties */
+  opacity: 0%;
+  animation: appearIn 1000ms ease-out 1s 1 normal forwards;
+
+  .idled, .hovered {
+    /*=== Spacing ===*/
+    @include flexContentAlignJustify(center, none);
+    height: 20px;
+    padding: 0;
+    margin: 0;
+  
+    /*fonts*/
+    font-size: 20px;
+    font-weight: 200;
+  
+    /*lists*/
+    list-style-type: none;
+    cursor: pointer;
+  
+    /*button*/
+    border: none;
+    background-color: transparent;
+    transition: 100ms ease-in-out;
+  }
+
+  .tuyenKhong, .subheading, .paragraph {
+    margin: 0;
+  }
+  
+  .tuyenKhong {
+    font-size: 20px;
+    letter-spacing: 5px;
+    font-weight: 200;
+    margin-bottom: 8%;
+  }
+  
+  .subheading {
+    font-weight: 600;
+    font-size: 45px;
+    color: #9C9C9C;
+    margin-bottom: 2%;
+  }
+  
+  .black {
+    color: black;
+  }
+  
+  .blue {
+    color: #495390;
+  }
+  
+  .paragraph {
+    // letter-spacing: 1px;
+    font-size: 20px;
+    color: black;
+    margin-bottom: 8%;
+  }
+  
+  .email {
+    /* border: 1px solid black; */
+    width: max-content;
+  }
+  
+  .copied {
+    /*=== Spacing ===*/
+    @include flexContentAlignJustify(center, none);
+    height: 20px;
+  
+    /*fonts*/
+    letter-spacing: 1px;
+    font-size: 20px;
+    font-weight: 200;
+  }  
+}
+
+/* =============================================================================*/
+/* =                            EMAIL ANIMATION                                =*/
+/* =============================================================================*/
+/*=== Email Animation ===
+
+  25 Characters
+  100ms delay each character
+  2.3s animated duration
+  5s total duration
+
+EMAIL IDLED ANIMATION*/
+.idled li:nth-child(n+1) {
+  position: relative;
+  animation-name: jump;
+  animation-duration: 15000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in;
+}
+
+$delays: 1000ms 1100ms 1200ms 1300ms 1400ms 1500ms 1600ms 1700ms 1800ms 1900ms 2000ms 2100ms 2200ms 2300ms 2400ms 2500ms 2600ms 2700ms 2800ms 2900ms 3000ms 3100ms 3200ms 3300ms 3400ms;
+@each $delay in $delays {
+  $index: index($delays, $delay);
+  .idled li:nth-child(#{$index}) {
+    animation-delay: $delay
+  }
+}
+
+@keyframes jump {
+  from {
+    bottom: 0px;
+  }
+  
+  2% {
+    bottom: 5px;
+    font-size: 50px;
+    font-weight: 600;
+  }
+  
+  5% { 
+    bottom: 0px;
+    font-size: 20px;
+    font-weight: 400;
+  }
+  
+  to {
+    bottom: 0px;
+  }
+} 
+
+/*EMAIL BUTTON ANIMATION*/
+.email .hovered {
+  &:hover {
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: 5.5px;
+  }
+  &:active {
+    color: white;
+    font-weight: 200;
+  }
+}
+
+@keyframes appearIn {
+  from {
+    opacity: 0%;
+  } to {
+    opacity: 100%;
+  }
+}

@@ -1,0 +1,113 @@
+@mixin widthHeight($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin gridSelfAlignJustify($align, $justify) {
+  align-self: $align; /* vertical */
+  justify-self: $justify; /* horizontal */
+}
+
+@mixin flexContentAlignJustify($align, $justify) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+/* =============================================================================*/
+/* =                                LANDING                                    =*/
+/* =============================================================================*/
+.landing {
+  @include widthHeight(100vw, 100vh);
+  display: grid;
+  grid-template-columns: 1fr; /*1 column*/
+  grid-template-rows: 1fr auto; /*2 column*/
+  overflow: hidden;
+
+  .designer, .self, .IG, .buttonContainer {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .self, .designer, .IG {
+    margin-left: 50px;
+  }
+
+  .designer {
+    font-weight: bold;
+    font-size: 200px;
+    color: white;
+    letter-spacing: 7pc;
+    text-shadow: 10px 10px 25px rgba(0, 0, 0, 0.2); /*Using rgba opacity will only apply to selected property*/
+
+    /*Grid Spacing*/
+    @include gridSelfAlignJustify(center, center);
+
+    /* Animation properties */
+    opacity: 0;
+    animation: moveUp 1s ease-out 0s 1 normal forwards;
+    transition: 2s ease-out;
+
+    span {
+      opacity: 0;
+    }
+  }
+
+  .self {
+    /*Grid Spacing*/
+    @include gridSelfAlignJustify(end, center);
+
+    /* Animation properties */
+    opacity: 100%;
+    animation: moveUp 1s ease-out 100ms;
+  }
+
+  .IG {
+    font-weight: bold;
+    font-size: 200px;
+    color: white;
+    letter-spacing: 7pc;
+
+    /*Grid Spacing*/
+    @include gridSelfAlignJustify(center, center);
+
+    /* Animation properties */
+    opacity: 0%;
+    animation: moveUp 1s ease-out 200ms 1 normal forwards;
+  }
+}
+
+
+/* =============================================================================*/
+/* =                                  BUTTON                                   =*/
+/* =============================================================================*/
+.buttonContainer {
+  @include widthHeight(33%, 33%);
+  @include gridSelfAlignJustify(end, none);
+  @include flexContentAlignJustify(center, center);
+  margin-left: 50px;
+
+  /* Animation Properties */
+  opacity: 0%;
+  animation: appearIn 1s ease-out 1s 1 normal forwards;
+}
+
+
+/* =============================================================================*/
+/* =                         LANDING INTRO ANIMATION                           =*/
+/* =============================================================================*/
+@keyframes moveUp {
+  from {
+    transform: translateY(100vh);
+    opacity: 0%;
+  } to {
+    transform: translateY(0);
+    opacity: 100%;
+  }
+}
+
+@keyframes appearIn {
+  to {
+    opacity: 100%;
+  }
+}

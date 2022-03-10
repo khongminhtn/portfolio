@@ -1,64 +1,100 @@
 import React from 'react'
-
-// CSS: Tells webpack Button.js uses these styles
-import './ui/style.modules.scss'
-import './ui/animation.modules.scss'
+import sass from './landing.module.scss';
+import { animation } from './style.js'
 import selfImage from './assets/self2.png'
 
 // Component
-import { Button } from '../../Components/index'
-import Description from './Description'
+import { Button, Description } from '../../components/index'
 
 // Context & Actions
 import { useStateValue } from '../../state/context'
-import { changeDisplay } from '../../state/reducer'
+import { setScrollTranslate, setCurrentPage } from '../../state/reducer'
+
+
 
 const SelfImage = () => {
+  const { state } = useStateValue()
+  const { currentPage, duration } = state.scroll
+
   return (
     <>
-      <img src={selfImage} alt="Self" width="30%" className='self'/>
+      <img 
+        className={sass.self}
+        style={animation('SelfImage', currentPage, duration)}
+        src={selfImage} 
+        alt="Self" 
+        width="30%" 
+        />
     </>
   )
 }
 
+
 const IG = () => {
+  const { state } = useStateValue()
+  const { currentPage, duration } = state.scroll
+
   return (
-    <div className="IG">IG</div>
+    <h1 
+    className={sass.IG}
+    style={animation('IG', currentPage, duration)}>
+      IG
+    </h1>
   )
 }
 
+
 const Designer = () => {
+  const { state } = useStateValue()
+  const { currentPage, duration } = state.scroll
+  
   return (
-    <div className="designer">DESIGNER</div>)
+    <h1 
+    className={sass.designer}
+    style={animation('Designer', currentPage, duration)}>
+      DES<span>IG</span>NER
+    </h1>)
 }
 
+
 const ButtonContainer = () => {
-  const {state, dispatch} = useStateValue()
+  const {dispatch} = useStateValue()
 
   const handleClick = () => {
-    dispatch(changeDisplay('projects'))
+    // Scroll to page 1 from page 0
+    dispatch(setScrollTranslate(100))
+    dispatch(setCurrentPage(1))
   }
-
   return (
     <div 
-    className="button-container">
+    className={sass.buttonContainer}>
       <Button 
-        content="Explore"
-        handleClick={handleClick}/>
+        handleClick={handleClick}
+        content="Explore"/>
     </div>
   )
 }
 
+
 const Landing = () => {
   return (
-    <div className="landing">
+    <section className={sass.landing}>
       <Designer/>
       <SelfImage/>
       <IG/>
       <ButtonContainer/>
-      <Description/>
-    </div>
+      <Description
+        name='Tuyen Khong'
+        black='Designer'
+        blue='Developer'
+        sub={['Website', 'and']}
+        paragraph='Web developer with Architectural background.
+        Knowledge in React, Redux, Node.js, Express.js,
+        MongoDB, GraphQL and Typescript based in London.'
+        email='tuyenminhkhong@live.co.uk'/>
+    </section>
   )
 }
+
 
 export default Landing

@@ -2,7 +2,16 @@ import React, { createContext, useContext, useReducer } from 'react'
 
 import { reducer } from './reducer'
 
-const initialState = {display: "landing"}
+const initialState = {
+  scroll: {
+    pause: false,
+    duration: 500,
+    currentPage: 0,
+    translate: 0,
+    totalPages: 0,
+  }
+}
+
 const Context = createContext([initialState, () => initialState])
 
 const ContextProvider = (props) => {

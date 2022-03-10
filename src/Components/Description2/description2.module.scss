@@ -1,0 +1,39 @@
+.description {
+  width: 500px;
+  height: 50%;
+  position: relative;
+  left: 5%;
+
+  .subject, .heading, .sub-heading, .paragraph, .cta {
+    margin: 0;
+    padding: 0;
+  }
+
+  .subject {
+    margin-bottom: 15%;
+    font-weight: 600;
+    font-size: 15px;
+  }
+
+  .heading {
+    font-weight: 600;
+    font-size: 100px;
+  }
+  
+  .subHeading {
+    margin-bottom: 15%;
+    font-weight: 400;
+    font-size: 15px;
+    // letter-spacing: 1px;
+  }
+
+  .paragraph {
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+  }
+
+  .cta {
+    font-weight: 600;
+    color: black;
+  }
+}

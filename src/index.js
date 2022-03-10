@@ -3,7 +3,9 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router } from 'react-router-dom';
-import './index.css'
+
+import './globalUi/index.scss'
+import './globalUi/animation.scss'
 
 import { ContextProvider } from './state/context'
 
