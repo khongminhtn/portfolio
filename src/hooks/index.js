@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import { useStateValue } from '../state/context'
 import { 
   setScrollPause, 
@@ -39,4 +40,68 @@ export const useScrollY = () => {
       dispatch(setScrollPause(false))
     }, duration)
   }
+}
+
+
+
+export const useCycleImg = (imageArray, duration) => {
+  const [img, setImg] = useState(imageArray[0])
+  const [index, setIndex] = useState(1)
+
+  useEffect(() => {
+      const imgCycle = setTimeout(() => {
+      setImg(imageArray[index])
+      if (index === imageArray.length - 1){
+        // Reset on last image
+        setIndex(0)
+      } else {
+        // Select next image
+        setIndex(index + 1)
+      }
+    }, duration)
+
+    
+    return () => {
+      clearTimeout(imgCycle)
+    }
+  }, [img, index, duration, imageArray])
+  return img
+}
+
+
+
+export const useTimeString = () => {
+  const [time, setTime] = useState('')
+  useEffect(() => {
+    const secondTimer = setInterval(() => {
+      const current = new Date()
+      // current.getHours()}:${current.getMinutes()}:${current.getSeconds()
+      setTime(`${current.toLocaleTimeString()}`)
+    }, 1000)
+    return () => {
+      clearInterval(secondTimer)
+    }
+  }, [])
+
+  return time
+}
+
+
+
+export const useOpacityCycle = (img) => {
+  const [opacity, setOpacity] = useState(1)
+
+  useEffect(() => {
+    const opacityOff = setTimeout(() => {
+      setOpacity(0)
+    }, 4900)
+
+    const opacityOn = setTimeout(() => {
+      setOpacity(1)
+    }, 5100)
+
+    return () => clearTimeout([opacityOff, opacityOn])
+  },[img])
+
+  return opacity
 }

@@ -35,7 +35,6 @@ export const ballTransition = (hovered, pageNumber, currentPage) => {
 
 export const lineTransition = (currentPage) => {
   const blckPg = 2 // Manual, dependent on mainPages and subPages
-  console.log(currentPage >= blckPg ? 'white' : 'black')
   return {
     borderColor: currentPage >= blckPg ? 'white' : 'black'
   }
