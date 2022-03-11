@@ -23,7 +23,7 @@
   grid-column: 1;
   grid-row: 1;
   margin-right: 3%;
-  margin-bottom: 30px;
+  margin-bottom: 2%;
   width: 30%;
 
   /* Animation Properties */
@@ -99,8 +99,16 @@
       font-weight: 200;
     }  
   }
-  
+}
 
+// Ipad Portraits
+@media (max-width: 769px) {
+  .description {
+    @include gridSelfAlignJustify(center, start);
+    // margin-top: 5%;
+    width: 50vw;
+    transform: translateX(5vw);
+  }
 }
 
 /* =============================================================================*/

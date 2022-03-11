@@ -22,8 +22,7 @@ const SelfImage = () => {
         className={sass.self}
         style={animation('SelfImage', currentPage, duration)}
         src={selfImage} 
-        alt="Self" 
-        width="30%" 
+        alt="Self"
         />
     </>
   )
@@ -67,7 +66,7 @@ const ButtonContainer = () => {
   }
   return (
     <div 
-    className={sass.buttonContainer}>
+    className={sass['button-container']}>
       <Button 
         handleClick={handleClick}
         content="Explore"/>

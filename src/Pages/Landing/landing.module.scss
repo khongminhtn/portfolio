@@ -14,6 +14,18 @@
   justify-content: $justify;
 }
 
+// Ipad Pro 
+$L-iProW: 1367px;
+$P-iProW: 1025px;
+
+// Ipad
+$L-iPadW: 1025px;
+$P-iPadW: 769px;
+
+// Plus Size Phone
+$L-PlusW: 737px;
+$P-PlusW: 415px;
+
 /* =============================================================================*/
 /* =                                LANDING                                    =*/
 /* =============================================================================*/
@@ -23,21 +35,18 @@
   grid-template-columns: 1fr; /*1 column*/
   grid-template-rows: 1fr auto; /*2 column*/
   overflow: hidden;
+  // width: 100vw;
 
-  .designer, .self, .IG, .buttonContainer {
+  .designer, .self, .IG, .button-container {
     grid-column: 1;
     grid-row: 1;
   }
 
-  .self, .designer, .IG {
-    margin-left: 50px;
-  }
-
   .designer {
     font-weight: bold;
-    font-size: 200px;
+    font-size: 10vw ;
     color: white;
-    letter-spacing: 7pc;
+    letter-spacing: 6vw;
     text-shadow: 10px 10px 25px rgba(0, 0, 0, 0.2); /*Using rgba opacity will only apply to selected property*/
 
     /*Grid Spacing*/
@@ -54,19 +63,22 @@
   }
 
   .self {
-    /*Grid Spacing*/
+    // Grid
     @include gridSelfAlignJustify(end, center);
 
-    /* Animation properties */
+    // Properties
+    width: 30%;
+
+    // Animation
     opacity: 100%;
     animation: moveUp 1s ease-out 100ms;
   }
 
   .IG {
     font-weight: bold;
-    font-size: 200px;
+    font-size: 10vw;
     color: white;
-    letter-spacing: 7pc;
+    letter-spacing: 6vw;
 
     /*Grid Spacing*/
     @include gridSelfAlignJustify(center, center);
@@ -75,21 +87,94 @@
     opacity: 0%;
     animation: moveUp 1s ease-out 200ms 1 normal forwards;
   }
-}
 
+  .button-container {
+    @include widthHeight(33%, 33%);
+    @include gridSelfAlignJustify(end, none);
+    @include flexContentAlignJustify(center, center);
+    /* Animation Properties */
+    opacity: 0%;
+    animation: appearIn 1s ease-out 1s 1 normal forwards;
+  }
 
-/* =============================================================================*/
-/* =                                  BUTTON                                   =*/
-/* =============================================================================*/
-.buttonContainer {
-  @include widthHeight(33%, 33%);
-  @include gridSelfAlignJustify(end, none);
-  @include flexContentAlignJustify(center, center);
-  margin-left: 50px;
+  /* =============================================================================*/
+  /* =                            LANDING MEDIA QUERY                            =*/
+  /* =============================================================================*/
+  // Ipad Pro Landscape
+  @media only screen and (max-device-width: #{$L-iProW}) and (orientation: landscape) {
+    .self {
+      width: 38%;
+      justify-self: center;
+    }
+  }
 
-  /* Animation Properties */
-  opacity: 0%;
-  animation: appearIn 1s ease-out 1s 1 normal forwards;
+  // Ipad Pro Portrait
+  @media only screen and (max-device-width: #{$P-iProW}) and (orientation: portrait) {
+    .self {
+      width: 70vw;
+      justify-self: end;
+      transform: translateX(30vw);
+    }
+    .designer, .IG {
+      display: none;
+    }
+  }
+
+  // Ipad Landscape
+  @media only screen and (max-device-width: #{$L-iPadW}) and (orientation: landscape) {
+    .self {
+      width: 38%;
+      justify-self: center;
+      transform: translateX(0vw);
+    }
+    .designer, .IG {
+      display: block;
+    }
+  }
+
+  // Ipad Portrait
+  @media only screen and (max-device-width: #{$P-iPadW}) and (orientation: portrait) {
+    .self {
+      width: 70vw;
+      justify-self: end;
+      transform: translateX(30vw);
+    }
+    .designer, .IG {
+      display: none;
+    }
+  }
+
+  // Plus Size Phone Landscape
+  @media only screen and (max-device-width: #{$L-PlusW}) and (orientation: landscape) {
+    .self {
+      justify-self: end;
+    }
+    .designer, .IG {
+      display: none;
+    }
+  }
+
+  // Plus Size Phone Landscape
+  @media only screen and (max-device-width: #{$L-PlusW}) and (orientation: landscape) {
+    .self {
+      justify-self: end;
+    }
+    .designer, .IG {
+      display: none;
+    }
+  }
+
+  // Plus Size Phone Portrait
+  @media only screen and (max-device-width: #{$P-PlusW}) and (orientation: portrait) {
+    .self {
+      width: 100vw;
+      justify-self: end;
+      transform: translateX(60vw)
+    }
+    .designer, .IG {
+      display: none;
+    }
+  }
 }
 
 
