@@ -1,0 +1,15 @@
+@mixin width-height($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin grid-self-align-justify($align, $justify) {
+  align-self: $align; /* vertical */
+  justify-self: $justify; /* horizontal */
+}
+
+@mixin flex-content-align-justify($align, $justify) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+}

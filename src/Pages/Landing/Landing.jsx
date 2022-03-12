@@ -1,5 +1,5 @@
 import React from 'react'
-import sass from './landing.module.scss';
+import sass from './sass/index.module.scss';
 import { animation } from './style.js'
 import selfImage from './assets/selfCompressed.png'
 

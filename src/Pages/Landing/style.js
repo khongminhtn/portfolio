@@ -22,5 +22,4 @@ export const animation = (element, currentPage, duration) => {
     default: 
       break
   }
-
 }
