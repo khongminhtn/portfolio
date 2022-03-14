@@ -1,32 +1,29 @@
-@use '../../globalUi/util/mixins';
-@use '../../globalUi/util/media';
+@use '../../../globalUi/util/mixins';
+@use '../../../globalUi/util/media';
 
 /* =============================================================================*/
 /* =                          MEDIA QUERY                                      =*/
 /* =============================================================================*/
 
 @mixin media-query {
-  @include media.iPro-portrait { flex-direction: column; }
-  @include media.Pro11-landscape { flex-direction: column; }
+  @include media.Pro11-landscape { font-size: 40px; }
+  @include media.Pro11-portrait { font-size: 40px; }
+  @include media.Max13-landscape { font-size: 25px; }
 }
 
 /* =============================================================================*/
 /* =                            STYLE                                          =*/
 /* =============================================================================*/
 
-
-.projects {
-  // Display
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  // Sizing
+.heading {
+  // Positioning
   margin: 0;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
+  padding: 0;
+
+  // Properties
+  font-weight: 600;
+  font-size: 100px;
 
   // Media Query
-  @include media-query();
+  @include media-query()
 }

@@ -1,13 +1,18 @@
-@use '../../globalUi/util/mixins';
-@use '../../globalUi/util/media';
+@use '../../../globalUi/util/mixins';
+@use '../../../globalUi/util/media';
 
 /* =============================================================================*/
 /* =                          MEDIA QUERY                                      =*/
 /* =============================================================================*/
 
 @mixin media-query {
-  @include media.iPro-portrait { flex-direction: column; }
-  @include media.Pro11-landscape { flex-direction: column; }
+  @include media.Pro11-landscape { 
+    font-size: 16px; 
+    // text-align: center;
+  }
+  @include media.Pro11-portrait { font-size: 16px; }
+
+  @include media.Max13-landscape { margin-bottom: 2vh; }
 }
 
 /* =============================================================================*/
@@ -15,18 +20,14 @@
 /* =============================================================================*/
 
 
-.projects {
-  // Display
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  // Sizing
+.paragraph {
   margin: 0;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
+  padding: 0;
+  margin-bottom: 30px;
+  
+  // Properties
+  letter-spacing: 1px;
 
   // Media Query
-  @include media-query();
+  @include media-query()
 }

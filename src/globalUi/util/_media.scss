@@ -12,6 +12,18 @@
   };
 };
 
+@mixin Pro11-landscape {
+  @media only screen and (max-device-width: vars.$L-Pro11W) and (orientation: landscape) {
+    @content;
+  };
+}
+
+@mixin Pro11-portrait  {
+  @media only screen and (max-device-width: vars.$P-Pro11W) and (orientation: portrait) {
+    @content;
+  };
+}
+
 @mixin iPad-landscape {
   @media only screen and (max-device-width: vars.$L-iPadW) and (orientation: landscape) {
     @content

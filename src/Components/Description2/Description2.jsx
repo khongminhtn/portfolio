@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { useStateValue } from '../../state/context'
 
 // Style
-import sass from './description2.module.scss'
+import sass from './sass/index.module.scss'
 import { transition } from './style'
 
 const CallToAction = ({content}) => {

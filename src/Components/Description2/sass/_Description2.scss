@@ -1,29 +1,29 @@
-@use '../../globalUi/util/mixins';
-@use '../../globalUi/util/media';
+@use '../../../globalUi/util/mixins';
+@use '../../../globalUi/util/media';
 
 /* =============================================================================*/
 /* =                          MEDIA QUERY                                      =*/
 /* =============================================================================*/
 
 @mixin media-query {
-  @include media.iPro-landscape { margin-left: 5%; }
-  @include media.iPro-portrait { 
-    margin: 0; 
-    margin-top: 10vh;
-    margin-bottom: 5%;
-    width: 40vw;
-    height: 80vh;
+  @include media.iPro-landscape { 
+    margin-top: 5vh; 
+    left: 3vw;
   }
 
-  @include media.Pro11-landscape { margin-top: 10vh; }
-  @include media.Pro11-portrait { margin-top: 5vh; }
+  @include media.iPro-portrait {
+    text-align: center;
+    width: 60vw;
+    left: 0;
+  }
 
-  @include media.Max13-landscape {
+  @include media.Pro11-landscape {
+    text-align: center;
     width: 50vw;
-    height: 50vh;
   }
+
   @include media.Max13-portrait {
-    width: 55vw;
+    margin-top: 5vh;
   }
 }
 
@@ -32,12 +32,12 @@
 /* =============================================================================*/
 
 
-
-.screen {
-  border: 5px solid black;
-  border-radius: 50px;
-  width: 55vw;
-  box-shadow: 0 7px 5px rgba(0, 0, 0, 0.5);
+.description {
+  width: 25%;
+  height: 50%;
+  position: relative;
+  left: 5%;
+  // border: 1px solid black;
 
   // Media Query
   @include media-query()
