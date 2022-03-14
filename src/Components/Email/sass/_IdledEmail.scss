@@ -1,9 +1,33 @@
-@use '../../../globalUi/util/_mixins.scss';
+@use '../../../globalUi/util/mixins';
+@use '../../../globalUi/util/media';
 
 /* =============================================================================*/
 /* =                          MEDIA QUERY                                      =*/
 /* =============================================================================*/
 
+@mixin media-query {
+  @include media.Max13-landscape {
+    font-size: 16px;
+    li:nth-child(n+1) {
+      position: relative;
+      animation-name: jumpPhone;
+      animation-duration: 15000ms;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease-in;
+    }
+  }
+
+  @include media.Max13-portrait {
+    font-size: 16px;
+    li:nth-child(n+1) {
+      position: relative;
+      animation-name: jumpPhone;
+      animation-duration: 15000ms;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease-in;
+    }
+  }
+}
 
 /* =============================================================================*/
 /* =                            STYLE                                          =*/
@@ -28,6 +52,26 @@
   border: none;
   background-color: transparent;
   transition: 100ms ease-in-out;
+
+  // Animation
+  li:nth-child(n+1) {
+    position: relative;
+    animation-name: jump;
+    animation-duration: 15000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
+  }
+
+  $delays: 1000ms 1100ms 1200ms 1300ms 1400ms 1500ms 1600ms 1700ms 1800ms 1900ms 2000ms 2100ms 2200ms 2300ms 2400ms 2500ms 2600ms 2700ms 2800ms 2900ms 3000ms 3100ms 3200ms 3300ms 3400ms;
+  @each $delay in $delays {
+    $index: index($delays, $delay);
+    li:nth-child(#{$index}) {
+      animation-delay: $delay
+    }
+  }
+
+  // Media Query
+  @include media-query
 }
 
 
@@ -40,21 +84,8 @@
   2.3s animated duration
   5s total duration
 */
-.idled li:nth-child(n+1) {
-  position: relative;
-  animation-name: jump;
-  animation-duration: 15000ms;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in;
-}
 
-$delays: 1000ms 1100ms 1200ms 1300ms 1400ms 1500ms 1600ms 1700ms 1800ms 1900ms 2000ms 2100ms 2200ms 2300ms 2400ms 2500ms 2600ms 2700ms 2800ms 2900ms 3000ms 3100ms 3200ms 3300ms 3400ms;
-@each $delay in $delays {
-  $index: index($delays, $delay);
-  .idled li:nth-child(#{$index}) {
-    animation-delay: $delay
-  }
-}
+
 
 @keyframes jump {
   from {
@@ -77,3 +108,26 @@ $delays: 1000ms 1100ms 1200ms 1300ms 1400ms 1500ms 1600ms 1700ms 1800ms 1900ms 2
     bottom: 0px;
   }
 } 
+
+
+@keyframes jumpPhone {
+  from {
+    bottom: 0px;
+  }
+  
+  2% {
+    bottom: 5px;
+    font-size: 30px;
+    font-weight: 400;
+  }
+  
+  5% { 
+    bottom: 0px;
+    font-size: 16px;
+    font-weight: 400;
+  }
+  
+  to {
+    bottom: 0px;
+  }
+}

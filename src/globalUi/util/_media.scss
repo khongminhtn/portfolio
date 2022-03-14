@@ -1,0 +1,49 @@
+@use 'vars';
+
+@mixin iPro-landscape {
+  @media only screen and (max-device-width: vars.$L-iProW) and (orientation: landscape) {
+    @content;
+  };
+};
+
+@mixin iPro-portrait {
+  @media only screen and (max-device-width: vars.$P-iProW) and (orientation: portrait) {
+    @content;
+  };
+};
+
+@mixin iPad-landscape {
+  @media only screen and (max-device-width: vars.$L-iPadW) and (orientation: landscape) {
+    @content
+  };
+};
+
+@mixin iPad-portrait {
+  @media only screen and (max-device-width: vars.$P-iPadW) and (orientation: portrait) {
+    @content;
+  };
+};
+
+@mixin Max13-landscape {
+  @media only screen and (max-device-width: vars.$L-MaxW) and (orientation: landscape) {
+    @content
+  };
+};
+
+@mixin Max13-portrait {
+  @media only screen and (max-device-width: vars.$P-MaxW) and (orientation: portrait) {
+    @content;
+  };
+};
+
+@mixin se-landscape {
+  @media only screen and (max-device-width: vars.$L-SEW) and (orientation: landscape) {
+    @content;
+  };
+};
+
+@mixin se-portrait {
+  @media only screen and (max-device-width: vars.$P-SEW) and (orientation: portrait) {
+    @content;
+  };
+};

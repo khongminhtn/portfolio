@@ -1,9 +1,39 @@
 @use '../../../globalUi/util/mixins';
+@use '../../../globalUi/util/media';
 
 /* =============================================================================*/
 /* =                          MEDIA QUERY                                      =*/
 /* =============================================================================*/
 
+@mixin media-query {
+  @include media.iPro-portrait {
+    @include mixins.flex-content-align-justify(center, start);
+    margin-left: 12.5%; 
+  }
+
+  @include media.iPro-landscape {
+    @include mixins.flex-content-align-justify(end, start);
+    margin-left: 12.5%;
+    margin-bottom: 10%;
+  }
+
+  @include media.Max13-landscape {
+    @include mixins.grid-self-align-justify(end, none);
+    @include mixins.flex-content-align-justify(end, start);
+    margin-bottom: 10vh;
+  }
+
+  @include media.se-landscape {
+    @include mixins.grid-self-align-justify(end, none);
+    @include mixins.flex-content-align-justify(end, start);
+    margin-bottom: 5vh;
+  }
+
+  @include media.se-portrait {
+    @include mixins.flex-content-align-justify(end, center);
+    margin-bottom: 10%;
+  }
+}
 
 /* =============================================================================*/
 /* =                            STYLE                                          =*/
@@ -16,13 +46,14 @@
   @include mixins.width-height(33%, 33%);
   @include mixins.grid-self-align-justify(end, none);
   @include mixins.flex-content-align-justify(center, center);
+  // border: 1px solid black;
 
   /* Animation Properties */
   opacity: 0%;
   animation: appearIn 1s ease-out 1s 1 normal forwards;
 
-  
-  
+  // Media Query
+  @include media-query
 }
 
 /* =============================================================================*/

@@ -1,5 +1,5 @@
 @use '../../../globalUi/util/mixins';
-@use '../../../globalUi/util/vars';
+@use '../../../globalUi/util/media';
 
 
 /* =============================================================================*/
@@ -7,29 +7,20 @@
 /* =============================================================================*/
 
 @mixin media-query {
-  // Ipad Pro Landscape
-  @media only screen and (max-device-width: vars.$L-iProW) and (orientation: landscape) {
+  @include media.iPro-portrait {
+    justify-self: start;
+    align-self: center;
+    margin-left: 12.5%;
   }
 
-  // Ipad Pro Portrait
-  @media only screen and (max-device-width: vars.$P-iProW) and (orientation: portrait) {
+  @include media.iPad-landscape {
+    justify-self: start;
+    align-self: center;
+    margin-left: 12.5%;
   }
 
-  // Ipad Landscape
-  @media only screen and (max-device-width: vars.$L-iPadW) and (orientation: landscape) {
-  }
-
-  // Ipad Portrait
-  @media only screen and (max-device-width: vars.$P-iPadW) and (orientation: portrait) {
-  }
-
-  // Plus Size Phone Landscape
-  @media only screen and (max-device-width: vars.$L-PlusW) and (orientation: landscape) {
-  }
-
-  // Plus Size Phone Portrait
-  @media only screen and (max-device-width: vars.$P-PlusW) and (orientation: portrait) {
-  }
+  @include media.Max13-landscape { margin-bottom: 10%; }
+  @include media.Max13-portrait { margin-bottom: 10%; }
 }
 
 

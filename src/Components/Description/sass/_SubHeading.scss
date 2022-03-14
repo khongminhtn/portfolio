@@ -1,8 +1,14 @@
-@use '../../../globalUi/util/_mixins.scss';
+@use '../../../globalUi/util/mixins';
+@use '../../../globalUi/util/media';
+
 /* =============================================================================*/
 /* =                          MEDIA QUERY                                      =*/
 /* =============================================================================*/
 
+@mixin media-query {
+  @include media.Max13-landscape { font-size: 30px; }
+  @include media.Max13-portrait { font-size: 30px; }
+}
 
 /* =============================================================================*/
 /* =                            STYLE                                          =*/
@@ -12,8 +18,7 @@
   font-weight: 600;
   font-size: 45px;
   color: #9C9C9C;
-  margin-bottom: 2%;
-  margin: 0;
+  margin-bottom: 2vh;
 
   .black {
     color: black;
@@ -22,4 +27,6 @@
   .blue {
     color: #495390;
   }
+  
+  @include media-query
 }

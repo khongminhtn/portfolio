@@ -1,56 +1,34 @@
 @use '../../../globalUi/util/mixins';
-@use '../../../globalUi/util/vars';
+@use '../../../globalUi/util/media';
 
 /* =============================================================================*/
 /* =                          MEDIA QUERY                                      =*/
 /* =============================================================================*/
 
 @mixin media-query {
-  // Ipad Pro Landscape
-  @media only screen and (max-device-width: vars.$L-iProW) and (orientation: landscape) {
+  @include media.iPro-landscape {
     width: 38%;
     justify-self: center;
   }
 
-  // Ipad Pro Portrait
-  @media only screen and (max-device-width: vars.$P-iProW) and (orientation: portrait) {
+  @include media.iPro-portrait {
     width: 70vw;
     justify-self: end;
     transform: translateX(30vw);
   }
 
-  // Ipad Landscape
-  @media only screen and (max-device-width: vars.$L-iPadW) and (orientation: landscape) {
-    width: 38%;
+  @include media.iPad-landscape {
+    width: 45%;
     justify-self: center;
-    transform: translateX(0vw);
-  }
-
-  // Ipad Portrait
-  @media only screen and (max-device-width: vars.$P-iPadW) and (orientation: portrait) {
-    width: 70vw;
-    justify-self: end;
     transform: translateX(30vw);
   }
 
-  // Plus Size Phone Landscape
-  @media only screen and (max-device-width: vars.$L-PlusW) and (orientation: landscape) {
-    justify-self: end;
-  }
-
-  // Plus Size Phone Landscape
-  @media only screen and (max-device-width: vars.$L-PlusW) and (orientation: landscape) {
-    justify-self: end;
-  }
-
-  // Plus Size Phone Portrait
-  @media only screen and (max-device-width: vars.$P-PlusW) and (orientation: portrait) {
-    width: 100vw;
-    justify-self: end;
-    transform: translateX(60vw)
+  @include media.Max13-landscape { width: 30vw; }
+  @include media.Max13-portrait {
+    width: 50vh;
+    transform: translateX(60vw);
   }
 }
-
 
 /* =============================================================================*/
 /* =                            STYLE                                          =*/

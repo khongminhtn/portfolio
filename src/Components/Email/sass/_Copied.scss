@@ -1,9 +1,14 @@
-@use '../../../globalUi/util/_mixins.scss';
+@use '../../../globalUi/util/mixins';
+@use '../../../globalUi/util/media';
 
 /* =============================================================================*/
 /* =                          MEDIA QUERY                                      =*/
 /* =============================================================================*/
 
+@mixin media-query {
+  @include media.Max13-landscape { font-size: 16px; }
+  @include media.Max13-portrait { font-size: 16px; }
+}
 
 /* =============================================================================*/
 /* =                            STYLE                                          =*/
@@ -15,7 +20,10 @@
   height: 20px;
 
   /*fonts*/
-  letter-spacing: 1px;
   font-size: 20px;
+  letter-spacing: 1px;
   font-weight: 200;
+
+  // Media Query
+  @include media-query
 }  

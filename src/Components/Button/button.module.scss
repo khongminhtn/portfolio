@@ -1,17 +1,32 @@
-// Ipad Pro 
-$L-iProW: 1367px;
-$P-iProW: 1025px;
-
-// Ipad
-$L-iPadW: 1025px;
-$P-iPadW: 769px;
-
-// Plus Size Phone
-$L-PlusW: 737px;
-$P-PlusW: 415px;
+@use '../../globalUi/util/mixins';
+@use '../../globalUi/util/media';
 
 /* =============================================================================*/
-/* =                           MEDIA QUERY                                     =*/
+/* =                          MEDIA QUERY                                      =*/
+/* =============================================================================*/
+
+@mixin media-query {
+  @include media.iPro-portrait {
+    font-size: 30px;
+    height: 6vh;
+    width: 30vw;
+  }
+
+  @include media.iPad-portrait {
+    font-size: 20px;
+    height: 6vh;
+    width: 30vw;
+  }
+
+  @include media.se-portrait {
+    font-size: 20px;
+    height: 6vh;
+    width: 50vw;
+  }
+}
+
+/* =============================================================================*/
+/* =                               Style                                       =*/
 /* =============================================================================*/
 
 .button {
@@ -50,4 +65,7 @@ $P-PlusW: 415px;
     font-size: calc(1.5vw + 1.5vw);
     border: 10px solid black
   }
+
+  // Media Query
+  @include media-query()
 }
