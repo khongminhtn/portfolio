@@ -1,4 +1,4 @@
-@use 'util/mixins';
+@use '../../../globalUi/util/mixins';
 
 /* =============================================================================*/
 /* =                          MEDIA QUERY                                      =*/
@@ -10,12 +10,19 @@
 /* =============================================================================*/
 
 .button-container {
+  // Positioning
+  grid-column: 1;
+  grid-row: 1;
   @include mixins.width-height(33%, 33%);
   @include mixins.grid-self-align-justify(end, none);
   @include mixins.flex-content-align-justify(center, center);
+
   /* Animation Properties */
   opacity: 0%;
   animation: appearIn 1s ease-out 1s 1 normal forwards;
+
+  
+  
 }
 
 /* =============================================================================*/

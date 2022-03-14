@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import PropTypes from 'prop-types'
-import sass from './description.module.scss'
+import sass from './sass/index.module.scss'
 
 const Copied = () => {
   return (

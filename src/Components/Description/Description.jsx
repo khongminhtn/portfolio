@@ -2,12 +2,11 @@ import React from "react"
 import PropType from 'prop-types'
 
 // Components 
-import Email from './Email.jsx'
-import sass from './description.module.scss'
+import sass from './sass/index.module.scss'
 
 const Name = ({name}) => {
   return (
-    <div className={sass.tuyenKhong}>{name}</div>
+    <div className={sass.name}>{name}</div>
   )
 }
 
@@ -26,18 +25,16 @@ const Paragraph = ({paragraph}) => {
   )
 }
 
-const Description = ({name, blue, black, sub, paragraph, email}) => {
+const Description = ({name, blue, black, sub, paragraph}) => {
   return (
-    <article 
-    className={sass.description}>
+    <>
       <Name name={name}/>
       <SubHeading 
         blue={blue}
         black={black}
         sub={sub}/>
       <Paragraph paragraph={paragraph}/>
-      <Email email={email}/>
-    </article>
+    </>
   )
 }
 

@@ -1,19 +1,21 @@
-@use 'util/mixins';
-
+@use '../../../globalUi/util/mixins';
 
 /* =============================================================================*/
 /* =                            STYLE                                          =*/
 /* =============================================================================*/
 
 .designer {
+  // Positioning
+  grid-column: 1;
+  grid-row: 1;
+  @include mixins.grid-self-align-justify(center, center);
+
+  // Properties
   font-weight: bold;
   font-size: 10vw ;
   color: white;
   letter-spacing: 6vw;
   text-shadow: 10px 10px 25px rgba(0, 0, 0, 0.2); /*Using rgba opacity will only apply to selected property*/
-
-  /*Grid Spacing*/
-  @include mixins.grid-self-align-justify(center, center);
 
   /* Animation properties */
   opacity: 0;

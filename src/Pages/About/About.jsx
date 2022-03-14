@@ -8,7 +8,7 @@ import { useInterval,  useTimeString } from '../../hooks/index'
 import { Description3 } from '../../components/index'
 
 // Style
-import sass from './about.module.scss'
+import sass from './sass/index.module.scss'
 
 // Assets
 import journey from './assets/img1.png'

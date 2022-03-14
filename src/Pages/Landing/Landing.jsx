@@ -1,14 +1,18 @@
 import React from 'react'
-import sass from './sass/index.module.scss';
-import { animation } from './style.js'
-import selfImage from './assets/selfCompressed.png'
 
 // Component
-import { Button, Description } from '../../components/index'
+import { Button, Description, Email } from '../../components/index'
 
 // Context & Actions
 import { useStateValue } from '../../state/context'
 import { setScrollTranslate, setCurrentPage } from '../../state/reducer'
+
+// Styles & Assets
+import sass from './sass/index.module.scss';
+import { animation } from './style.js'
+import selfImage from './assets/selfCompressed.png'
+
+
 
 
 
@@ -75,13 +79,9 @@ const ButtonContainer = () => {
 }
 
 
-const Landing = () => {
+const DescriptionContainter = () => {
   return (
-    <section className={sass.landing}>
-      <Designer/>
-      <SelfImage/>
-      <IG/>
-      <ButtonContainer/>
+    <article className={sass['description-container']}>
       <Description
         name='Tuyen Khong'
         black='Designer'
@@ -89,8 +89,21 @@ const Landing = () => {
         sub={['Website', 'and']}
         paragraph='Web developer with Architectural background.
         Knowledge in React, Redux, Node.js, Express.js,
-        MongoDB, GraphQL and Typescript based in London.'
-        email='tuyenminhkhong@live.co.uk'/>
+        MongoDB, GraphQL and Typescript based in London.'/>
+      <Email email='tuyenminhkhong@live.co.uk'/>
+    </article>
+  )
+}
+
+
+const Landing = () => {
+  return (
+    <section className={sass.landing}>
+      <Designer/>
+      <SelfImage/>
+      <IG/>
+      <ButtonContainer/>
+      <DescriptionContainter/>
     </section>
   )
 }

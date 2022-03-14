@@ -1,6 +1,7 @@
 @use '../../../globalUi/util/mixins';
 @use '../../../globalUi/util/vars';
 
+
 /* =============================================================================*/
 /* =                          MEDIA QUERY                                      =*/
 /* =============================================================================*/
@@ -8,88 +9,60 @@
 @mixin media-query {
   // Ipad Pro Landscape
   @media only screen and (max-device-width: vars.$L-iProW) and (orientation: landscape) {
-    width: 38%;
-    justify-self: center;
   }
 
   // Ipad Pro Portrait
   @media only screen and (max-device-width: vars.$P-iProW) and (orientation: portrait) {
-    width: 70vw;
-    justify-self: end;
-    transform: translateX(30vw);
   }
 
   // Ipad Landscape
   @media only screen and (max-device-width: vars.$L-iPadW) and (orientation: landscape) {
-    width: 38%;
-    justify-self: center;
-    transform: translateX(0vw);
   }
 
   // Ipad Portrait
   @media only screen and (max-device-width: vars.$P-iPadW) and (orientation: portrait) {
-    width: 70vw;
-    justify-self: end;
-    transform: translateX(30vw);
   }
 
   // Plus Size Phone Landscape
   @media only screen and (max-device-width: vars.$L-PlusW) and (orientation: landscape) {
-    justify-self: end;
-  }
-
-  // Plus Size Phone Landscape
-  @media only screen and (max-device-width: vars.$L-PlusW) and (orientation: landscape) {
-    justify-self: end;
   }
 
   // Plus Size Phone Portrait
   @media only screen and (max-device-width: vars.$P-PlusW) and (orientation: portrait) {
-    width: 100vw;
-    justify-self: end;
-    transform: translateX(60vw)
   }
 }
+
 
 
 /* =============================================================================*/
 /* =                            STYLE                                          =*/
 /* =============================================================================*/
 
-.self {
+.description-container {
   // Positioning
   grid-column: 1;
   grid-row: 1;
-  @include mixins.grid-self-align-justify(end, center);
-
-  // Properties
+  @include mixins.grid-self-align-justify(end, end);
+  margin-right: 3%;
+  margin-bottom: 2%;
   width: 30%;
+  
+  /* Animation Properties */
+  opacity: 0%;
+  animation: appearIn 1000ms ease-out 1s 1 normal forwards;
 
-  // Animation
-  opacity: 100%;
-  animation: moveUp 1s ease-out 100ms;
-
-  // Media query
+  // Media Query
   @include media-query
 }
-
 
 /* =============================================================================*/
 /* =                           ANIMATION                                       =*/
 /* =============================================================================*/
 
-@keyframes moveUp {
+@keyframes appearIn {
   from {
-    transform: translateY(100vh);
     opacity: 0%;
   } to {
-    transform: translateY(0);
-    opacity: 100%;
-  }
-}
-
-@keyframes appearIn {
-  to {
     opacity: 100%;
   }
 }

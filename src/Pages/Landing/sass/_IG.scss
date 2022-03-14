@@ -1,17 +1,19 @@
-@use 'util/mixins';
-
+@use '../../../globalUi/util/mixins';
 /* =============================================================================*/
 /* =                            STYLE                                          =*/
 /* =============================================================================*/
 
 .IG {
+  // Positioning
+  grid-column: 1;
+  grid-row: 1;
+  @include mixins.grid-self-align-justify(center, center);
+
+  // Properties
   font-weight: bold;
   font-size: 10vw;
   color: white;
   letter-spacing: 6vw;
-
-  /*Grid Spacing*/
-  @include mixins.grid-self-align-justify(center, center);
 
   /* Animation properties */
   opacity: 0%;

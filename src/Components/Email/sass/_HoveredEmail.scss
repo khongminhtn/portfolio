@@ -1,0 +1,49 @@
+@use '../../../globalUi/util/_mixins.scss';
+
+
+/* =============================================================================*/
+/* =                          MEDIA QUERY                                      =*/
+/* =============================================================================*/
+
+
+/* =============================================================================*/
+/* =                            STYLE                                          =*/
+/* =============================================================================*/
+
+.hovered {
+  /*=== Spacing ===*/
+  @include mixins.flex-content-align-justify(center, none);
+  height: 20px;
+  padding: 0;
+  margin: 0;
+
+  /*fonts*/
+  font-size: 20px;
+  font-weight: 200;
+
+  /*lists*/
+  list-style-type: none;
+  cursor: pointer;
+
+  /*button*/
+  border: none;
+  background-color: transparent;
+  transition: 100ms ease-in-out;
+}
+
+
+/* =============================================================================*/
+/* =                            ANIMATION                                      =*/
+/* =============================================================================*/
+
+.hovered {
+  transition: '500ms ease-out 200ms';
+  font-size: 20px;
+  &:hover {
+    font-size: 25px;
+  }
+  &:active {
+    color: white;
+    font-weight: 200;
+  }
+}
