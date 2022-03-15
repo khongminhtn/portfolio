@@ -1,0 +1,13 @@
+.line {
+  // Grid Alignment
+  align-self: center;
+  justify-self: center;
+  
+  // Properties
+  height: 30px;
+  width: 0px;
+  border-left: 1px solid black;
+  
+  //Animation Property
+  transition: 500ms ease-out;
+}

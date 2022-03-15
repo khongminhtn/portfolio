@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { NavBarLogic } from './NavBarLogic'
 
 // Styling
-import sass from './navbar.module.scss'
+import sass from './sass/index.module.scss'
 import { 
   contentTransition, 
   navBarStyle, 

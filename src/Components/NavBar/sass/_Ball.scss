@@ -1,0 +1,49 @@
+@use '../../../globalUi/util/mixins';
+@use '../../../globalUi/util/media';
+
+/* =============================================================================*/
+/* =                          MEDIA QUERY                                      =*/
+/* =============================================================================*/
+
+@mixin media-query {
+  @include media.Max13-landscape { 
+    width: 10px;
+    height: 10px;  
+  }
+}
+
+/* =============================================================================*/
+/* =                            STYLE                                          =*/
+/* =============================================================================*/
+
+
+.ball {
+  // Grid Alignment
+  align-self: center;
+  justify-self: center;
+  
+  // Sizing
+  width: 15px;
+  height: 15px;
+  
+  // Properties
+  background-color: black;
+  border-radius: 100%;
+  
+  // Animation
+  transition: 100ms ease-out;
+  cursor: pointer;
+
+  &:hover {
+    width: 20px;
+    height: 20px;
+  }
+  
+  &:active {
+    width: 25px;
+    height: 25px;
+  }
+
+  // Media Query
+  @include media-query()
+}

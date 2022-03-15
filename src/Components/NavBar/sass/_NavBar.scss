@@ -1,0 +1,31 @@
+.navBar {
+  // Grid Display is manged in style.js
+  // Sizing
+  width: 130px;
+  height: 30%;
+  position: fixed;
+  top: 18%;
+  left: 1%;
+  z-index: 1;
+}
+
+// Requires update upon changes to mainPages and subPages
+// props of NavBar
+$colStarts: 1 2 1 1 2 1 1 2 1 1 2;
+$colEnds--: 2 3 2 2 3 2 2 3 2 2 3; 
+
+$rowStarts: 1 1 2 3 3 4 5 5 6 7 7;  
+$rowEnds--: 2 2 3 4 4 5 6 6 7 8 8;  
+
+@for $i from 1 through length($rowStarts) {
+  $rowStart: nth($rowStarts, $i);
+  $rowEnd: nth($rowEnds--, $i);
+
+  $colStart: nth($colStarts, $i);
+  $colEnd: nth($colEnds--, $i);
+
+  .navBar div:nth-child(#{$i}) {
+    grid-column: $colStart;
+    grid-row: $rowStart;
+  };
+}

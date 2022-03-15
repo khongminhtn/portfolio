@@ -1,0 +1,17 @@
+.content {
+  // Grid Aligning
+  align-self: center;
+  justify-self: start;
+  
+  // Properties
+  font-size: 15px;
+  letter-spacing: 1px;
+  opacity: 20%;
+  cursor: pointer;
+  
+  // Animation
+  transition: 500ms ease-out;
+  &:hover {
+    opacity: 100%;
+  }
+}
