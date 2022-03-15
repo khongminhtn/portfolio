@@ -1,0 +1,28 @@
+.nav {
+  // Positioning
+  position: relative;
+  left: 100vw;
+  display: flex;
+  flex-direction: column;
+  
+  background: black;
+  color: white;
+  font-family: 'Roboto Condensed';
+  
+  -webkit-transition: all 350ms ease-out;
+  transition: 300ms ease-out;
+}
+
+.nav button {
+  // Sizing
+  width: 100vw;
+  height: 25vh;
+
+  // Properties
+  background-color: black;
+  border: none;
+  color: white;
+  font-family: inherit;
+  font-size: inherit;
+  border-bottom: 1px grey solid;
+}

@@ -1,0 +1,25 @@
+.burger {
+  width: 20px;
+  height: 20px;
+  
+  display: flex;
+  flex-direction: column;
+  
+  position: fixed;
+  left: 90vw;
+  top: 5vh;
+  z-index: 1;
+  
+  // border: 1px solid black;
+  cursor: pointer;
+}
+
+.burger span {
+  height: 2px;
+  width: 100%;
+  background-color: black;
+  
+  -webkit-transition: all 350ms ease-out;
+  transition: 500ms ease-out;
+  margin: 4px 0;
+}

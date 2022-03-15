@@ -1,27 +1,46 @@
+import React, { useEffect } from 'react'
 import {
   Routes,
   Route
-} from "react-router-dom"
+} from 'react-router-dom'
 
 // Data
 import data from './data' 
 
 // Components
-import { Scrollable, NavBar, Social } from './components/index'
+import { Scrollable, NavBar, NavBarMobile, Social } from './components/index'
 import { About, Landing, Projects } from './pages/index'
-import { useStateValue } from "./state/context"
+import { useStateValue } from './state/context'
+
+// Hooks
+import { useMediaQuery } from './hooks/index'
+
 
 function App() {
   const { state } = useStateValue()
   const { currentPage } = state.scroll
+  const isMax13L = useMediaQuery('(max-width: 927px)')
+  const isMax13P = useMediaQuery('(max-width: 429px)')
+  const isPortrait = useMediaQuery('(orientation: portrait)')
+  const isLandscape = useMediaQuery('(orientation: landscape)')
+
+  useEffect(() => {
+    console.log('Max13:', isMax13L, isMax13P)
+    console.log('Portrait:', isPortrait)
+    console.log('Landscape:', isLandscape)
+  })
 
   return (
     <Routes className="App">
       <Route path="/" element={
         <>
-          <NavBar
-            mainPages={['Landing', 'Projects', 'About', 'Hobby']}
-            subPages={[0, 0, 0, 0]}/>
+          {
+            (isMax13P && isPortrait) || (isMax13L && isLandscape)
+            ? <NavBarMobile/>
+            : <NavBar
+                mainPages={['Landing', 'Projects', 'About', 'Hobby']}
+                subPages={[0, 0, 0, 0]}/>
+          }
           <Social
             currentPage={currentPage}/> 
           <Scrollable>
