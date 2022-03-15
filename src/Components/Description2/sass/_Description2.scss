@@ -22,6 +22,10 @@
     width: 50vw;
   }
 
+  @include media.Max13-landscape {
+    left: 0;
+  }
+
   @include media.Max13-portrait {
     margin-top: 5vh;
   }

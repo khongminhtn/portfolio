@@ -1,3 +1,40 @@
+@use '../../globalUi/util/mixins';
+@use '../../globalUi/util/media';
+
+/* =============================================================================*/
+/* =                          MEDIA QUERY                                      =*/
+/* =============================================================================*/
+
+@mixin media-social {
+  @include media.Max13-landscape { 
+    top: 25vh;
+    left: 90vw; 
+  }
+
+  @include media.Max13-portrait {
+    left: 5vw;
+    top: 15vh;
+  }
+}
+
+@mixin media-components {
+  @include media.Max13-landscape { 
+    width: 4vw;
+    height: 4vw;
+    margin-bottom: 5vw;
+  }
+  
+  @include media.Max13-portrait { 
+    width: 4vh;
+    height: 4vh;
+    margin-bottom: 5vh;
+  }
+}
+
+/* =============================================================================*/
+/* =                            STYLE                                          =*/
+/* =============================================================================*/
+
 .social {
   // Display
   display: flex;
@@ -8,13 +45,15 @@
   z-index: 1;
   top: 65%;
   left: 1.4%;
+  
+  @include media-social()
 }
 
 .email, .github, .linkedin, .codepen {
   // Sizing
   width: 30px;
   height: 30px;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 
   // Animation
   cursor: pointer;
@@ -22,4 +61,6 @@
   &:hover {
     opacity: 30%;
   }
+
+  @include media-components()
 }
