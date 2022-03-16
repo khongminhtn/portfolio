@@ -4,7 +4,7 @@ import { useStateValue } from '../../state/context'
 
 // States
 import sass from './social.module.scss'
-import { socialTransition } from './style'
+import { socialStyle, copiedStyle } from './style'
 
 
 // Assets
@@ -16,31 +16,46 @@ import linkedinBlack from './assets/linkedin.png'
 import linkedinWhite from './assets/linkedin-white.png'
 import codepenBlack from './assets/codepen-black.png'
 import codepenWhite from './assets/codepen-white.png'
+import { setTotalPages } from '../../state/reducer'
 
-const Social = () => {
-  const { state } = useStateValue()
-  const { currentPage } = state.scroll
-
-  // Manual page selection to turn social icons to white
-  const blckPg = 2
-
+const Copied = ({copied, color}) => {
   return(
+    <div 
+    className={sass.copied}
+    style={copiedStyle(copied, color)}>Copied</div>
+  )
+}
+
+
+
+const EmailIcon = ({img, handleClick}) => {
+  return (
+    <img 
+    className={sass.email} 
+    alt='email'
+    src={img}
+    onClick={handleClick}/> 
+  )
+}
+
+
+
+const Icons = ({email, github, linkedin, codepen, currentPage}) => {
+  return (
     <section 
     className={sass.social}
-    style={socialTransition(currentPage)}>
-      <img 
-      className={sass.email} 
-      alt='email'
-      src={ currentPage >= blckPg ? emailWhite : emailBlack }/> 
+    style={socialStyle(currentPage)}>
+
+      <EmailIcon { ...email }/>
 
       <a
       href='https://github.com/khongminhtn'
       target='_blank'
       rel='noreferrer'>
         <img 
-        className={sass.github} 
+        className={ sass.github } 
         alt='github'
-        src={ currentPage >= blckPg ? githubWhite : githubBlack }/>
+        src={ github }/>
       </a>
 
       <a
@@ -48,8 +63,8 @@ const Social = () => {
       target='_blank'
       rel='noreferrer'>
         <img 
-        className={sass.linkedin} 
-        src={currentPage >= blckPg ? linkedinWhite: linkedinBlack} 
+        className={ sass.linkedin } 
+        src={ linkedin } 
         alt='linkedin'/>
       </a>
 
@@ -59,10 +74,53 @@ const Social = () => {
       rel='noreferrer'>
         <img 
         className={sass.codepen} 
-        src={currentPage >= blckPg ? codepenWhite : codepenBlack} 
+        src={ codepen } 
         alt='codepen'/>
       </a>
     </section>
+  )
+}
+
+
+const Social = () => {
+  // State
+  const { state } = useStateValue()
+  const { currentPage } = state.scroll
+  const { pages } = state
+  const [copied, setCopied] = React.useState(false)
+
+  const about = pages.about
+
+  // Props
+  const emailProps = {
+    copied,
+    img: currentPage >= about ? emailWhite : emailBlack,
+    handleClick: () => {
+      navigator.clipboard.writeText('tuyenminhkhong@live.co.uk')
+      setCopied(!copied)
+      setTimeout(() => setCopied(false), 1000)
+    }
+  }
+
+  const iconProps = {
+    email: emailProps,
+    github: currentPage >= about ? githubWhite : githubBlack,
+    linkedin: currentPage >= about ? linkedinWhite: linkedinBlack,
+    codepen: currentPage >= about ? codepenWhite : codepenBlack,
+    currentPage
+  }
+
+  const copiedProps = {
+    copied: copied,
+    color: currentPage === pages.about ? 'white' : 'black'
+  }
+
+  // JSX
+  return(
+    <>
+      <Copied { ...copiedProps }/>
+      <Icons { ...iconProps }/>
+    </>
   )
 }
 

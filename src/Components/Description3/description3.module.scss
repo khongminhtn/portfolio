@@ -1,5 +1,25 @@
+@use '../../globalUi/util/mixins';
+@use '../../globalUi/util/media';
+
+/* =============================================================================*/
+/* =                          MEDIA QUERY                                      =*/
+/* =============================================================================*/
+
+@mixin media-paragraph {
+  @include media.Max13-landscape { font-size: 16px; }
+  @include media.Max13-portrait { font-size: 16px; }
+}
+
+@mixin media-heading {
+  @include media.Max13-landscape { font-size: 30px;}
+  @include media.Max13-portrait { font-size: 30px;}
+}
+/* =============================================================================*/
+/* =                            STYLE                                          =*/
+/* =============================================================================*/
+
 .description {
-  width: 500px;
+  // width: 25vw;
   font-weight: lighter;
 }
 
@@ -10,11 +30,15 @@
 
 .heading {
   font-size: 50px;
-  margin-bottom: 50px;
+  margin-bottom: 5vh;
+
+  @include media-heading()
 }
 
 .paragraph, .paragraph1 {
-  margin-top: 15px;
+  margin-top: 2vh;
   font-size: 18px;
+
+  @include media-paragraph()
 }
 

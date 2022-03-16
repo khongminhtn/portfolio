@@ -4,14 +4,14 @@ import { useState } from 'react'
 import { useStateValue } from '../../state/context'
 import { setCurrentPage, setScrollTranslate } from '../../state/reducer'
 
-export const NavBarLogic = (mainPages, subPages) => {
+const NavBarLogic = (mainPages, subPages) => {
   // States Access
   const [hovered, setHovered] = useState(null)
   const { state, dispatch } = useStateValue()
   const { currentPage } = state.scroll
 
   // Work out correct page number for each main page
-  // inclusive of subpages
+  // including subpages
   let previousPage = 0
   const pageNumbers = mainPages.map((mainPage, i) => {
     if (i === 0) {
@@ -51,3 +51,5 @@ export const NavBarLogic = (mainPages, subPages) => {
     }
   }
 }
+
+export default NavBarLogic

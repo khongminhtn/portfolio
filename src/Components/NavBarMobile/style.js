@@ -1,11 +1,15 @@
-export const slice1 = { 
-  transform: 'translateY(5px) rotate(-135deg)',
-  background: 'white'
+export const burgerStyle = {
+  slice1:(color, toggled) => ({ 
+    transform: toggled ? 'translateY(5px) rotate(-135deg)' : null,
+    background: toggled ? 'white' : color
+  }),
+
+  slice2: (color, toggled) => ({ 
+    transform: toggled ? 'translateY(-5px) rotate(135deg)' : null,
+    background: toggled ? 'white' : color
+  }),
 }
 
-export const slice2 = { 
-  transform: 'translateY(-5px) rotate(135deg)',
-  background: 'white'
-}
+
 
 export const navStyle = { left: 0 }

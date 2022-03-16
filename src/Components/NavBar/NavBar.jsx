@@ -1,52 +1,38 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { NavBarLogic } from './NavBarLogic'
+import NavBarLogic from './NavBarLogic'
 
 // Styling
 import sass from './sass/index.module.scss'
 import { 
   contentTransition, 
-  navBarStyle, 
+  navBarAnimation, 
   ballTransition, 
   lineTransition } from './style.js'
 
 
-const Ball = ({
-  pageNumber, 
-  handleClick,
-  handleMouseEnter, 
-  handleMouseLeave,
-  ballTransition}) => {
-
+const Ball = (props) => {
   return (
     <div 
       className={sass.ball}
-      pagenumber={pageNumber}
-      onClick={handleClick}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      style={ballTransition}></div>
+      pagenumber={props.pageNumber}
+      onClick={props.handleClick}
+      onMouseEnter={props.handleMouseEnter}
+      onMouseLeave={props.handleMouseLeave}
+      style={props.ballTransition}></div>
   )
 }
 
 
-const Content = ({ 
-  mainPage, 
-  pageNumber, 
-  handleClick,
-  handleMouseEnter,
-  handleMouseLeave,
-  contentTransition
-}) => {
-
+const Content = (props) => {
   return (
     <div
       className={sass.content}
-      pagenumber={pageNumber}
-      onClick={handleClick}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      style={contentTransition}>{mainPage}</div>
+      pagenumber={props.pageNumber}
+      onClick={props.handleClick}
+      onMouseEnter={props.handleMouseEnter}
+      onMouseLeave={props.handleMouseLeave}
+      style={props.contentTransition}>{props.mainPage}</div>
   )
 }
 
@@ -64,7 +50,6 @@ const Line = ({lineTransition}) => {
 const NavBar = ({mainPages, subPages}) => {
   const { values, handlers } = NavBarLogic(mainPages, subPages)
   const { hovered, currentPage, pageNumbers } = values
-  const { handleClick, handleMouseEnter, handleMouseLeave } = handlers
 
   // If there is only 1 page
   if (mainPages.length === 1) {
@@ -75,7 +60,7 @@ const NavBar = ({mainPages, subPages}) => {
   return(
     <nav 
     className={sass.navBar}
-    style={navBarStyle(mainPages, currentPage)}>
+    style={navBarAnimation(mainPages, currentPage)}>
       {
         mainPages.map((mainPage, i) => {
           // on main page
@@ -84,17 +69,13 @@ const NavBar = ({mainPages, subPages}) => {
               <React.Fragment key={mainPage}>
                 <Ball 
                   pageNumber={pageNumbers[i]}
-                  handleClick={handleClick}
-                  handleMouseEnter={handleMouseEnter}
-                  handleMouseLeave={handleMouseLeave}
-                  ballTransition={ballTransition(hovered, pageNumbers[i], currentPage)}/>
+                  ballTransition={ballTransition(hovered, pageNumbers[i], currentPage)}
+                  {...handlers}/>
                 <Content 
                   pageNumber={pageNumbers[i]}
                   mainPage={mainPage}
-                  handleClick={handleClick}
-                  handleMouseEnter={handleMouseEnter}
-                  handleMouseLeave={handleMouseLeave}
-                  contentTransition={contentTransition(currentPage, pageNumbers[i], subPages[i], hovered)}/>
+                  contentTransition={contentTransition(currentPage, pageNumbers[i], subPages[i], hovered)}
+                  {...handlers}/>
               </React.Fragment>
             )
           }
@@ -103,17 +84,13 @@ const NavBar = ({mainPages, subPages}) => {
             <React.Fragment key={mainPage}>
               <Ball 
                 pageNumber={pageNumbers[i]}
-                handleClick={handleClick}
-                handleMouseEnter={handleMouseEnter}
-                handleMouseLeave={handleMouseLeave}
-                ballTransition={ballTransition(hovered, pageNumbers[i], currentPage)}/>
+                ballTransition={ballTransition(hovered, pageNumbers[i], currentPage)}
+                {...handlers}/>
               <Content 
                 pageNumber={pageNumbers[i]}
                 mainPage={mainPage}
-                handleClick={handleClick}
-                handleMouseEnter={handleMouseEnter}
-                handleMouseLeave={handleMouseLeave}
-                contentTransition={contentTransition(currentPage, pageNumbers[i], subPages[i], hovered)}/>
+                contentTransition={contentTransition(currentPage, pageNumbers[i], subPages[i], hovered)}
+                {...handlers}/>
               <Line lineTransition={lineTransition(currentPage)}/> 
             </React.Fragment>
           )

@@ -42,7 +42,7 @@ export const lineTransition = (currentPage) => {
 
 
 
-export const navBarStyle = (mainPages, currentPage) => {
+export const navBarAnimation = (mainPages, currentPage) => {
   const gridRows = mainPages.reduce((prevVal, curVal, i) => {
     if (i === mainPages.length - 1) {
       return prevVal + ' 1fr'

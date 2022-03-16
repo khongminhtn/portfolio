@@ -1,3 +1,21 @@
+@use '../../../globalUi/util/mixins';
+@use '../../../globalUi/util/media';
+
+/* =============================================================================*/
+/* =                          MEDIA QUERY                                      =*/
+/* =============================================================================*/
+
+@mixin media-query {
+  @include media.iPro-portrait {
+    flex-direction: column;
+  }
+}
+
+/* =============================================================================*/
+/* =                            STYLE                                          =*/
+/* =============================================================================*/
+
+
 .about {
   // Display
   display: flex;
@@ -13,7 +31,6 @@
   background-color: black;
   color: white;
 
-
-
-  
+  // Media Query
+  @include media-query()
 }

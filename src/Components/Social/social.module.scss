@@ -8,7 +8,7 @@
 @mixin media-social {
   @include media.Max13-landscape { 
     top: 25vh;
-    left: 90vw; 
+    left: 89vw; 
   }
 
   @include media.Max13-portrait {
@@ -31,6 +31,17 @@
   }
 }
 
+@mixin media-copied {
+  @include media.Max13-landscape { 
+    top: 24vh; 
+  }
+
+  @include media.Max13-portrait {
+    top: 14vh;
+  }
+}
+
+
 /* =============================================================================*/
 /* =                            STYLE                                          =*/
 /* =============================================================================*/
@@ -49,7 +60,7 @@
   @include media-social()
 }
 
-.email, .github, .linkedin, .codepen {
+.email, .github, .linkedin, .codepen{
   // Sizing
   width: 30px;
   height: 30px;
@@ -63,4 +74,23 @@
   }
 
   @include media-components()
+}
+
+.copied {
+  // Positioning
+  position: fixed;
+  top: 64%;
+  transform: translateX(-200px);
+  z-index: 2;
+
+  // Properties
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 15px 60px;
+  letter-spacing: 3px;
+
+  // Animations
+  transition: 500ms ease-out;
+  @include media-copied()
 }

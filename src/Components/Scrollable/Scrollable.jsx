@@ -14,10 +14,8 @@ const Scrollable = (props) => {
   const scrollY = useScrollY()
   const scrollable = useRef()
 
-  const handleWheel = (event) => {
-    scrollY(event, scrollable)
-  }
-
+  const handleWheel = (event) => scrollY(event, scrollable)
+  
   return (
     <div
     className={sass.Scrollable}

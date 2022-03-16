@@ -42,7 +42,7 @@ const About = () => {
   return (
     <section className={sass.about}>
       <article
-      className={sass.detail}>
+      className={sass['description-container']}>
         <Description3
           name='Tuyen Khong'
           paragraph={`Born and raised in Vietnam, 

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import {
   Routes,
   Route
@@ -19,16 +19,15 @@ import { useMediaQuery } from './hooks/index'
 function App() {
   const { state } = useStateValue()
   const { currentPage } = state.scroll
+  const { pages } = state
+
   const isMax13L = useMediaQuery('(max-width: 927px)')
   const isMax13P = useMediaQuery('(max-width: 429px)')
   const isPortrait = useMediaQuery('(orientation: portrait)')
   const isLandscape = useMediaQuery('(orientation: landscape)')
 
-  useEffect(() => {
-    console.log('Max13:', isMax13L, isMax13P)
-    console.log('Portrait:', isPortrait)
-    console.log('Landscape:', isLandscape)
-  })
+  React.useEffect(() => {
+  }, [])
 
   return (
     <Routes className="App">
