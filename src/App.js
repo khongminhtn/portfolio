@@ -13,13 +13,12 @@ import { About, Landing, Projects } from './pages/index'
 import { useStateValue } from './state/context'
 
 // Hooks
-import { useMediaQuery } from './hooks/index'
+import useMediaQuery from './hooks/useMediaQuery'
 
 
 function App() {
   const { state } = useStateValue()
   const { currentPage } = state.scroll
-  const { pages } = state
 
   const isMax13L = useMediaQuery('(max-width: 927px)')
   const isMax13P = useMediaQuery('(max-width: 429px)')
@@ -37,8 +36,8 @@ function App() {
             (isMax13P && isPortrait) || (isMax13L && isLandscape)
             ? <NavBarMobile/>
             : <NavBar
-                mainPages={['Landing', 'Projects', 'About', 'Hobby']}
-                subPages={[0, 0, 0, 0]}/>
+                mainPages={['Landing', 'Projects', 'About']}
+                subPages={[0, 0, 0]}/>
           }
           <Social
             currentPage={currentPage}/> 

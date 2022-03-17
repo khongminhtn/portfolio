@@ -2,7 +2,8 @@ import React from 'react'
 // import PropTypes from 'prop-types'
 
 // Hooks
-import { useInterval,  useTimeString } from '../../hooks/index'
+import useTimeString from '../../hooks/useTimeString'
+import useInterval from '../../hooks/useInterval'  
 
 // Components
 import { Description3 } from '../../components/index'

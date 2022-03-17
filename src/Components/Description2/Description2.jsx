@@ -9,7 +9,7 @@ import { transition } from './style'
 const CallToAction = ({content}) => {
   return (
     <section className={sass.cta}>
-      {content}
+      {content} <small style={{fontWeight: '200'}}>(Site under construction)</small>
     </section>
   )
 }
