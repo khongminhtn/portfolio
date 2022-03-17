@@ -10,6 +10,25 @@
     font-size: 30px;
     height: 6vh;
     width: 30vw;
+
+    // Animation
+    transition: 100ms ease-in-out;
+    &:hover {
+      width: 33vw;
+      height: 7vh;
+      color: black;
+      font-size: 20px;
+      font-weight: bold;
+      background-color: white;
+      border: 1px solid black
+    }
+
+    &:active{
+      width: 35vw;
+      height: 8vh;
+      font-size: 20px;
+      border: 10px solid black
+    }
   }
 
   @include media.iPad-portrait {
