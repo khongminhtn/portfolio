@@ -16,7 +16,6 @@ import linkedinBlack from './assets/linkedin.png'
 import linkedinWhite from './assets/linkedin-white.png'
 import codepenBlack from './assets/codepen-black.png'
 import codepenWhite from './assets/codepen-white.png'
-import { setTotalPages } from '../../state/reducer'
 
 const Copied = ({copied, color}) => {
   return(

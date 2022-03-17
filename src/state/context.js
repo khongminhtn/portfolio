@@ -11,6 +11,11 @@ const initialState = {
     translate: 0,
     totalPages: 0,
   },
+
+  // useScroll
+  touch: {
+    start: { x: 0, y: 0}
+  },
   
   // NavBarMobile
   pages: {

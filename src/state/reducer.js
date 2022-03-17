@@ -28,6 +28,14 @@ export const setTotalPages = (payload) => {
   }
 } 
 
+// TOUCH STATES
+export const setStart = (payload) => {
+  return {
+    type: 'SET_START',
+    payload
+  }
+}
+
 // Reducer
 export const reducer = (state, {type, payload}) => {
   switch (type) {
@@ -51,6 +59,12 @@ export const reducer = (state, {type, payload}) => {
       return {
         ...state,
         scroll: {...state.scroll, totalPages: payload}
+      }
+    // TOUCH
+    case "SET_START":
+      return {
+        ...state,
+        touch: { ...state.touch, start: payload}
       }
     default:
       return state
