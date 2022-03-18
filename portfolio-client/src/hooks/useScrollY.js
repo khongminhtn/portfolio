@@ -64,7 +64,6 @@ const useScrollY = (elementRef, scrollState, touchState) => {
     
     // HANDLE TOUCH START
     const handleTouchStart = (event) => { 
-      event.preventDefault()
       const newStart = {
         x: event.changedTouches[0].clientX,
         y: event.changedTouches[0].clientY
