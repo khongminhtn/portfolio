@@ -25,9 +25,6 @@ function App() {
   const isPortrait = useMediaQuery('(orientation: portrait)')
   const isLandscape = useMediaQuery('(orientation: landscape)')
 
-  React.useEffect(() => {
-  }, [])
-
   return (
     <Routes className="App">
       <Route path="/" element={
