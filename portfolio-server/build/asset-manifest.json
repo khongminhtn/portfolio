@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/static/css/main.a8464f60.css",
+    "main.js": "/static/js/main.078594d9.js",
+    "static/js/787.562bae8d.chunk.js": "/static/js/787.562bae8d.chunk.js",
+    "static/media/img3.png": "/static/media/img3.6ed22c851d38c9009c6d.png",
+    "static/media/img4.png": "/static/media/img4.600867e208962025f387.png",
+    "static/media/selfCompressed.png": "/static/media/selfCompressed.b5027904868c027769dc.png",
+    "static/media/img2.png": "/static/media/img2.8df06b33dd9b058ff53e.png",
+    "static/media/img1.png": "/static/media/img1.6282ba2460391ef1a6c5.png",
+    "static/media/zoenail.png": "/static/media/zoenail.3aa642e8b24c58898a39.png",
+    "static/media/email-black.png": "/static/media/email-black.3b9fd65610966f72e90e.png",
+    "static/media/email-white.png": "/static/media/email-white.db1c876d3ca8484851ad.png",
+    "static/media/github.png": "/static/media/github.9e094d235b4caa7c31fc.png",
+    "static/media/github-white.png": "/static/media/github-white.0b90eb5eec25a758d1d5.png",
+    "static/media/linkedin-white.png": "/static/media/linkedin-white.8ddca65d7180f4d37ab0.png",
+    "static/media/linkedin.png": "/static/media/linkedin.41a23f98c77f41c13b8e.png",
+    "static/media/codepen-black.png": "/static/media/codepen-black.dd472431beea4b559140.png",
+    "index.html": "/index.html",
+    "main.a8464f60.css.map": "/static/css/main.a8464f60.css.map",
+    "main.078594d9.js.map": "/static/js/main.078594d9.js.map",
+    "787.562bae8d.chunk.js.map": "/static/js/787.562bae8d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a8464f60.css",
+    "static/js/main.078594d9.js"
+  ]
+}
