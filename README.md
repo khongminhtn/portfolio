@@ -20,4 +20,4 @@ The portfolio will be ongoing work. It will be updated, improved and revised reg
  
 # Application Mapping
 ### Pages
-![alt text](https://github.com/khongminhtn/portfolio/blob/[branch]/image.jpg?raw=true)
+![alt text](https://github.com/khongminhtn/portfolio/blob/master/diagram/landing.png)
