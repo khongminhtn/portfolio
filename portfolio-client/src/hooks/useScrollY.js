@@ -64,6 +64,7 @@ const useScrollY = (elementRef, scrollState, touchState) => {
     
     // HANDLE TOUCH START
     const handleTouchStart = (event) => { 
+      event.preventDefault()
       const newStart = {
         x: event.changedTouches[0].clientX,
         y: event.changedTouches[0].clientY
@@ -75,6 +76,7 @@ const useScrollY = (elementRef, scrollState, touchState) => {
 
     // HANDLE TOUCH MOVE
     const handleTouchMove = (event) => { 
+      event.preventDefault()
       const { pause, currentPage, duration } = scrollStatesRef.current
 
       // Do nothing if paused
