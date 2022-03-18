@@ -20,22 +20,22 @@ The portfolio will be ongoing work. It will be updated, improved and revised reg
  
 # Application Mapping 
 ## Index 
-![index] (https://github.com/khongminhtn/portfolio/blob/master/diagram/index.png)
+![index](https://github.com/khongminhtn/portfolio/blob/master/diagram/index.png)
  
 ## Store 
-![state] (https://github.com/khongminhtn/portfolio/blob/master/diagram/state-management.png)
+![state](https://github.com/khongminhtn/portfolio/blob/master/diagram/state-management.png)
  
 ## Pages 
 ![landing](https://github.com/khongminhtn/portfolio/blob/master/diagram/landing.png)
-![projects] (https://github.com/khongminhtn/portfolio/blob/master/diagram/projects.png)
-![about] (https://github.com/khongminhtn/portfolio/blob/master/diagram/about.png)
+![projects](https://github.com/khongminhtn/portfolio/blob/master/diagram/projects.png)
+![about](https://github.com/khongminhtn/portfolio/blob/master/diagram/about.png)
  
 ## Components 
-![description] (https://github.com/khongminhtn/portfolio/blob/master/diagram/description.png)
-![email] (https://github.com/khongminhtn/portfolio/blob/master/diagram/email.png)
-![navbar] (https://github.com/khongminhtn/portfolio/blob/master/diagram/nav-bar.png)
-![navBarMobile] (https://github.com/khongminhtn/portfolio/blob/master/diagram/nav-bar-mobile.png)
+![description](https://github.com/khongminhtn/portfolio/blob/master/diagram/description.png)
+![email](https://github.com/khongminhtn/portfolio/blob/master/diagram/email.png)
+![navbar](https://github.com/khongminhtn/portfolio/blob/master/diagram/nav-bar.png)
+![navBarMobile](https://github.com/khongminhtn/portfolio/blob/master/diagram/nav-bar-mobile.png)
  
 ## Custom Hooks 
-![useScroll] (https://github.com/khongminhtn/portfolio/blob/master/diagram/use-scroll-y.png)
-![useInterval] (https://github.com/khongminhtn/portfolio/blob/master/diagram/useInterval.png)
+![useScroll](https://github.com/khongminhtn/portfolio/blob/master/diagram/use-scroll-y.png)
+![useInterval](https://github.com/khongminhtn/portfolio/blob/master/diagram/useInterval.png)
