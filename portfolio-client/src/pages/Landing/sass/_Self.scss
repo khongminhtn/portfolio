@@ -45,6 +45,7 @@
   grid-column: 1;
   grid-row: 1;
   @include mixins.grid-self-align-justify(end, center);
+  transform: translateY(100vh);
 
   // Properties
   width: 30%;
