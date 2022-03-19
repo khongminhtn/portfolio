@@ -21,8 +21,7 @@ const initialState = {
   pages: {
     landing: 0,
     projects: 1,
-    about: 2,
-    hobby: 3
+    about: 2
   }
 }
 
