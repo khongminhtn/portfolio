@@ -36,7 +36,7 @@ const useScrollY = (elementRef, scrollState, touchState) => {
       const { pause, currentPage, duration } = scrollStatesRef.current
 
       // Pages availble to scroll
-      const totalPages = (elementRef.current.offsetHeight / window.visualViewport.height) - 1
+      const totalPages = (elementRef.current.clientHeight / window.innerHeight) - 1
       dispatch(setTotalPages(totalPages)) // ?
 
       // Do nothing if pause is true
