@@ -52,7 +52,7 @@
 
   // Animation
   opacity: 100%;
-  animation: moveUp 1s ease-out 100ms;
+  animation: moveUp 1s ease-out 100ms normal forwards;
 
   // Media query
   @include media-query
