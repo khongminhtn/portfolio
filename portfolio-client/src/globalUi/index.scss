@@ -36,7 +36,7 @@ html {
 
 body {
   /* Sizing body */
-  position: fixed;
+  // position: fixed; // BUG: Causes mobile useScrollY to excute even when currentPage reaches totalPage
   overflow: hidden;
   width: 100vw;
   height: 100vh;
