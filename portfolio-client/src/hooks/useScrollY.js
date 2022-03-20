@@ -68,6 +68,7 @@ const useScrollY = (elementRef, scrollState, touchState) => {
         y: event.changedTouches[0].clientY
       }
       dispatch(setStart(newStart))
+      console.log(event)
     }
 
 
@@ -126,10 +127,12 @@ const useScrollY = (elementRef, scrollState, touchState) => {
 
     // ATTACHING EVENTS
     element.addEventListener('wheel', handleWheel)
+
+    // DEBUGGIN: Iphone single page scroll not working as expected
+    // Using scroll as alternative meanwhile:
     element.addEventListener('touchstart', handleTouchStart)
     element.addEventListener('touchmove', handleTouchMove)
     // element.addEventListener('touchend', handleTouchEnd)
-    console.log('Scroll events added')
 
     
     // CLEAR EVENTS

@@ -1,3 +1,6 @@
+@use './util/mixins';
+@use './util/media';
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap');
 /* 
   Raleway font:  
@@ -9,6 +12,21 @@
   Black 900
 */
 
+
+/* =============================================================================*/
+/* =                          MEDIA QUERY                                      =*/
+/* =============================================================================*/
+
+@mixin media-query {
+  // @include media.iPro-landscape { overflow: scroll; }
+  // @include media.iPro-portrait { overflow: scroll; }
+}
+
+/* =============================================================================*/
+/* =                            STYLE                                          =*/
+/* =============================================================================*/
+
+
 html {
   font-family: 'Roboto Condensed', sans-serif;
   font-size: 20px;
@@ -18,12 +36,12 @@ html {
 
 body {
   /* Sizing body */
-  position: fixed;
   overflow: hidden;
   width: 100vw;
   height: 100vh;
   margin: 0;
   padding: 0;
 
+  @include media-query()
 }
 
