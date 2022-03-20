@@ -1,61 +1,91 @@
 @use 'vars';
 
 @mixin iPro-landscape {
-  @media only screen and (max-width: vars.$L-iProW) and (orientation: landscape) {
+  @media only screen 
+  and (max-device-width: vars.$L-iProW) 
+  and (orientation: landscape) 
+  and (-webkit-device-pixel-ratio : 2) {
     @content;
   };
 };
 
 @mixin iPro-portrait {
-  @media only screen and (max-width: vars.$P-iProW) and (orientation: portrait) {
+  @media only screen 
+  and (max-device-width: vars.$P-iProW) 
+  and (orientation: portrait) 
+  and (-webkit-device-pixel-ratio : 2) {
     @content;
   };
 };
 
 @mixin Pro11-landscape {
-  @media only screen and (max-width: vars.$L-Pro11W) and (orientation: landscape) {
+  @media only screen 
+  and (max-width: vars.$L-Pro11W) 
+  and (orientation: landscape) 
+  and (-webkit-device-pixel-ratio : 2) {
     @content;
   };
 }
 
 @mixin Pro11-portrait  {
-  @media only screen and (max-width: vars.$P-Pro11W) and (orientation: portrait) {
+  @media only screen 
+  and (max-width: vars.$P-Pro11W) 
+  and (orientation: portrait) 
+  and (-webkit-device-pixel-ratio : 2) {
     @content;
   };
 }
 
 @mixin iPad-landscape {
-  @media only screen and (max-width: vars.$L-iPadW) and (orientation: landscape) {
+  @media only screen 
+  and (max-width: vars.$L-iPadW) 
+  and (orientation: landscape) 
+  and (-webkit-device-pixel-ratio : 2) {
     @content
   };
 };
 
 @mixin iPad-portrait {
-  @media only screen and (max-width: vars.$P-iPadW) and (orientation: portrait) {
+  @media only screen 
+  and (max-width: vars.$P-iPadW) 
+  and (orientation: portrait) 
+  and (-webkit-device-pixel-ratio : 2) {
     @content;
   };
 };
 
 @mixin Max13-landscape {
-  @media only screen and (max-width: vars.$L-MaxW) and (orientation: landscape) {
+  @media only screen 
+  and (max-width: vars.$L-MaxW) 
+  and (orientation: landscape) 
+  and (-webkit-device-pixel-ratio : 3) {
     @content
   };
 };
 
 @mixin Max13-portrait {
-  @media only screen and (max-width: vars.$P-MaxW) and (orientation: portrait) {
+  @media only screen 
+  and (max-width: vars.$P-MaxW) 
+  and (orientation: portrait) 
+  and (-webkit-device-pixel-ratio : 3) {
     @content;
   };
 };
 
 @mixin se-landscape {
-  @media only screen and (max-width: vars.$L-SEW) and (orientation: landscape) {
+  @media only screen 
+  and (max-width: vars.$L-SEW) 
+  and (orientation: landscape) 
+  and (-webkit-device-pixel-ratio : 2) {
     @content;
   };
 };
 
 @mixin se-portrait {
-  @media only screen and (max-width: vars.$P-SEW) and (orientation: portrait) {
+  @media only screen 
+  and (max-width: vars.$P-SEW) 
+  and (orientation: portrait) 
+  and (-webkit-device-pixel-ratio : 2) {
     @content;
   };
 };
