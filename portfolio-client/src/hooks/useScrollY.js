@@ -68,7 +68,6 @@ const useScrollY = (elementRef, scrollState, touchState) => {
         y: event.changedTouches[0].clientY
       }
       dispatch(setStart(newStart))
-      console.log(event)
     }
 
 
