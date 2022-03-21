@@ -84,19 +84,19 @@ const DescriptionContainter = () => {
   // Knowledge in React, Redux, Node.js, Express.js,
   // MongoDB, GraphQL and Typescript based in London.'
 
-  const [message, setMessage] = React.useState()
-  React.useEffect(() => {
-    setMessage(`deviceRatio: ${window.devicePixelRatio}, 
-    innerHeight: ${window.innerHeight}, 
-    innerWidth: ${window.innerWidth}, 
-    outerHeight: ${window.outerHeight}, 
-    outerWidth: ${window.outerWidth}, 
-    visualVP: ${window.visualViewport.height} ${window.visualViewport.width}, 
-    screenX: ${window.screenX}, 
-    screenY: ${window.screenY}, 
-    screen: ${window.screen.width} ${window.screen.height} ${window.screen.orientation.type}, 
-    `)
-  }, [])
+  // const [message, setMessage] = React.useState()
+  // React.useEffect(() => {
+  //   setMessage(`deviceRatio: ${window.devicePixelRatio}, 
+  //   innerHeight: ${window.innerHeight}, 
+  //   innerWidth: ${window.innerWidth}, 
+  //   outerHeight: ${window.outerHeight}, 
+  //   outerWidth: ${window.outerWidth}, 
+  //   visualVP: ${window.visualViewport.height} ${window.visualViewport.width}, 
+  //   screenX: ${window.screenX}, 
+  //   screenY: ${window.screenY}, 
+  //   screen: ${window.screen.width} ${window.screen.height} ${window.screen.orientation.type}, 
+  //   `)
+  // }, [])
   
   return (
     <article className={sass['description-container']}>
@@ -105,7 +105,7 @@ const DescriptionContainter = () => {
         black='Designer'
         blue='Developer'
         sub={['Website', 'and']}
-        paragraph={message}/>
+        paragraph='{message}'/>
       <Email email='tuyenminhkhong@live.co.uk'/>
     </article>
   )
