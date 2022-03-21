@@ -6,30 +6,36 @@
 /* =============================================================================*/
 
 @mixin media-query {
-  @include media.iPro-portrait {
-    @include mixins.flex-content-align-justify(center, start);
-    margin-left: 12.5vw; 
-  }
-
-  @include media.iPro-landscape {
+  
+  @include media.tablet-large(landscape) {
     @include mixins.flex-content-align-justify(end, start);
     margin-left: 12.5vw;
     margin-bottom: 10vh;
   }
-
-  @include media.Max13-landscape {
-    @include mixins.grid-self-align-justify(end, none);
-    @include mixins.flex-content-align-justify(end, start);
-    margin-bottom: 10vh;
+  @include media.tablet-large(portrait) {
+    @include mixins.flex-content-align-justify(center, start);
+    margin-left: 12.5vw; 
   }
 
-  @include media.se-landscape {
+  
+  @include media.phone-large(landscape) {
+    @include mixins.grid-self-align-justify(end, none);
+    @include mixins.flex-content-align-justify(end, start);
+    margin-bottom: env(safe-area-inset-buttom, 10vh);
+    margin-left: 15vw;
+  }
+  @include media.phone-large(portrait) {
+    margin-bottom: env(safe-area-inset-buttom);
+    margin-left: 6vw;
+  }
+  
+
+  @include media.phone-xsmall(landscape) {
     @include mixins.grid-self-align-justify(end, none);
     @include mixins.flex-content-align-justify(end, start);
     margin-bottom: 5vh;
   }
-
-  @include media.se-portrait {
+  @include media.phone-xsmall(portrait) {
     @include mixins.flex-content-align-justify(end, center);
     margin-bottom: 10vh;
   }
@@ -46,7 +52,7 @@
   @include mixins.width-height(33vw, 33vh);
   @include mixins.grid-self-align-justify(end, none);
   @include mixins.flex-content-align-justify(center, center);
-  // border: 1px solid black;
+  border: 1px solid black;
 
   /* Animation Properties */
   opacity: 0%;
