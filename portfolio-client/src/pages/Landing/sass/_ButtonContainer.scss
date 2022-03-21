@@ -8,13 +8,13 @@
 @mixin media-query {
   @include media.iPro-portrait {
     @include mixins.flex-content-align-justify(center, start);
-    margin-left: 12.5%; 
+    margin-left: 12.5vw; 
   }
 
   @include media.iPro-landscape {
     @include mixins.flex-content-align-justify(end, start);
-    margin-left: 12.5%;
-    margin-bottom: 10%;
+    margin-left: 12.5vw;
+    margin-bottom: 10vh;
   }
 
   @include media.Max13-landscape {
@@ -31,7 +31,7 @@
 
   @include media.se-portrait {
     @include mixins.flex-content-align-justify(end, center);
-    margin-bottom: 10%;
+    margin-bottom: 10vh;
   }
 }
 
@@ -43,7 +43,7 @@
   // Positioning
   grid-column: 1;
   grid-row: 1;
-  @include mixins.width-height(33%, 33%);
+  @include mixins.width-height(33vw, 33vh);
   @include mixins.grid-self-align-justify(end, none);
   @include mixins.flex-content-align-justify(center, center);
   // border: 1px solid black;
