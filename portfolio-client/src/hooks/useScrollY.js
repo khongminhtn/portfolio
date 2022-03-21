@@ -30,16 +30,13 @@ const useScrollY = (elementRef, scrollState, touchState) => {
   // SET UP EVENTS
   useEffect(() => {
     const element = elementRef.current
-    const totalPages = (elementRef.current.clientHeight / window.innerHeight) - 1
+
+    const totalPages = elementRef.current.childNodes.length - 1
     dispatch(setTotalPages(totalPages)) // ?
 
     // HANDLE WHEEL
     const handleWheel = (event) => { 
       const { pause, currentPage, duration } = scrollStatesRef.current
-
-      // Pages availble to scroll
-      const totalPages = (elementRef.current.clientHeight / window.innerHeight) - 1
-      dispatch(setTotalPages(totalPages)) // ?
 
       // Do nothing if pause is true
       if (pause) return null
@@ -78,12 +75,7 @@ const useScrollY = (elementRef, scrollState, touchState) => {
     const handleTouchMove = (event) => { 
       event.preventDefault()
       const { pause, currentPage, duration } = scrollStatesRef.current
-
-      // Pages availble to scroll
-      const totalPages = (elementRef.current.clientHeight / window.innerHeight) - 1
-      dispatch(setTotalPages(totalPages)) // ?
-
-
+      
       // Do nothing if paused
       if ( pause ) return null
 
