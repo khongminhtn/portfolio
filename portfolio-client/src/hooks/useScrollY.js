@@ -30,6 +30,8 @@ const useScrollY = (elementRef, scrollState, touchState) => {
   // SET UP EVENTS
   useEffect(() => {
     const element = elementRef.current
+    const totalPages = (elementRef.current.clientHeight / window.innerHeight) - 1
+    dispatch(setTotalPages(totalPages)) // ?
 
     // HANDLE WHEEL
     const handleWheel = (event) => { 

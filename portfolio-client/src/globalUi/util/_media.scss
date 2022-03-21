@@ -6,7 +6,7 @@
     /* Iteration */
     @for $i from 1 through 6 {
       @media only screen 
-      and (max-device-width: vars.$tablet-large-landscape) 
+      and (max-width: vars.$tablet-large-landscape) 
       and (orientation: landscape) 
       and (-webkit-device-pixel-ratio : $i) {
         @content;
@@ -17,7 +17,7 @@
 
     @for $i from 1 through 6 {
       @media only screen 
-      and (max-device-width: vars.$tablet-large-portrait) 
+      and (max-width: vars.$tablet-large-portrait) 
       and (orientation: portrait) 
       and (-webkit-device-pixel-ratio : $i) {
         @content;
@@ -33,7 +33,7 @@
     /* Iteration */
     @for $i from 1 through 6 {
       @media only screen 
-      and (max-device-width: vars.$tablet-small-landscape) 
+      and (max-width: vars.$tablet-small-landscape) 
       and (orientation: landscape) 
       and (-webkit-device-pixel-ratio : $i) {
         @content;
@@ -44,7 +44,7 @@
 
     @for $i from 1 through 6 {
       @media only screen 
-      and (max-device-width: vars.$tablet-small-portrait) 
+      and (max-width: vars.$tablet-small-portrait) 
       and (orientation: portrait) 
       and (-webkit-device-pixel-ratio : $i) {
         @content;
@@ -60,7 +60,7 @@
     /* Iteration */
     @for $i from 1 through 6 {
       @media only screen 
-      and (max-device-width: vars.$phone-large-landscape) 
+      and (max-width: vars.$phone-large-landscape) 
       and (orientation: landscape) 
       and (-webkit-device-pixel-ratio : $i) {
         @content;
@@ -71,7 +71,7 @@
 
     @for $i from 1 through 6 {
       @media only screen 
-      and (max-device-width: vars.$phone-large-portrait) 
+      and (max-width: vars.$phone-large-portrait) 
       and (orientation: portrait) 
       and (-webkit-device-pixel-ratio : $i) {
         @content;
@@ -86,7 +86,7 @@
     /* Iteration */
     @for $i from 1 through 6 {
       @media only screen 
-      and (max-device-width: vars.$phone-medium-landscape) 
+      and (max-width: vars.$phone-medium-landscape) 
       and (orientation: landscape) 
       and (-webkit-device-pixel-ratio : $i) {
         @content;
@@ -97,7 +97,7 @@
 
     @for $i from 1 through 6 {
       @media only screen 
-      and (max-device-width: vars.$phone-medium-portrait) 
+      and (max-width: vars.$phone-medium-portrait) 
       and (orientation: portrait) 
       and (-webkit-device-pixel-ratio : $i) {
         @content;
@@ -112,7 +112,7 @@
     /* Iteration */
     @for $i from 1 through 6 {
       @media only screen 
-      and (max-device-width: vars.$phone-small-landscape) 
+      and (max-width: vars.$phone-small-landscape) 
       and (orientation: landscape) 
       and (-webkit-device-pixel-ratio : $i) {
         @content;
@@ -123,7 +123,7 @@
 
     @for $i from 1 through 6 {
       @media only screen 
-      and (max-device-width: vars.$phone-small-portrait) 
+      and (max-width: vars.$phone-small-portrait) 
       and (orientation: portrait) 
       and (-webkit-device-pixel-ratio : $i) {
         @content;
@@ -138,7 +138,7 @@
     /* Iteration */
     @for $i from 1 through 6 {
       @media only screen 
-      and (max-device-width: vars.$phone-xsmall-landscape) 
+      and (max-width: vars.$phone-xsmall-landscape) 
       and (orientation: landscape) 
       and (-webkit-device-pixel-ratio : $i) {
         @content;
@@ -149,7 +149,7 @@
 
     @for $i from 1 through 6 {
       @media only screen 
-      and (max-device-width: vars.$phone-xsmall-portrait) 
+      and (max-width: vars.$phone-xsmall-portrait) 
       and (orientation: portrait) 
       and (-webkit-device-pixel-ratio : $i) {
         @content;
