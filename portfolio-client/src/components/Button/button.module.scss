@@ -6,7 +6,7 @@
 /* =============================================================================*/
 
 @mixin media-query {
-  @include media.iPro-portrait {
+  @include media.tablet-large(portrait) {
     font-size: 30px;
     height: 6vh;
     width: 30vw;
@@ -31,17 +31,18 @@
     }
   }
 
-  @include media.iPad-portrait {
+  @include media.tablet-small(portrait) {
     font-size: 20px;
     height: 6vh;
     width: 30vw;
   }
 
-  @include media.se-portrait {
-    font-size: 20px;
-    height: 6vh;
-    width: 50vw;
-  }
+  @include media.phone-large(landscape) { margin: 0 0 0 15vw; }
+  @include media.phone-large(portrait) { margin: 0 0 0 6vw; }
+
+
+  @include media.phone-small(landscape) { display: none }
+  @include media.phone-small(portrait) { display: none }
 }
 
 /* =============================================================================*/

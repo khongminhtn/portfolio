@@ -7,20 +7,20 @@
 /* =============================================================================*/
 
 @mixin media-query {
-  @include media.iPro-portrait {
+  @include media.tablet-large(portrait) {
     justify-self: start;
     align-self: center;
     margin-left: 12.5%;
   }
 
-  @include media.iPad-landscape {
+  @include media.tablet-small(landscape) {
     justify-self: start;
     align-self: center;
     margin-left: 12.5%;
   }
 
-  @include media.Max13-landscape { margin-bottom: 10%; }
-  @include media.Max13-portrait { margin-bottom: 10%; }
+  @include media.phone-large(landscape) { margin: 0 0 0 15vw; }
+  @include media.phone-large(portrait) { margin: 0 0 0 6vw; }
 }
 
 

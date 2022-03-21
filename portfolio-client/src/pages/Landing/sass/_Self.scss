@@ -6,34 +6,61 @@
 /* =============================================================================*/
 
 @mixin media-query {
-  @include media.iPro-landscape {
-    width: 38%;
-    justify-self: center;
+  // NEW VERSION
+  @include media.tablet-large(landscape) { 
+    width: 38vw;
   }
 
-  @include media.iPro-portrait {
+  @include media.tablet-large(portrait) { 
     width: 70vw;
     justify-self: end;
-    transform: translateX(20vw);
-    animation: moveUpiPadPortrait 1s ease-out 100ms;
+    transform: translate(20vw, 100vh);
+    animation: moveUpTablet 1s ease-out 100ms normal forwards;
   }
 
-  @include media.iPad-landscape {
-    width: 45%;
-    justify-self: center;
-    transform: translateX(20vw);
+  @include media.tablet-small(landscape) { 
+    justify-self: end; 
   }
 
-  @include media.Max13-landscape { 
-    width: 30vw; 
-    animation: moveUpPhoneLandscape 1s ease-out 100ms;
+  @include media.phone-large(landscape) {
+    width: 30vw;
+    animation: moveUpPhoneLandscape 1s ease-out 100ms normal forwards;
   }
 
-  @include media.Max13-portrait {
+  @include media.phone-large(portrait) {
     width: 50vh;
-    transform: translateX(60vw);
-    animation: moveUpPhonePortrait 1s ease-out 100ms;
+    animation: moveUpPhonePortrait 1s ease-out 100ms normal forwards;
   }
+
+  // OLD VERSION
+  // @include media.iPro-landscape {
+  //   width: 38%;
+  //   justify-self: center;
+  // }
+
+  // @include media.iPro-portrait {
+  //   width: 70vw;
+  //   justify-self: end;
+  //   transform: translateX(20vw);
+  //   animation: moveUpiPadPortrait 1s ease-out 100ms;
+  // }
+
+  // @include media.iPad-landscape {
+  //   width: 35%;
+  //   justify-self: center;
+  //   transform: translateX(20vw);
+  // }
+
+  // @include media.Max13-landscape { 
+  //   width: 30vw; 
+  //   animation: moveUpPhoneLandscape 1s ease-out 100ms;
+  // }
+
+  // @include media.Max13-portrait {
+  //   width: 50vh;
+  //   transform: translateX(60vw);
+  //   animation: moveUpPhonePortrait 1s ease-out 100ms;
+  // }
 }
 
 /* =============================================================================*/
@@ -79,7 +106,7 @@
   }
 }
 
-@keyframes moveUpiPadPortrait {
+@keyframes moveUpTablet {
   from {
     transform: translate(20vw, 100vh);
     opacity: 0%;
@@ -91,20 +118,20 @@
 
 @keyframes moveUpPhonePortrait {
   from {
-    transform: translate(60vw, 100vh);
+    transform: translate(50vw, 100vh);
     opacity: 0%;
   } to {
-    transform: translate(60vw,0);
+    transform: translate(50vw,0);
     opacity: 100%;
   }
 }
 
 @keyframes moveUpPhoneLandscape {
   from {
-    transform: translate(20vw, 100vh);
+    transform: translate(-10vw, 100vh);
     opacity: 0%;
   } to {
-    transform: translate(20vw,0);
+    transform: translate(-10vw,0);
     opacity: 100%;
   }
 }

@@ -6,8 +6,10 @@
 /* =============================================================================*/
 
 @mixin media-query {
-  @include media.Max13-landscape { font-size: 30px; }
-  @include media.Max13-portrait { font-size: 30px; }
+  @include media.phone-large(landscape) { font-size: 25px; }
+  @include media.phone-large(portrait) { font-size: 25px; }
+  @include media.phone-xsmall(landscape) { display: none; }
+  @include media.phone-xsmall(portrait) { display: none; }
 }
 
 /* =============================================================================*/

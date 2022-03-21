@@ -6,8 +6,9 @@
 /* =============================================================================*/
 
 @mixin media-query {
-  @include media.iPro-portrait { display: none; }
-  @include media.iPad-landscape { display: none; }
+  @include media.tablet-large(portrait) { display: none; }
+  @include media.tablet-small(landscape) { display: none; }
+  @include media.tablet-small(portrait) { display: none; }
 }
 
 /* =============================================================================*/
