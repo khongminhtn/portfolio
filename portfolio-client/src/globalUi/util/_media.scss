@@ -60,14 +60,14 @@
     @media only screen 
     and (max-device-width: vars.$phone-large-landscape) 
     and (orientation: landscape) 
-    and (max-resolution: 477dpi) {
+    and (-webkit-max-device-ratio: 4) {
       @content;
     };
   } @else { 
     @media only screen 
       and (max-device-width: vars.$phone-large-portrait) 
       and (orientation: portrait) 
-      and (max-resolution: 477dpi) {
+      and (-webkit-max-device-ratio: 4) {
         @content;
       };
   }
