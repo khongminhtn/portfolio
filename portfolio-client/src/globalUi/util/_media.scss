@@ -1,12 +1,12 @@
 @use 'vars';
 
-// NEW VERSION
+/* NEW VERSION */
 @mixin tablet-large($orientation) { 
   @if $orientation == landscape {  
-    // Iteration
+    /* Iteration */
     @for $i from 1 through 6 {
       @media only screen 
-      and (max-device-width: vars.$tablet-large-landscape) 
+      and (max-width: vars.$tablet-large-landscape) 
       and (orientation: landscape) 
       and (-webkit-device-pixel-ratio : $i) {
         @content;
@@ -17,7 +17,7 @@
 
     @for $i from 1 through 6 {
       @media only screen 
-      and (max-device-width: vars.$tablet-large-portrait) 
+      and (max-width: vars.$tablet-large-portrait) 
       and (orientation: portrait) 
       and (-webkit-device-pixel-ratio : $i) {
         @content;
@@ -30,10 +30,10 @@
 
 @mixin tablet-small($orientation) { 
   @if $orientation == landscape {  
-    // Iteration
+    /* Iteration */
     @for $i from 1 through 6 {
       @media only screen 
-      and (max-device-width: vars.$tablet-small-landscape) 
+      and (max-width: vars.$tablet-small-landscape) 
       and (orientation: landscape) 
       and (-webkit-device-pixel-ratio : $i) {
         @content;
@@ -44,7 +44,7 @@
 
     @for $i from 1 through 6 {
       @media only screen 
-      and (max-device-width: vars.$tablet-small-portrait) 
+      and (max-width: vars.$tablet-small-portrait) 
       and (orientation: portrait) 
       and (-webkit-device-pixel-ratio : $i) {
         @content;
@@ -57,36 +57,10 @@
 
 @mixin phone-large($orientation) { 
   @if $orientation == landscape {  
-    // Iteration
+    /* Iteration */
     @for $i from 1 through 6 {
       @media only screen 
-      and (max-device-width: vars.$phone-large-landscape) 
-      and (orientation: landscape) 
-      and (-webkit-max-device-pixel-ratio : $i) {
-        @content;
-      };
-    }
-    
-  } @else { 
-
-    @for $i from 1 through 6 {
-      @media only screen 
-      and (max-device-width: vars.$phone-large-portrait) 
-      and (orientation: portrait) 
-      and (-webkit-max-device-pixel-ratio : $i) {
-        @content;
-      };
-    }
-
-  }
-}
-
-@mixin phone-medium($orientation) { 
-  @if $orientation == landscape {  
-    // Iteration
-    @for $i from 1 through 6 {
-      @media only screen 
-      and (max-device-width: vars.$phone-medium-landscape) 
+      and (max-width: vars.$phone-large-landscape) 
       and (orientation: landscape) 
       and (-webkit-device-pixel-ratio : $i) {
         @content;
@@ -97,7 +71,33 @@
 
     @for $i from 1 through 6 {
       @media only screen 
-      and (max-device-width: vars.$phone-medium-portrait) 
+      and (max-width: vars.$phone-large-portrait) 
+      and (orientation: portrait) 
+      and (-webkit-device-pixel-ratio : $i) {
+        @content;
+      };
+    }
+
+  }
+}
+
+@mixin phone-medium($orientation) { 
+  @if $orientation == landscape {  
+    /* Iteration */
+    @for $i from 1 through 6 {
+      @media only screen 
+      and (max-width: vars.$phone-medium-landscape) 
+      and (orientation: landscape) 
+      and (-webkit-device-pixel-ratio : $i) {
+        @content;
+      };
+    }
+    
+  } @else { 
+
+    @for $i from 1 through 6 {
+      @media only screen 
+      and (max-width: vars.$phone-medium-portrait) 
       and (orientation: portrait) 
       and (-webkit-device-pixel-ratio : $i) {
         @content;
@@ -109,10 +109,10 @@
 
 @mixin phone-small($orientation) { 
   @if $orientation == landscape {  
-    // Iteration
+    /* Iteration */
     @for $i from 1 through 6 {
       @media only screen 
-      and (max-device-width: vars.$phone-small-landscape) 
+      and (max-width: vars.$phone-small-landscape) 
       and (orientation: landscape) 
       and (-webkit-device-pixel-ratio : $i) {
         @content;
@@ -123,7 +123,7 @@
 
     @for $i from 1 through 6 {
       @media only screen 
-      and (max-device-width: vars.$phone-small-portrait) 
+      and (max-width: vars.$phone-small-portrait) 
       and (orientation: portrait) 
       and (-webkit-device-pixel-ratio : $i) {
         @content;
@@ -135,10 +135,10 @@
 
 @mixin phone-xsmall($orientation) { 
   @if $orientation == landscape {  
-    // Iteration
+    /* Iteration */
     @for $i from 1 through 6 {
       @media only screen 
-      and (max-device-width: vars.$phone-xsmall-landscape) 
+      and (max-width: vars.$phone-xsmall-landscape) 
       and (orientation: landscape) 
       and (-webkit-device-pixel-ratio : $i) {
         @content;
@@ -149,7 +149,7 @@
 
     @for $i from 1 through 6 {
       @media only screen 
-      and (max-device-width: vars.$phone-xsmall-portrait) 
+      and (max-width: vars.$phone-xsmall-portrait) 
       and (orientation: portrait) 
       and (-webkit-device-pixel-ratio : $i) {
         @content;
@@ -161,10 +161,10 @@
 
 
 
-// OLD VERSION
+/* OLD VERSION */
 @mixin iPro-landscape {
   @media only screen 
-  and (max-device-width: vars.$L-iProW) 
+  and (max-width: vars.$L-iProW) 
   and (orientation: landscape) 
   and (-webkit-device-pixel-ratio : 2) {
     @content;
@@ -173,7 +173,7 @@
 
 @mixin iPro-portrait {
   @media only screen 
-  and (max-device-width: vars.$P-iProW) 
+  and (max-width: vars.$P-iProW) 
   and (orientation: portrait) 
   and (-webkit-device-pixel-ratio : 2) {
     @content;
