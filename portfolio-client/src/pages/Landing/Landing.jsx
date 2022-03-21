@@ -106,7 +106,9 @@ const DescriptionContainter = () => {
         black='Designer'
         blue='Developer'
         sub={['Website', 'and']}
-        paragraph={message}/>
+        paragraph='Web developer with Architectural background.
+         Knowledge in React, Redux, Node.js, Express.js,
+         MongoDB, GraphQL and Typescript based in London.'/>
       <Email email='tuyenminhkhong@live.co.uk'/>
     </article>
   )
