@@ -30,10 +30,10 @@ const useScrollY = (elementRef, scrollState, touchState) => {
   // SET UP EVENTS
   useEffect(() => {
     const element = elementRef.current
-
     const totalPages = elementRef.current.childNodes.length - 1
     dispatch(setTotalPages(totalPages)) // ?
 
+    
     // HANDLE WHEEL
     const handleWheel = (event) => { 
       const { pause, currentPage, duration } = scrollStatesRef.current
@@ -75,7 +75,7 @@ const useScrollY = (elementRef, scrollState, touchState) => {
     const handleTouchMove = (event) => { 
       event.preventDefault()
       const { pause, currentPage, duration } = scrollStatesRef.current
-      
+
       // Do nothing if paused
       if ( pause ) return null
 

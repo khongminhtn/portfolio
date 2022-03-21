@@ -8,7 +8,7 @@ import {
 import data from './data' 
 
 // Components
-import { Scrollable, NavBar, NavBarMobile, Social } from './components/index'
+import { Scrollable, NavBar, NavBarMobile, Social, MobileConsole } from './components/index'
 import { About, Landing, Projects } from './pages/index'
 import { useStateValue } from './state/context'
 
@@ -29,6 +29,7 @@ function App() {
     <Routes className="App">
       <Route path="/" element={
         <>
+          <MobileConsole/>
           {
             (isMax13P && isPortrait) || (isMax13L && isLandscape)
             ? <NavBarMobile/>
@@ -51,7 +52,6 @@ function App() {
           </Scrollable>
         </>}
       />
-      
     </Routes>
   );
 }

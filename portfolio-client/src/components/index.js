@@ -9,6 +9,8 @@ import Screen from './Screen/Screen.jsx'
 import Social from './Social/Social.jsx'
 import Email from './Email/Email.jsx'
 
+import MobileConsole from './MobileConsole/MobileConsole.jsx'
+
 
 export { 
   Button, 
@@ -20,5 +22,7 @@ export {
   Description3,
   Screen,
   Social,
-  Email
+  Email,
+
+  MobileConsole
 }

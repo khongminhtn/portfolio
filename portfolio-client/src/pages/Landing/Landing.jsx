@@ -80,28 +80,6 @@ const ButtonContainer = () => {
 
 
 const DescriptionContainter = () => {
-  const [message, setMessage] = React.useState()
-  const { state } = useStateValue()
-  const {totalPages, currentPage} = state.scroll
-  // paragraph='Web developer with Architectural background.
-  // Knowledge in React, Redux, Node.js, Express.js,
-  // MongoDB, GraphQL and Typescript based in London.'
-
-
-  React.useEffect(() => {
-    setMessage(`deviceRatio: ${window.devicePixelRatio}, 
-    innerHeight: ${window.innerHeight}, 
-    innerWidth: ${window.innerWidth}, 
-    outerHeight: ${window.outerHeight}, 
-    outerWidth: ${window.outerWidth}, 
-    visualVP: ${window.visualViewport.height} ${window.visualViewport.width}, 
-    screenX: ${window.screenX}, 
-    screenY: ${window.screenY}, 
-    screen: ${window.screen.width} ${window.screen.height},
-    totalPages: ${totalPages}, 
-    currentPage: ${currentPage}`)
-  })
-  
   return (
     <article className={sass['description-container']}>
       <Description
@@ -109,7 +87,9 @@ const DescriptionContainter = () => {
         black='Designer'
         blue='Developer'
         sub={['Website', 'and']}
-        paragraph={message}/>
+        paragraph='Web developer with Architectural background.
+        Knowledge in React, Redux, Node.js, Express.js,
+        MongoDB, GraphQL and Typescript based in London.'/>
       <Email email='tuyenminhkhong@live.co.uk'/>
     </article>
   )
