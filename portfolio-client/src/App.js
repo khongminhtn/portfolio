@@ -29,7 +29,7 @@ function App() {
     <Routes className="App">
       <Route path="/" element={
         <>
-          <MobileConsole/>
+          {/* <MobileConsole/> */}
           {
             (isMax13P && isPortrait) || (isMax13L && isLandscape)
             ? <NavBarMobile/>
