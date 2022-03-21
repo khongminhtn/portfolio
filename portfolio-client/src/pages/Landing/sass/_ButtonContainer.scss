@@ -8,36 +8,27 @@
 @mixin media-query {
   
   @include media.tablet-large(landscape) {
-    @include mixins.flex-content-align-justify(end, start);
-    margin-left: 12.5vw;
-    margin-bottom: 10vh;
+    margin-left: 10vw;
+    margin-bottom: 15vh;
   }
   @include media.tablet-large(portrait) {
-    @include mixins.flex-content-align-justify(center, start);
     margin-left: 12.5vw; 
+  }
+
+
+  @include media.tablet-small(landscape) {
+    margin-left: 12.5vw;
   }
 
   
   @include media.phone-large(landscape) {
     @include mixins.grid-self-align-justify(end, none);
-    @include mixins.flex-content-align-justify(end, start);
-    margin-bottom: env(safe-area-inset-buttom, 10vh);
+    margin-bottom: 10vh;
     margin-left: 15vw;
   }
   @include media.phone-large(portrait) {
-    margin-bottom: env(safe-area-inset-buttom);
+    margin-bottom: 15vh;
     margin-left: 6vw;
-  }
-  
-
-  @include media.phone-xsmall(landscape) {
-    @include mixins.grid-self-align-justify(end, none);
-    @include mixins.flex-content-align-justify(end, start);
-    margin-bottom: 5vh;
-  }
-  @include media.phone-xsmall(portrait) {
-    @include mixins.flex-content-align-justify(end, center);
-    margin-bottom: 10vh;
   }
 }
 
@@ -49,10 +40,11 @@
   // Positioning
   grid-column: 1;
   grid-row: 1;
-  @include mixins.width-height(33vw, 33vh);
-  @include mixins.grid-self-align-justify(end, none);
-  @include mixins.flex-content-align-justify(center, center);
-  border: 1px solid black;
+  align-self: end; /* vertical */
+  justify-self: start; /* horizontal */
+  margin-left: 12.5vw;
+  margin-bottom: 15vh;
+  // border: 1px solid black;
 
   /* Animation Properties */
   opacity: 0%;
