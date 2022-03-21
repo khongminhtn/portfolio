@@ -57,19 +57,27 @@
 
 @mixin phone-large($orientation) { 
   @if $orientation == landscape {  
-    @media only screen 
-    and (max-device-width: vars.$phone-large-landscape) 
-    and (orientation: landscape) 
-    and (-webkit-max-device-ratio: 4) {
-      @content;
-    };
-  } @else { 
-    @media only screen 
-      and (max-device-width: vars.$phone-large-portrait) 
-      and (orientation: portrait) 
-      and (-webkit-max-device-ratio: 4) {
+    // Iteration
+    @for $i from 1 through 6 {
+      @media only screen 
+      and (max-device-width: vars.$phone-large-landscape) 
+      and (orientation: landscape) 
+      and (-webkit-max-device-pixel-ratio : $i) {
         @content;
       };
+    }
+    
+  } @else { 
+
+    @for $i from 1 through 6 {
+      @media only screen 
+      and (max-device-width: vars.$phone-large-portrait) 
+      and (orientation: portrait) 
+      and (-webkit-max-device-pixel-ratio : $i) {
+        @content;
+      };
+    }
+
   }
 }
 
