@@ -6,7 +6,7 @@
     /* Iteration */
     @for $i from 1 through 6 {
       @media only screen 
-      and (max-width: vars.$tablet-large-landscape) 
+      and (max-device-width: vars.$tablet-large-landscape) 
       and (orientation: landscape) 
       and (-webkit-device-pixel-ratio : $i) {
         @content;
@@ -17,7 +17,7 @@
 
     @for $i from 1 through 6 {
       @media only screen 
-      and (max-width: vars.$tablet-large-portrait) 
+      and (max-device-width: vars.$tablet-large-portrait) 
       and (orientation: portrait) 
       and (-webkit-device-pixel-ratio : $i) {
         @content;
@@ -33,7 +33,7 @@
     /* Iteration */
     @for $i from 1 through 6 {
       @media only screen 
-      and (max-width: vars.$tablet-small-landscape) 
+      and (max-device-width: vars.$tablet-small-landscape) 
       and (orientation: landscape) 
       and (-webkit-device-pixel-ratio : $i) {
         @content;
@@ -44,7 +44,7 @@
 
     @for $i from 1 through 6 {
       @media only screen 
-      and (max-width: vars.$tablet-small-portrait) 
+      and (max-device-width: vars.$tablet-small-portrait) 
       and (orientation: portrait) 
       and (-webkit-device-pixel-ratio : $i) {
         @content;
