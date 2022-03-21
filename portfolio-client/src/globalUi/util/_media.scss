@@ -60,7 +60,7 @@
     /* Iteration */
     @for $i from 1 through 6 {
       @media only screen 
-      and (max-width: vars.$phone-large-landscape) 
+      and (max-device-width: vars.$phone-large-landscape) 
       and (orientation: landscape) 
       and (-webkit-device-pixel-ratio : $i) {
         @content;
@@ -71,7 +71,7 @@
 
     @for $i from 1 through 6 {
       @media only screen 
-      and (max-width: vars.$phone-large-portrait) 
+      and (max-device-width: vars.$phone-large-portrait) 
       and (orientation: portrait) 
       and (-webkit-device-pixel-ratio : $i) {
         @content;

@@ -96,7 +96,6 @@ const DescriptionContainter = () => {
     screenY: ${window.screenY}, 
     screen: ${window.screen.width} ${window.screen.height} ${window.screen.orientation.type}, 
     `)
-    console.log(document)
   }, [])
   
   return (
@@ -106,9 +105,7 @@ const DescriptionContainter = () => {
         black='Designer'
         blue='Developer'
         sub={['Website', 'and']}
-        paragraph='Web developer with Architectural background.
-         Knowledge in React, Redux, Node.js, Express.js,
-         MongoDB, GraphQL and Typescript based in London.'/>
+        paragraph={message}/>
       <Email email='tuyenminhkhong@live.co.uk'/>
     </article>
   )
