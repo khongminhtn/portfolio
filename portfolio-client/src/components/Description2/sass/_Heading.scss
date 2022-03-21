@@ -6,9 +6,9 @@
 /* =============================================================================*/
 
 @mixin media-query {
-  @include media.Pro11-landscape { font-size: 40px; }
-  @include media.Pro11-portrait { font-size: 40px; }
-  @include media.Max13-landscape { font-size: 25px; }
+  @include media.tablet-small(landscape) { font-size: 40px; }
+  @include media.tablet-small(portrait) { font-size: 40px; }
+  @include media.phone-large(landscape) { font-size: 40px; margin-bottom: 5vh; }
 }
 
 /* =============================================================================*/

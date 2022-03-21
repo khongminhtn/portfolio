@@ -6,8 +6,9 @@
 /* =============================================================================*/
 
 @mixin media-query {
-  @include media.iPro-portrait { flex-direction: column; }
-  @include media.Pro11-landscape { flex-direction: column; }
+  @include media.tablet-large(portrait) { flex-direction: column; }
+  @include media.phone-large(landscape) { transform: translateX(-5vw); }
+  @include media.phone-medium(portrait) { flex-direction: column; }
 }
 
 /* =============================================================================*/
@@ -18,8 +19,8 @@
 .projects {
   // Display
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: center; // NOT WORKING FOR SAFARI IOS
+  justify-content: center; 
 
   // Sizing
   margin: 0;

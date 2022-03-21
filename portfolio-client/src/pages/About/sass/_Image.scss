@@ -7,18 +7,24 @@
 /* =============================================================================*/
 
 @mixin media-query {
-  @include media.iPro-portrait {
+  @include media.tablet-large(portrait) {
     margin: 0;
     margin-bottom: 15vh;
 
     width: 70vw;
   }
 
-  @include media.Max13-landscape {
+
+  @include media.phone-large(landscape) {
     margin-right: 15vw;
+    margin-left: 2vw;
+  }
+  @include media.phone-large(portrait) {
+    margin-bottom: 40vw;
   }
 
-  @include media.se-landscape {
+
+  @include media.phone-xsmall(landscape) {
     display: none;
   }
 }

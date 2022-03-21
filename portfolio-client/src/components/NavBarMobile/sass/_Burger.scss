@@ -1,4 +1,5 @@
 .burger {
+  padding-top: env(safe-area-inset-top);
   width: 20px;
   height: 20px;
   

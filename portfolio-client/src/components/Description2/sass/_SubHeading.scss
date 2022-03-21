@@ -6,14 +6,18 @@
 /* =============================================================================*/
 
 @mixin media-query {
-  @include media.iPro-portrait { margin-bottom: 5%; }
+  @include media.tablet-large(portrait) { 
+    margin-bottom: 5%; 
+  }
   
-  @include media.Pro11-landscape { 
+  @include media.tablet-small(landscape) { 
     font-size: 16px;
     margin-bottom: 2vh; 
   }
 
-  @include media.Max13-landscape { display: none; }
+  @include media.phone-large(landscape) { 
+    display: none; 
+  }
 }
 
 /* =============================================================================*/

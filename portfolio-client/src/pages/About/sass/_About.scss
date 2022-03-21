@@ -6,7 +6,7 @@
 /* =============================================================================*/
 
 @mixin media-query {
-  @include media.iPro-portrait {
+  @include media.tablet-large(portrait) {
     flex-direction: column;
   }
 }

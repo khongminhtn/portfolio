@@ -20,8 +20,8 @@ function App() {
   const { state } = useStateValue()
   const { currentPage } = state.scroll
 
-  const isMax13L = useMediaQuery('(max-width: 927px)')
-  const isMax13P = useMediaQuery('(max-width: 429px)')
+  const largePhoneL = useMediaQuery('(max-width: 927px)')
+  const largePhoneP = useMediaQuery('(max-width: 429px)')
   const isPortrait = useMediaQuery('(orientation: portrait)')
   const isLandscape = useMediaQuery('(orientation: landscape)')
 
@@ -31,7 +31,7 @@ function App() {
         <>
           {/* <MobileConsole/> */}
           {
-            (isMax13P && isPortrait) || (isMax13L && isLandscape)
+            (largePhoneP && isPortrait) || (largePhoneL && isLandscape)
             ? <NavBarMobile/>
             : <NavBar
                 mainPages={['Landing', 'Projects', 'About']}

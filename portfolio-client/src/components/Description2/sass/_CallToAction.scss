@@ -6,10 +6,10 @@
 /* =============================================================================*/
 
 @mixin media-query {
-  @include media.Pro11-portrait { text-decoration: underline; }
-  @include media.Pro11-landscape { text-decoration: underline;}
-  @include media.Max13-landscape { display: none; }
-  @include media.Max13-portrait { display: none;}
+  @include media.tablet-small(portrait) { text-decoration: underline; }
+  @include media.tablet-small(landscape) { text-decoration: underline;}
+  @include media.phone-large(landscape) { display: none; }
+  @include media.phone-large(portrait) { display: none;}
   
 }
 

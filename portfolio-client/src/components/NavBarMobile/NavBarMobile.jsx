@@ -62,11 +62,9 @@ const NavBarMobile = () => {
   const burgerProps = {
     toggled,
     handleClick: () => setToggled(!toggled),
-    color: currentPage === pages.landing 
-      ? 'transparent' 
-      : currentPage === pages.about 
-      ? 'white' 
-      : 'black'
+    color: currentPage === pages.about 
+    ? 'white' 
+    : 'black'
   }
 
   const navProps = {

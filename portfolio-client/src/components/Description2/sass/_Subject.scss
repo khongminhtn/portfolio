@@ -6,11 +6,11 @@
 /* =============================================================================*/
 
 @mixin media-query {
-  @include media.iPro-portrait { margin-bottom: 5%; } 
+  @include media.tablet-large(portrait) { margin-bottom: 5%; } 
 
-  @include media.Pro11-landscape { display: none; }
+  @include media.tablet-small(landscape) { display: none; }
 
-  @include media.Max13-portrait { display: none;}
+  @include media.phone-large(portrait) { display: none;}
 }
 
 /* =============================================================================*/

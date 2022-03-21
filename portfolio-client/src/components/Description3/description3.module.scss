@@ -6,13 +6,13 @@
 /* =============================================================================*/
 
 @mixin media-paragraph {
-  @include media.Max13-landscape { font-size: 16px; }
-  @include media.Max13-portrait { font-size: 16px; }
+  @include media.phone-large(landscape) { font-size: 16px; }
+  @include media.phone-large(portrait) { font-size: 16px; }
 }
 
 @mixin media-heading {
-  @include media.Max13-landscape { font-size: 30px;}
-  @include media.Max13-portrait { font-size: 30px;}
+  @include media.phone-large(landscape) { font-size: 30px;}
+  @include media.phone-large(portrait) { font-size: 30px;}
 }
 /* =============================================================================*/
 /* =                            STYLE                                          =*/

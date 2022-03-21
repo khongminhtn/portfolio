@@ -4,11 +4,16 @@
   left: 100vw;
   display: flex;
   flex-direction: column;
+
+  // Sizing
+  height: 100vh;
   
+  // Properties
   background: black;
   color: white;
   font-family: 'Roboto Condensed';
   
+  // Animation
   -webkit-transition: all 350ms ease-out;
   transition: 300ms ease-out;
 }
@@ -16,7 +21,7 @@
 .nav button {
   // Sizing
   width: 100vw;
-  height: 25vh;
+  flex-grow: 1;
 
   // Properties
   background-color: black;

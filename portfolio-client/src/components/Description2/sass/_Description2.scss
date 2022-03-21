@@ -6,28 +6,24 @@
 /* =============================================================================*/
 
 @mixin media-query {
-  @include media.iPro-landscape { 
+  @include media.tablet-large(landscape) { 
     margin-top: 5vh; 
     left: 3vw;
   }
 
-  @include media.iPro-portrait {
+  @include media.tablet-large(portrait) {
     text-align: center;
     width: 60vw;
     left: 0;
   }
 
-  @include media.Pro11-landscape {
-    text-align: center;
-    width: 50vw;
+  @include media.phone-large(landscape) {
+    left: 2;
+    height: auto;
   }
 
-  @include media.Max13-landscape {
-    left: 0;
-  }
-
-  @include media.Max13-portrait {
-    margin-top: 5vh;
+  @include media.phone-large(portrait) {
+    // margin-top: 1vh;
   }
 }
 
@@ -37,10 +33,10 @@
 
 
 .description {
-  width: 25%;
-  height: 50%;
+  width: 25vw;
+  height: 50vh;
   position: relative;
-  left: 5%;
+  left: 5vw;
   // border: 1px solid black;
 
   // Media Query

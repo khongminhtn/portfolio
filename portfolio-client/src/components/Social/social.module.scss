@@ -6,37 +6,37 @@
 /* =============================================================================*/
 
 @mixin media-social {
-  @include media.Max13-landscape { 
+  @include media.phone-large(landscape) { 
     top: 25vh;
     left: 89vw; 
   }
 
-  @include media.Max13-portrait {
+  @include media.phone-large(portrait) {
     left: 5vw;
     top: 15vh;
   }
 }
 
 @mixin media-components {
-  @include media.Max13-landscape { 
+  @include media.phone-large(landscape) { 
     width: 4vw;
     height: 4vw;
-    margin-bottom: 5vw;
+    margin-bottom: 3vw;
   }
   
-  @include media.Max13-portrait { 
+  @include media.phone-large(portrait) { 
     width: 4vh;
     height: 4vh;
-    margin-bottom: 5vh;
+    margin-bottom: 3vh;
   }
 }
 
 @mixin media-copied {
-  @include media.Max13-landscape { 
+  @include media.phone-large(landscape) { 
     top: 24vh; 
   }
 
-  @include media.Max13-portrait {
+  @include media.phone-large(portrait) {
     top: 14vh;
   }
 }

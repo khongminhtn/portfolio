@@ -10,9 +10,14 @@
     font-size: 16px; 
     // text-align: center;
   }
-  @include media.Pro11-portrait { font-size: 16px; }
+  @include media.tablet-small(portrait) { 
+    font-size: 16px; 
+  }
 
-  @include media.Max13-landscape { margin-bottom: 2vh; }
+  @include media.phone-large(landscape) { 
+    margin-bottom: 2vh;
+    font-size: 16px; 
+  }
 }
 
 /* =============================================================================*/
