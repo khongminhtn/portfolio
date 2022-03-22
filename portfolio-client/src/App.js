@@ -3,6 +3,7 @@ import {
   Routes,
   Route
 } from 'react-router-dom'
+import ReactGA from 'react-ga'
 
 // Data
 import data from './data' 
@@ -24,6 +25,12 @@ function App() {
   const largePhoneP = useMediaQuery('(max-width: 429px)')
   const isPortrait = useMediaQuery('(orientation: portrait)')
   const isLandscape = useMediaQuery('(orientation: landscape)')
+
+  // Google Analytic
+  React.useEffect(() => {
+    ReactGA.initialize('G-H2KFD2BG78')
+    ReactGA.pageview('/')
+  }, [])
 
   return (
     <Routes className="App">

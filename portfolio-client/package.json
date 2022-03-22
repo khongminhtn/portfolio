@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^13.5.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-ga": "^3.3.0",
     "react-router-dom": "^6.2.1",
     "react-scripts": "5.0.0",
     "sass": "^1.49.9",
@@ -15,12 +16,10 @@
   },
   "scripts": {
     "start": "react-scripts start",
-
     "build": "react-scripts build",
     "rmServerBuild": "cd ../portfolio-server && rmdir /s /q build && mkdir build",
     "copyBuildToServer": "Xcopy \"build\" \"../portfolio-server/build\" /E /H /C /I",
     "buildToServer": "npm run build && npm run rmServerBuild && npm run copyBuildToServer",
-
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "git": "git add --all && git commit -m"
