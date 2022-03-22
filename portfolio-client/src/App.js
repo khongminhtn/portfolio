@@ -3,7 +3,7 @@ import {
   Routes,
   Route
 } from 'react-router-dom'
-import ReactGA from 'react-ga'
+// import ReactGA from 'react-ga'
 
 // Data
 import data from './data' 
@@ -27,10 +27,10 @@ function App() {
   const isLandscape = useMediaQuery('(orientation: landscape)')
 
   // Google Analytic
-  React.useEffect(() => {
-    ReactGA.initialize('G-H2KFD2BG78')
-    ReactGA.pageview('/')
-  }, [])
+  // React.useEffect(() => {
+  //   ReactGA.initialize('G-H2KFD2BG78')
+  //   ReactGA.pageview('/')
+  // }, [])
 
   return (
     <Routes className="App">
@@ -47,7 +47,7 @@ function App() {
           <Social
             currentPage={currentPage}/> 
           <Scrollable>
-            <Landing/>
+            <Landing/>0-
             <Projects 
               pageNumber={1}
               heading={data.zoenail.heading}
