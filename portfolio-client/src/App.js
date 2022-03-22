@@ -47,7 +47,7 @@ function App() {
           <Social
             currentPage={currentPage}/> 
           <Scrollable>
-            <Landing/>0-
+            <Landing/>
             <Projects 
               pageNumber={1}
               heading={data.zoenail.heading}
