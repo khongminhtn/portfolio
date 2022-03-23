@@ -1,0 +1,112 @@
+@use '../../globalUi/util/mixins';
+@use '../../globalUi/util/media';
+
+/* =============================================================================*/
+/* =                          MEDIA QUERY                                      =*/
+/* =============================================================================*/
+
+@mixin media-query {
+  // NEW VERSION
+  @include media.tablet-large(landscape) { 
+    width: 38vw;
+  }
+
+  @include media.tablet-large(portrait) { 
+    width: 70vw;
+    justify-self: end;
+    transform: translate(20vw, 100vh);
+    animation: moveUpTablet 1s ease-out 100ms normal forwards;
+  }
+
+  
+  @include media.tablet-small(landscape) { 
+    justify-self: end; 
+  }
+
+  
+  @include media.phone-large(landscape) {
+    width: 30vw;
+    animation: moveUpPhoneLandscape 1s ease-out 100ms normal forwards;
+  }
+
+  @include media.phone-large(portrait) {
+    animation: moveUpPhonePortrait 1s ease-out 100ms normal forwards;
+    justify-self: center;
+    width: 50vh;
+  }
+}
+
+/* =============================================================================*/
+/* =                            STYLE                                          =*/
+/* =============================================================================*/
+
+.self {
+  // Positioning
+  grid-column: 1;
+  grid-row: 1;
+  align-self: end;
+  justify-self: center;
+  transform: translateY(100vh);
+
+  // Properties
+  width: 30%;
+
+  // Animation
+  opacity: 100%;
+  animation: moveUp 500ms ease-out 100ms normal forwards;
+
+  // Media query
+  @include media-query
+}
+
+
+/* =============================================================================*/
+/* =                           ANIMATION                                       =*/
+/* =============================================================================*/
+
+@keyframes moveUp {
+  from {
+    transform: translateY(100vh);
+    opacity: 0%;
+  } to {
+    transform: translateY(0);
+    opacity: 100%;
+  }
+}
+
+@keyframes appearIn {
+  to {
+    opacity: 100%;
+  }
+}
+
+@keyframes moveUpTablet {
+  from {
+    transform: translate(20vw, 100vh);
+    opacity: 0%;
+  } to {
+    transform: translate(20vw,0);
+    opacity: 100%;
+  }
+}
+
+@keyframes moveUpPhonePortrait {
+  from {
+    transform: translate(10vw, 100vh);
+    opacity: 0%;
+  } to {
+    transform: translate(10vw,0);
+    opacity: 20%;
+  }
+}
+
+@keyframes moveUpPhoneLandscape {
+  from {
+    transform: translate(0, 100vh);
+    opacity: 0%;
+  } to {
+    transform: translate(0,0);
+    opacity: 20%;
+  }
+}
+

@@ -1,4 +1,26 @@
+@use '../../../globalUi/util/mixins';
+@use '../../../globalUi/util/media';
+
+/* =============================================================================*/
+/* =                          MEDIA QUERY                                      =*/
+/* =============================================================================*/
+
+@mixin media-query {
+  @include media.phone-large(landscape) { 
+    display: none; 
+  }
+  @include media.phone-large(portrait) {
+    display: none;
+  }
+}
+
+/* =============================================================================*/
+/* =                            STYLE                                          =*/
+/* =============================================================================*/
+
+
 .email {
   /* border: 1px solid black; */
   width: max-content;
+  @include media-query()
 }

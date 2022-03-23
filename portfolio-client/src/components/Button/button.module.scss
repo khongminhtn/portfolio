@@ -37,8 +37,8 @@
     width: 30vw;
   }
 
-  @include media.phone-small(landscape) { display: none }
-  @include media.phone-small(portrait) { display: none }
+  @include media.phone-large(landscape) { display: none }
+  @include media.phone-large(portrait) { display: none }
 }
 
 /* =============================================================================*/

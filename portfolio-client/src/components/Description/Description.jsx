@@ -10,11 +10,11 @@ const Name = ({name}) => {
   )
 }
 
-const SubHeading = ({blue, black, sub}) => {
+const SubHeading = ({blue, black}) => {
   return(
     <h1 className={sass.subheading}>
-      {sub[0]} <b className={sass.black}>{black}</b> <br/>
-      {sub[1]} <b className={sass.blue}>{blue}</b>
+<b className={sass.black}>{black}</b> <br/>
+<b className={sass.blue}>{blue}</b>
     </h1>
   )
 }
@@ -31,8 +31,7 @@ const Description = ({name, blue, black, sub, paragraph}) => {
       <Name name={name}/>
       <SubHeading 
         blue={blue}
-        black={black}
-        sub={sub}/>
+        black={black}/>
       <Paragraph paragraph={paragraph}/>
     </>
   )

@@ -8,6 +8,10 @@ import Description3 from './Description3/Description3.jsx'
 import Screen from './Screen/Screen.jsx'
 import Social from './Social/Social.jsx'
 import Email from './Email/Email.jsx'
+import SelfImage from './SelfImage/SelfImage.jsx'
+import SafeArea from './SafeArea/SafeArea'
+import BGText from './BGText/BGText'
+import ArrowChev from './ArrowChev/ArrowChev.jsx'
 
 import MobileConsole from './MobileConsole/MobileConsole.jsx'
 
@@ -23,6 +27,9 @@ export {
   Screen,
   Social,
   Email,
-
-  MobileConsole
+  SelfImage,
+  SafeArea,
+  BGText,
+  MobileConsole,
+  ArrowChev
 }

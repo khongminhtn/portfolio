@@ -1,0 +1,27 @@
+.arrow {
+  // Grid Positioning
+  grid-row: 1;
+  grid-column: 1;
+  align-self: end;
+  justify-self: end;
+  margin: 0 10vw 10vh;
+
+  // Animation
+  position: relative;
+  animation-name: floating; 
+  animation-duration: 500ms; 
+  animation-iteration-count: infinite; 
+  animation-timing-function: ease-out;
+  animation-direction: alternate;
+
+  // Sizing
+  width: 20vw;
+}
+
+@keyframes floating {
+  from {
+    bottom: 0px;
+  } to {
+    bottom: 10px;
+  }
+}

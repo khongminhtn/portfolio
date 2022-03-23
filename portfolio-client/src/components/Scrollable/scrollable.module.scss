@@ -4,3 +4,11 @@
   height: 100vh;
   position: relative;
 }
+
+.safe-area-top {
+  position: fixed;
+  background-color: black;
+  padding-top: 20vh;
+  padding-right: 100vw;
+  opacity: 5%;
+}

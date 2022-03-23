@@ -1,7 +1,7 @@
 import React from 'react'
 
 // Component
-import { Button, Description, Email } from '../../components/index'
+import { ArrowChev, BGText, Button, Description, Email, SelfImage } from '../../components/index'
 
 // Context & Actions
 import { useStateValue } from '../../state/context'
@@ -9,52 +9,26 @@ import { setScrollTranslate, setCurrentPage } from '../../state/reducer'
 
 // Styles & Assets
 import sass from './sass/index.module.scss';
-import { animation } from './style.js'
-import selfImage from './assets/selfCompressed.png'
+import style from './style.js'
 
 
 
-
-
-const SelfImage = () => {
-  const { state } = useStateValue()
-  const { currentPage, duration } = state.scroll
-
-  return (
-    <>
-      <img 
-        className={sass.self}
-        style={animation('SelfImage', currentPage, duration)}
-        src={selfImage} 
-        alt="Self"
-        />
-    </>
-  )
-}
-
-
-const IG = () => {
-  const { state } = useStateValue()
-  const { currentPage, duration } = state.scroll
-
+const IG = ({style}) => {
   return (
     <h1 
     className={sass.IG}
-    style={animation('IG', currentPage, duration)}>
+    style={style}>
       IG
     </h1>
   )
 }
 
 
-const Designer = () => {
-  const { state } = useStateValue()
-  const { currentPage, duration } = state.scroll
-  
+const Designer = (style) => {
   return (
     <h1 
     className={sass.designer}
-    style={animation('Designer', currentPage, duration)}>
+    style={style}>
       DES<span>IG</span>NER
     </h1>)
 }
@@ -97,13 +71,18 @@ const DescriptionContainter = () => {
 
 
 const Landing = () => {
+  const { state } = useStateValue()
+  const { currentPage } = state.scroll
+
   return (
     <section className={sass.landing}>
-      <Designer/>
-      <SelfImage/>
-      <IG/>
+      <ArrowChev/>
+      <Designer style={style.designer(currentPage)}/>
+      <SelfImage style={style.selfImage(currentPage)}/>
+      <IG style={style.IG(currentPage)}/>
       <ButtonContainer/>
       <DescriptionContainter/>
+      <BGText text='PORTFOLIO'/>
     </section>
   )
 }

@@ -20,7 +20,10 @@
   }
 
   @include media.phone-large(landscape) { margin: 0 0 0 15vw; }
-  @include media.phone-large(portrait) { margin: 0 0 0 6vw; }
+  @include media.phone-large(portrait) { 
+    margin: 20vh 0 0 35vw;
+    width: 50vw;
+  }
 }
 
 
