@@ -3,13 +3,12 @@ import {
   Routes,
   Route
 } from 'react-router-dom'
-// import ReactGA from 'react-ga'
 
 // Data
 import data from './data' 
 
 // Components
-import { Scrollable, NavBar, NavBarMobile, Social, MobileConsole } from './components/index'
+import { Scrollable, NavBar, NavBarMobile, Social } from './components/index'
 import { About, Landing, Projects } from './pages/index'
 import { useStateValue } from './state/context'
 
@@ -25,12 +24,6 @@ function App() {
   const largePhoneP = useMediaQuery('(max-width: 429px)')
   const isPortrait = useMediaQuery('(orientation: portrait)')
   const isLandscape = useMediaQuery('(orientation: landscape)')
-
-  // Google Analytic
-  // React.useEffect(() => {
-  //   ReactGA.initialize('G-H2KFD2BG78')
-  //   ReactGA.pageview('/')
-  // }, [])
 
   return (
     <Routes className="App">
