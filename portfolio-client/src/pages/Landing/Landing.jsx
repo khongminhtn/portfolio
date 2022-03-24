@@ -28,7 +28,7 @@ const IG = ({style}) => {
 }
 
 
-const Designer = (style) => {
+const Designer = ({style}) => {
   return (
     <h1 
     className={sass.designer}
@@ -83,9 +83,11 @@ const Landing = () => {
   // MOBILE
   const largePhone477 = useMediaQuery('(max-width: 477px)')
   const isPortrait = useMediaQuery('(orientation: portrait)')
+  const largePhone927 = useMediaQuery('(max-width: 927px)')
+  const isLandscape = useMediaQuery('(orientation: landscape)')
 
   const selfImageProps = {
-    transitions: largePhone477 && isPortrait
+    transitions: (largePhone477 && isPortrait) || (largePhone927 && isLandscape)
       ? styleMobile.selfImage(defaultScroll.top)
       : style.selfImage(currentPage),
   }
@@ -94,7 +96,7 @@ const Landing = () => {
     transitions: styleMobile.arrowChev(currentPage)
   }
 
-  const arrowChev = largePhone477 && isPortrait 
+  const arrowChev = (largePhone477 && isPortrait) || (largePhone927 && isLandscape)
   ? <ArrowChev {...arrowChevProps}/>
   : <></>
 

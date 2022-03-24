@@ -17,10 +17,11 @@ const style = {
   },
 
   designer: (currentPage) => {
+    console.log(currentPage)
     return {
       position: 'relative',
-      bottom: `${currentPage === 0 ? '0vh' : '50vh'}`,
-      transition: `1000ms ease-out 400ms`
+      bottom: currentPage === 0 ? '0vh' : '50vh',
+      transition: `1000ms ease-out 400ms`,
     }
   }
 }

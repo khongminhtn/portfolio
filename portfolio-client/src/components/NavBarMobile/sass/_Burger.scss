@@ -1,5 +1,27 @@
+@use '../../../globalUi/util/mixins';
+@use '../../../globalUi/util/media';
+
+/* =============================================================================*/
+/* =                          MEDIA QUERY                                      =*/
+/* =============================================================================*/
+
+@mixin media-query {
+  @include media.phone-large(landscape) { 
+    top: 10vh;
+    left: 92vw;
+  }
+  @include media.phone-large(portrait) {  
+    top: 5vh;
+    left: 85vw;
+  }
+}
+
+/* =============================================================================*/
+/* =                            STYLE                                          =*/
+/* =============================================================================*/
+
+
 .burger {
-  padding-top: env(safe-area-inset-top);
   width: 20px;
   height: 20px;
   
@@ -7,12 +29,13 @@
   flex-direction: column;
   
   position: fixed;
-  left: 90vw;
-  top: 5vh;
+
+
   z-index: 1;
   
   // border: 1px solid black;
   cursor: pointer;
+  @include media-query()
 }
 
 .burger span {

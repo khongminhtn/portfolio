@@ -1,3 +1,22 @@
+@use '../../globalUi/util/mixins';
+@use '../../globalUi/util/media';
+
+/* =============================================================================*/
+/* =                          MEDIA QUERY                                      =*/
+/* =============================================================================*/
+
+@mixin media-query {
+  @include media.phone-large(landscape) { 
+    width: 10vw;
+    margin: 0 1vw 5vh;
+  }
+}
+
+/* =============================================================================*/
+/* =                            STYLE                                          =*/
+/* =============================================================================*/
+
+
 .arrow {
   // Grid Positioning
   grid-row: 1;
@@ -7,7 +26,7 @@
   margin: 0 10vw 10vh;
 
   // Animation
-  position: relative;;
+  position: relative;
   animation-name: floating; 
   animation-duration: 500ms; 
   animation-iteration-count: infinite;  // TRANSITIONs CANNOT OVERIDE
@@ -16,6 +35,8 @@
 
   // Sizing
   width: 20vw;
+
+  @include media-query()
 }
 
 @keyframes floating {

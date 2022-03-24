@@ -6,7 +6,7 @@
 /* =============================================================================*/
 
 @mixin media-query {
-  // NEW VERSION
+  // Tablet Desktop
   @include media.tablet-large(landscape) { 
     width: 38vw;
   }
@@ -15,7 +15,7 @@
     width: 70vw;
     justify-self: end;
     transform: translate(20vw, 100vh);
-    animation: moveUpTablet 1s ease-out 100ms normal forwards;
+    animation: moveUp-tablet 1s ease-out 100ms normal forwards;
   }
 
   
@@ -24,17 +24,29 @@
   }
 
   
+  // Phone Large
   @include media.phone-large(landscape) {
-    width: 30vw;
-    animation: moveUpPhoneLandscape 1s ease-out 100ms normal forwards;
+    width: 60vw;
+    justify-self: center;
+    animation: moveUp-phone-large-landscape 1s ease-out 100ms normal forwards;
   }
 
   @include media.phone-large(portrait) {
-    animation: moveUpPhonePortrait 1s ease-out 100ms normal forwards;
+    animation: moveUp-phone-large-portrait 1s ease-out 100ms normal forwards;
     justify-self: center;
     width: 50vh;
   }
+
+
+  // Phone Medium
+  @include media.phone-medium(landscape) {
+    width: 60vw;
+    justify-self: center;
+    animation: moveUp-phone-medium-landscape 1s ease-out 100ms normal forwards;
+  }
 }
+
+
 
 /* =============================================================================*/
 /* =                            STYLE                                          =*/
@@ -52,7 +64,7 @@
   
   // Animation
   opacity: 100%;
-  transform: translateY(100vh);
+  transform: translateY(200vh);
   animation: moveUp 500ms ease-out 100ms normal forwards;
 
   // Media query
@@ -63,7 +75,7 @@
 /* =============================================================================*/
 /* =                           ANIMATION                                       =*/
 /* =============================================================================*/
-
+// Desktop & Tablet
 @keyframes moveUp {
   from {
     transform: translateY(100vh);
@@ -72,13 +84,7 @@
   }
 }
 
-@keyframes appearIn {
-  to {
-    opacity: 100%;
-  }
-}
-
-@keyframes moveUpTablet {
+@keyframes moveUp-tablet {
   from {
     transform: translate(20vw, 100vh);
   } to {
@@ -86,7 +92,9 @@
   }
 }
 
-@keyframes moveUpPhonePortrait {
+
+// Large Phone
+@keyframes moveUp-phone-large-portrait {
   from {
     transform: translate(10vw, 100vh);
   } to {
@@ -94,11 +102,21 @@
   }
 }
 
-@keyframes moveUpPhoneLandscape {
+@keyframes moveUp-phone-large-landscape {
   from {
-    transform: translate(0, 100vh);
+    transform: translate(10vw, 200vh);
   } to {
-    transform: translate(0,0);
+    transform: translate(10vw, 100vh);
+  }
+}
+
+
+// Medium Phone
+@keyframes moveUp-phone-medium-landscape {
+  from {
+    transform: translate(10vw, 200vh);
+  } to {
+    transform: translate(10vw, 70vh);
   }
 }
 

@@ -6,17 +6,24 @@
 /* =============================================================================*/
 
 @mixin media-query {
-  @include media.phone-large(landscape) { font-size: 16px; }
+  @include media.phone-large(landscape) { 
+    display: inline-block;
+    align-self: end;
+    justify-self: start;
+
+    font-size: 18vw;
+    letter-spacing: 2px;
+    transform:translate(3vw, 8vh)
+  }
+  
   @include media.phone-large(portrait) {
     display: inline-block;
-    grid-column: 1;
-    grid-row: 1;
     align-self: start;
 
     transform-origin: bottom left;
     transform: rotate(90deg) translate(-12vh, 7.3vw);
 
-    margin: 0;
+
     padding: 0;
 
     font-size: 16vh;
@@ -30,6 +37,9 @@
 
 .bgtext {
   display: none;
+  grid-column: 1;
+  grid-row: 1;
+  margin: 0;
   // border: 1px solid black;
 
 
