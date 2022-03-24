@@ -18,8 +18,8 @@
 /* =============================================================================*/
 
 @mixin media-query {
-  // @include media.iPro-landscape { overflow: scroll; }
-  // @include media.iPro-portrait { overflow: scroll; }
+  @include media.phone-large(landscape) { overflow: scroll; }
+  @include media.phone-large(portrait) { overflow: scroll; }
 }
 
 /* =============================================================================*/

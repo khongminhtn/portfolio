@@ -1,5 +1,5 @@
 
-// SCROLL STATES
+// SCROLL
 export const setScrollPause = (payload) => {
   return {
     type: 'SET_SCROLL_PAUSE',
@@ -28,13 +28,26 @@ export const setTotalPages = (payload) => {
   }
 } 
 
-// TOUCH STATES
+
+// DEFAULT SCROLL
+export const setTop = (payload) => {
+  return {
+    type: 'SET_TOP',
+    payload
+  }
+}
+
+
+// TOUCH (DEPRECATED) 
 export const setStart = (payload) => {
   return {
     type: 'SET_START',
     payload
   }
 }
+
+
+
 
 // Reducer
 export const reducer = (state, {type, payload}) => {
@@ -60,7 +73,15 @@ export const reducer = (state, {type, payload}) => {
         ...state,
         scroll: {...state.scroll, totalPages: payload}
       }
-    // TOUCH
+
+    // DEFAULT SCROLL
+    case "SET_TOP":
+      return {
+        ...state,
+        defaultScroll: {...state.defaultScroll, top: payload}
+      }
+      
+    // TOUCH (DEPRECATED)
     case "SET_START":
       return {
         ...state,

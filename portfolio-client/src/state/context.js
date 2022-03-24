@@ -12,7 +12,12 @@ const initialState = {
     totalPages: 0,
   },
 
-  // useScroll
+  // useScrollY, Landing
+  defaultScroll: {
+    top: 0,
+  },
+
+  // useScroll (DEPRECATED)
   touch: {
     start: { x: 0, y: 0}
   },
