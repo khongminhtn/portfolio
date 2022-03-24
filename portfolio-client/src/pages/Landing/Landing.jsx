@@ -88,7 +88,7 @@ const Landing = () => {
 
   const selfImageProps = {
     transitions: (largePhone477 && isPortrait) || (largePhone927 && isLandscape)
-      ? styleMobile.selfImage(defaultScroll.top)
+      ? styleMobile.selfImage(defaultScroll.top, isLandscape)
       : style.selfImage(currentPage),
   }
 

@@ -1,6 +1,11 @@
 const styleMobile = {
-  selfImage: (scrollTop) => {
-    const percent = (20 - (scrollTop / window.outerHeight) * 30)
+  selfImage: (scrollTop, isLandscape) => {
+    const percentOffset = isLandscape ? 50 : 30
+    const percent = 
+      percentOffset 
+      - (scrollTop / window.outerHeight) 
+      * percentOffset
+    
     const blurPx = (scrollTop / window.outerHeight) * 30
 
     return { 

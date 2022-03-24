@@ -16,12 +16,14 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+
+    "git": "git add --all && git commit -m",
     "rmServerBuild": "cd ../portfolio-server && rmdir /s /q build && mkdir build",
     "copyBuildToServer": "Xcopy \"build\" \"../portfolio-server/build\" /E /H /C /I",
-    "buildToServer": "npm run build && npm run rmServerBuild && npm run copyBuildToServer",
+    "buildToServer": "npm run build && npm run rmServerBuild && npm run copyBuildToServer && npm run git",
+
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "git": "git add --all && git commit -m"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [

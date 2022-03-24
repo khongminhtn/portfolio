@@ -17,7 +17,6 @@ const style = {
   },
 
   designer: (currentPage) => {
-    console.log(currentPage)
     return {
       position: 'relative',
       bottom: currentPage === 0 ? '0vh' : '50vh',

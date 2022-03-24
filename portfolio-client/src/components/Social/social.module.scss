@@ -7,29 +7,16 @@
 
 @mixin media-social {
   @include media.phone-large(landscape) { 
-    top: 25vh;
-    left: 89vw; 
+    left: 92vw;
+    top: 40vh;
   }
 
   @include media.phone-large(portrait) {
-    left: 5vw;
-    top: 15vh;
+    left: 85vw;
+    top: 50vh;
   }
 }
 
-@mixin media-components {
-  @include media.phone-large(landscape) { 
-    width: 4vw;
-    height: 4vw;
-    margin-bottom: 3vw;
-  }
-  
-  @include media.phone-large(portrait) { 
-    width: 4vh;
-    height: 4vh;
-    margin-bottom: 3vh;
-  }
-}
 
 @mixin media-copied {
   @include media.phone-large(landscape) { 
@@ -54,7 +41,7 @@
   // Positioning
   position: fixed;
   z-index: 1;
-  top: 65%;
+  top: 65vh;
   left: 1.4%;
   
   @include media-social()
@@ -62,8 +49,8 @@
 
 .email, .github, .linkedin, .codepen{
   // Sizing
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
   margin-bottom: 20px;
 
   // Animation
@@ -72,8 +59,6 @@
   &:hover {
     opacity: 30%;
   }
-
-  @include media-components()
 }
 
 .copied {

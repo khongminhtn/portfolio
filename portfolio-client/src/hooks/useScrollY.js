@@ -67,7 +67,7 @@ const useScrollY = (elementRef, scrollState, touchState) => {
 
       const scrollHeight = element.clientHeight
       const scrollTop = window.scrollY
-      const offSet = 0.9
+      const offSet = 0.5 // 50% of page to update currentPage
       const viewablePages = totalPages + 1
 
       const page = Math.floor(
