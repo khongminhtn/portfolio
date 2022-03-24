@@ -85,7 +85,7 @@ const Icons = ({email, linkedin, github, codepen, currentPage}) => {
       </a>
       
       <a
-      href='https://www.linkedin.com/tuyenkhongarch/'
+      href='https://www.linkedin.com/in/tuyenkhongarch/'
       target='_blank'
       rel='noreferrer'>
         <LinkedIn {...linkedin}/>
