@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 
 // Context & Actions
 import { setScrollTranslate, setCurrentPage } from '../../state/reducer'
@@ -12,8 +12,8 @@ import { ArrowChev, BGText, Button, Description, Email, SelfImage } from '../../
 
 // Styles & Assets
 import sass from './sass/index.module.scss';
-import style from './style.js'
-import styleMobile from './styleMobile.js'
+import style from './Landing.desktopStyle.js'
+import styleMobile from './Landing.mobileStyle.js'
 
 
 
@@ -75,28 +75,34 @@ const DescriptionContainter = () => {
 
 
 const Landing = () => {
-  // Desktop & Tablet
+  // DESKTOP
   const { state } = useStateValue()
   const { defaultScroll } = state
   const { currentPage } = state.scroll
 
-
-  // Mobile
-  const largePhoneP = useMediaQuery('(max-width: 477px)')
+  // MOBILE
+  const largePhone477 = useMediaQuery('(max-width: 477px)')
   const isPortrait = useMediaQuery('(orientation: portrait)')
 
-
   const selfImageProps = {
-    style: largePhoneP && isPortrait
+    transitions: largePhone477 && isPortrait
       ? styleMobile.selfImage(defaultScroll.top)
       : style.selfImage(currentPage),
   }
 
+  const arrowChevProps = {
+    transitions: styleMobile.arrowChev(currentPage)
+  }
+
+  const arrowChev = largePhone477 && isPortrait 
+  ? <ArrowChev {...arrowChevProps}/>
+  : <></>
+
   return (
     <section className={sass.landing}>
-      <ArrowChev/>
+      {arrowChev}
       <Designer style={style.designer(currentPage)}/>
-      <SelfImage style={selfImageProps.style}/>
+      <SelfImage {...selfImageProps}/>
       <IG style={style.IG(currentPage)}/>
       <ButtonContainer/>
       <DescriptionContainter/>

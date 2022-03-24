@@ -7,10 +7,10 @@
   margin: 0 10vw 10vh;
 
   // Animation
-  position: relative;
+  position: relative;;
   animation-name: floating; 
   animation-duration: 500ms; 
-  animation-iteration-count: infinite; 
+  animation-iteration-count: infinite;  // TRANSITIONs CANNOT OVERIDE
   animation-timing-function: ease-out;
   animation-direction: alternate;
 

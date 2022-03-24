@@ -46,14 +46,14 @@
   grid-row: 1;
   align-self: end;
   justify-self: center;
-  transform: translateY(100vh);
-
+  
   // Properties
   width: 30%;
-
+  
   // Animation
   opacity: 100%;
-  // animation: moveUp 500ms ease-out 100ms normal forwards;
+  transform: translateY(100vh);
+  animation: moveUp 500ms ease-out 100ms normal forwards;
 
   // Media query
   @include media-query
@@ -67,10 +67,8 @@
 @keyframes moveUp {
   from {
     transform: translateY(100vh);
-    opacity: 0%;
   } to {
     transform: translateY(0);
-    opacity: 100%;
   }
 }
 
@@ -83,30 +81,24 @@
 @keyframes moveUpTablet {
   from {
     transform: translate(20vw, 100vh);
-    opacity: 0%;
   } to {
     transform: translate(20vw,0);
-    opacity: 100%;
   }
 }
 
 @keyframes moveUpPhonePortrait {
   from {
     transform: translate(10vw, 100vh);
-    opacity: 0%;
   } to {
     transform: translate(10vw,0);
-    opacity: 20%;
   }
 }
 
 @keyframes moveUpPhoneLandscape {
   from {
     transform: translate(0, 100vh);
-    opacity: 0%;
   } to {
     transform: translate(0,0);
-    opacity: 20%;
   }
 }
 

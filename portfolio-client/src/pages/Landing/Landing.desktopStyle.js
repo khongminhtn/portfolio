@@ -2,9 +2,9 @@ const style = {
   selfImage: (currentPage) => {
     return { 
       position: 'relative',
-      top: `${currentPage === 0 ? '0vh' : '80vh'}`,
       transition: `1000ms ease-out`,
-      opacity: `${currentPage === 0 ? '100%' : '0%'}`
+      top: `${currentPage === 0 ? '0vh' : '80vh'}`,
+      opacity: `${currentPage === 0 ? '100%' : '0%'}`,
     }
   },
 
