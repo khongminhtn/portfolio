@@ -10,25 +10,6 @@
     font-size: 30px;
     height: 6vh;
     width: 30vw;
-
-    /* Animation */
-    transition: 100ms ease-in-out;
-    &:hover {
-      width: 33vw;
-      height: 7vh;
-      color: black;
-      font-size: 20px;
-      font-weight: bold;
-      background-color: white;
-      border: 1px solid black
-    }
-
-    &:active{
-      width: 35vw;
-      height: 8vh;
-      font-size: 20px;
-      border: 10px solid black
-    }
   }
 
   @include media.tablet-small(portrait) {
@@ -36,9 +17,6 @@
     height: 6vh;
     width: 30vw;
   }
-
-  @include media.phone-large(landscape) { display: none }
-  @include media.phone-large(portrait) { display: none }
 }
 
 /* =============================================================================*/
@@ -76,8 +54,8 @@
   }
 
   &:active{
-    width: calc(15vw + 1vw);
-    height: calc(8vh + 3vh);
+    width: 16vw;
+    height: 13vh;
     font-size: calc(1.5vw + 1.5vw);
     border: 10px solid black
   }

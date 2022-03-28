@@ -24,7 +24,7 @@ function App() {
   const largePhoneP = useMediaQuery('(max-width: 429px)')
   const isPortrait = useMediaQuery('(orientation: portrait)')
   const isLandscape = useMediaQuery('(orientation: landscape)')
-
+  
   return (
     <Routes className="App">
       <Route path="/" element={

@@ -16,9 +16,6 @@ const Copied = ({copied, color}) => {
 }
 
 const EmailIcon = ({content, background, handleClick}) => {
-  React.useEffect(() => {
-    console.log(content, background)
-  })
   return (
     <svg 
     className={sass.email}
@@ -70,7 +67,7 @@ const LinkedIn = ({background, content}) => {
 }
 
 
-const Icons = ({email, linkedin, github, codepen, currentPage}) => {
+const Icons = ({email, linkedin, github, codepen}) => {
   return (
     <section 
     className={sass.social}>

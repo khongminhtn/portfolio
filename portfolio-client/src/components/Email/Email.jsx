@@ -25,7 +25,7 @@ const HoveredEmail = ({email}) => {
   )
 }
 
-const Email = ({ email }) => {
+const Email = ({ content, style}) => {
   const [hovered, setHovered] = useState(false) 
   const [clicked, setClicked] = useState(false)
 
@@ -41,15 +41,16 @@ const Email = ({ email }) => {
   return (
     <div 
     className={sass.email}
-    value={email}
+    style={style}
+    value={content}
     onMouseLeave={() => setHovered(false)}
     onMouseEnter={() => setHovered(true)}
     onClick={handleClick}>
       {
         hovered && !clicked
-        ? <HoveredEmail email={email}/>
+        ? <HoveredEmail email={content}/>
         : !hovered && !clicked
-        ? <IdledEmail email={email}/>
+        ? <IdledEmail email={content}/>
         : <Copied/>
       }
     </div>
@@ -57,7 +58,8 @@ const Email = ({ email }) => {
 }
 
 Email.propTypes = {
-  email: PropTypes.string
+  content: PropTypes.string,
+  style: PropTypes.object
 }
 
 export default Email

@@ -1,0 +1,61 @@
+@use '../../../../globalUi/util/mixins';
+@use '../../../../globalUi/util/media';
+
+/* =============================================================================*/
+/* =                          MEDIA QUERY                                      =*/
+/* =============================================================================*/
+
+@mixin media-query {
+  
+  @include media.tablet-large(landscape) {
+    margin-left: 10vw;
+    margin-bottom: 15vh;
+  }
+
+  @include media.phone-large(landscape) {
+    display: none;
+  }
+  @include media.phone-large(portrait) {
+    display: none;
+  }
+}
+
+/* =============================================================================*/
+/* =                            STYLE                                          =*/
+/* =============================================================================*/
+
+.ButtonContainer {
+  display: grid;
+
+  // Positioning
+  grid-column: 1;
+  grid-row: 1;
+  align-self: end;
+  justify-self: start; 
+  margin-left: 12.5vw;
+  margin-bottom: 15vh;
+  // border: 1px solid black;
+  
+  // Sizing
+  width: 16vw;
+  height: 13vh;
+
+  /* Animation Properties */
+  opacity: 0%;
+  animation: appearIn 1s ease-out 1s 1 normal forwards;
+
+  // Media Query
+  @include media-query
+}
+
+/* =============================================================================*/
+/* =                           ANIMATION                                       =*/
+/* =============================================================================*/
+
+@keyframes appearIn {
+  from {
+    opacity: 0%;
+  } to {
+    opacity: 100%;
+  }
+}

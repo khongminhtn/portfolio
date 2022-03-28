@@ -1,0 +1,53 @@
+@use '../../../../globalUi/util/mixins';
+@use '../../../../globalUi/util/media';
+
+
+@mixin media-query {
+  @include media.tablet-large(portrait) {
+    justify-self: start;
+    align-self: center;
+    margin-left: 12.5%;
+  }
+
+  @include media.tablet-small(landscape) {
+    justify-self: start;
+    align-self: center;
+    margin-left: 12.5%;
+  }
+
+  @include media.phone-large(landscape) { 
+    margin: 0 0 30vh 4vw; 
+  }
+  @include media.phone-large(portrait) { 
+    margin: 20vh 0 0 35vw;
+    width: 50vw;
+  }
+}
+
+.Description {
+  // Positioning
+  grid-column: 1;
+  grid-row: 1;
+  align-self: end;
+  justify-self: end;
+  margin-right: 3%;
+  margin-bottom: 2%;
+
+  // Properties
+  width: 30%;
+  // border: 1px solid black;
+  
+  /* Animation Properties */
+  opacity: 0%;
+  animation: appearIn 1000ms ease-out 1s 1 normal forwards;
+
+  @include media-query()
+}
+
+@keyframes appearIn {
+  from {
+    opacity: 0%;
+  } to {
+    opacity: 100%;
+  }
+}

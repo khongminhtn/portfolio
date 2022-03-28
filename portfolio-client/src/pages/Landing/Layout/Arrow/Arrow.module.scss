@@ -1,0 +1,39 @@
+@use '../../../../globalUi/util/media';
+
+@mixin media-query {
+  @include media.phone-large(landscape) {
+    display: block;
+    margin: 0 1vw 5vh;
+  }
+  
+  @include media.phone-large(portrait) {
+    display: block;
+    margin: 20vw 0vh;
+  }
+}
+
+.Arrow {
+  display: none;
+  grid-row: 1;
+  grid-column: 1;
+  align-self: end;
+  justify-self: end;
+
+  // Animation
+  position: relative;
+  animation-name: floating; 
+  animation-duration: 500ms; 
+  animation-iteration-count: infinite;  // TRANSITIONs CANNOT OVERIDE
+  animation-timing-function: ease-out;
+  animation-direction: alternate;
+  
+  @include media-query()
+}
+
+@keyframes floating {
+  from {
+    bottom: 0px;
+  } to {
+    bottom: 10px;
+  }
+}

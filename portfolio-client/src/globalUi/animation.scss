@@ -1,0 +1,17 @@
+@keyframes appearIn {
+  from {
+    opacity: 0%;
+  } to {
+    opacity: 100%;
+  }
+}
+
+@keyframes moveUp {
+  from {
+    transform: translateY(100vh);
+    opacity: 0%;
+  } to {
+    transform: translateY(0);
+    opacity: 100%;
+  }
+}

@@ -4,9 +4,6 @@ import PropTypes from 'prop-types'
 // Style
 import sass from './projects.module.scss'
 
-// Assets
-
-
 // Components
 import { Description2, Screen } from '../../components/index'
 

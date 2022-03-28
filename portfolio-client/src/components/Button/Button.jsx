@@ -2,12 +2,13 @@ import React from 'react'
 import sass from './button.module.scss'
 import PropTypes from 'prop-types'
 
-const Button = ({content, handleClick}) => {
+const Button = ({content, handleClick ,style}) => {
   return(
     <>
       <button 
-      onClick={handleClick}
-      className={sass.button}>
+      className={sass.button}
+      style={style}
+      onClick={handleClick}>
         {content}
       </button>
     </>
@@ -16,7 +17,8 @@ const Button = ({content, handleClick}) => {
 
 Button.propTypes = {
   content: PropTypes.string.isRequired,
-  handleClick: PropTypes.func.isRequired
+  handleClick: PropTypes.func.isRequired,
+  style: PropTypes.object
 }
 
 export default Button

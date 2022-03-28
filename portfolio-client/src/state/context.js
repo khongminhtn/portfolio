@@ -27,7 +27,7 @@ const initialState = {
     landing: 0,
     projects: 1,
     about: 2
-  }
+  },
 }
 
 const Context = createContext([initialState, () => initialState])
