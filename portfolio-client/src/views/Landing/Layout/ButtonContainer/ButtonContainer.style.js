@@ -1,5 +1,5 @@
 const styles = {
-  button: ({phone}) => ({
+  button: () => ({
     gridColumn: 1,
     gridRow: 1,
     alignSelf: 'center',

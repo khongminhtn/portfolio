@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import _ from 'lodash'
 
 const useSetMedia = () => {
   const [media, setMedia] = useState({
@@ -75,14 +76,18 @@ const useSetMedia = () => {
         }
       }
     }
-    
-    if (newMedia !== media) { 
-      setMedia(newMedia)
-    }
 
-    const listener = () => setMedia(newMedia)
+    if (!_.isEqual(media, newMedia)) { 
+      console.log('ran')
+      setMedia(newMedia)
+    } 
+
+    const listener = () => { 
+      setMedia(newMedia)
+    } 
     window.addEventListener('resize', listener)
-  }, [])
+    return () => window.removeEventListener('resize', listener)
+  }, [media])
 
   return media
 }

@@ -1,17 +1,19 @@
 import React from 'react'
 
+// Context
 import { useStateValue } from '../../../../state/context'
 import { setCurrentPage, setScrollTranslate } from '../../../../state/reducer'
 
-import useSetMedia from '../../../../hooks/useSetMedia'
+// Components
 import { Button } from '../../../../components/index' 
 
+// Styles
 import sass from './ButtonContainer.module.scss'
 import styles from './ButtonContainer.style.js'
 
+
 const ButtonContainer = () => {
   const {dispatch} = useStateValue()
-  const media = useSetMedia()
 
   const handleClick = () => {
     // Scroll to page 1 from page 0
@@ -22,7 +24,7 @@ const ButtonContainer = () => {
   const buttonProps = {
     content: 'Explore',
     handleClick,
-    style: styles.button(media)
+    style: styles.button()
   }
 
   return (

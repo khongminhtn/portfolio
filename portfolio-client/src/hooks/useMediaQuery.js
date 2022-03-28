@@ -9,6 +9,7 @@ const useMediaQuery = (query) => {
       setMatches(media.matches)
     }
 
+
     const listener = () => setMatches(media.matches)
     window.addEventListener('resize', listener)
   }, [matches, query])

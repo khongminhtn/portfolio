@@ -9,7 +9,7 @@ import data from './data'
 
 // Components
 import { Scrollable, NavBar, NavBarMobile, Social } from './components/index'
-import { About, Landing, Projects } from './pages/index'
+import { About, Landing, Projects } from './views/index'
 import { useStateValue } from './state/context'
 
 // Hooks
@@ -29,7 +29,6 @@ function App() {
     <Routes className="App">
       <Route path="/" element={
         <>
-          {/* <MobileConsole/> */}
           {
             (largePhoneP && isPortrait) || (largePhoneL && isLandscape)
             ? <NavBarMobile/>
