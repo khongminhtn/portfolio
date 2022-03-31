@@ -1,0 +1,31 @@
+@use '../../../../globalUi/util/media';
+
+@mixin media-query {
+  @include media.phone-medium(portrait) {
+    margin-bottom: 16vh;
+  }
+
+  @include media.phone-large(landscape) {
+    // Positioning
+    align-self: center;
+    justify-self: center;
+    margin-bottom: 0;
+    margin-left: 40vw;
+
+    // Sizing
+    width: 30vw;
+  }
+}
+
+
+.DescriptionMobile {
+  grid-column: 1;
+  grid-row: 1;
+  align-self: end;
+  width: 60vw;
+
+  margin-bottom: 8vh;
+  margin-left: 8vw;
+
+  @include media-query()
+}

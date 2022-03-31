@@ -7,49 +7,63 @@ import {
 // Data
 import data from './data' 
 
-// Components
-import { Scrollable, NavBar, NavBarMobile, Social } from './components/index'
-import { About, Landing, Projects } from './views/index'
-import { useStateValue } from './state/context'
-
 // Hooks
-import useMediaQuery from './hooks/useMediaQuery'
+import { useStateValue } from './state/context'
+import useSetMedia from './hooks/useSetMedia'
+
+// Components
+import { Scrollable, NavBar, NavBarMobile, Social, Header } from './components/index'
+import { About, Landing, Projects } from './views/index'
+
+// Assets
+import zoenail from './assets/zoenail.png'
+import styles from './App.style.js'
 
 
 function App() {
+  const media = useSetMedia()
   const { state } = useStateValue()
+  const { pages } = state
   const { currentPage } = state.scroll
 
-  const largePhoneL = useMediaQuery('(max-width: 927px)')
-  const largePhoneP = useMediaQuery('(max-width: 429px)')
-  const isPortrait = useMediaQuery('(orientation: portrait)')
-  const isLandscape = useMediaQuery('(orientation: landscape)')
-  
+  // PROPS
+  const projectProps = {
+    subject: 'PROJECTS',
+    heading: data.zoenail.heading,
+    subHeading: data.zoenail.subHeading,
+    paragraph: data.zoenail.paragraph,
+    src: zoenail,
+    alt: 'zoenail'
+  }
+
+  const projectTextProps = {
+    content: 'PROJECTS',
+    style: styles.projectText(media, pages, currentPage)
+  }
+
+  // CONDITIONAL COMPONENTS
+  const cNavBar = media.phone.large.portrait || media.phone.large.landscape
+  ? <NavBarMobile/>
+  : <NavBar
+    mainPages={['Landing', 'Projects', 'About']}
+    subPages={[0, 0, 0]}/>
+
   return (
     <Routes className="App">
-      <Route path="/" element={
-        <>
-          {
-            (largePhoneP && isPortrait) || (largePhoneL && isLandscape)
-            ? <NavBarMobile/>
-            : <NavBar
-                mainPages={['Landing', 'Projects', 'About']}
-                subPages={[0, 0, 0]}/>
-          }
-          <Social
-            currentPage={currentPage}/> 
-          <Scrollable>
-            <Landing/>
-            <Projects 
-              pageNumber={1}
-              heading={data.zoenail.heading}
-              subHeading={data.zoenail.subHeading}
-              paragraph={data.zoenail.paragraph}
-              cta={data.zoenail.cta}
-              asset={data.zoenail.asset}/>
-            <About/>
-          </Scrollable>
-        </>}
+      <Route 
+        path="/" 
+        element={
+          <>
+            <Header {...projectTextProps}/> 
+            <Scrollable>
+              <Landing/>
+              <Projects {...projectProps}/>
+              <About/>
+            </Scrollable>
+            { cNavBar }
+            <Social currentPage={currentPage}/> 
+          </>
+        }
       />
     </Routes>
   );

@@ -16,13 +16,7 @@ const Paragraph = ({content, style}) => {
 
 Paragraph.propTypes = {
   content: PropTypes.string,
-  style: PropTypes.shape({
-    fontSize: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    fontFamily: PropTypes.string,
-    fontWeight: PropTypes.string,
-    letterSpacing: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    color: PropTypes.string,
-  })
+  style: PropTypes.object
 }
 
 Paragraph.defaultProps = {

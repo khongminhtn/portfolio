@@ -13,13 +13,7 @@ const Header = ({content, style}) => {
 
 Header.propTypes = {
   content: PropTypes.string,
-  style: PropTypes.shape({
-    fontSize: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    fontFamily: PropTypes.string,
-    fontWeight: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    letterSpacing: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    color: PropTypes.string,
-  })
+  style: PropTypes.object
 }
 
 Header.defaultProps = {

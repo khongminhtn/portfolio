@@ -1,30 +1,35 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import useSetMedia from '../../hooks/useSetMedia'
 
 // Style
 import sass from './projects.module.scss'
 
-// Components
-import { Description2, Screen } from '../../components/index'
+// Layout
+import { Image, Description, DescriptionMobile } from './Layout'
 
-const Projects = ({
-  pageNumber,
-  heading,
-  subHeading,
-  paragraph,
-  cta,
-  asset
-}) => {
+const Projects = ({ alt, src, ...props }) => {
+  const { phone} = useSetMedia()
+
+  const descriptionProps = {
+    header: props.heading,
+    subHeading: props.subHeading,
+    paragraph: props.paragraph,
+    subject: props.subject
+  }
+
+  // CONDITIONAL COMPONENTS
+  const cDescription = phone.large.landscape || phone.large.portrait 
+  ? <DescriptionMobile {...descriptionProps}/>
+  : <Description {...descriptionProps}/>
+
   return (
     <section className={sass.projects}>
-      <Screen src={asset}/>
-      <Description2
-        pageNumber={pageNumber}
-        subject="PROJECTS"
-        heading={heading}
-        subHeading={subHeading}
-        paragraph={paragraph}
-        cta={cta}/>
+      <Image 
+      alt={alt} 
+      src={src}/>
+
+      {cDescription}
     </section>
   )
 }
