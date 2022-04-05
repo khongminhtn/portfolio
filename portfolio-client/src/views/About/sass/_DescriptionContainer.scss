@@ -16,12 +16,17 @@
   
 
   @include media.phone-large(landscape) {
+    margin: 0;
     margin-left: 5vw;
     width: 30vw;
+    text-align: left;
   }
   @include media.phone-large(portrait) {
+    margin: 0;
+    margin-right: 12vw;
     margin-top: 10vh;
     width: 60vw;
+    text-align: left;
   }
 
 
