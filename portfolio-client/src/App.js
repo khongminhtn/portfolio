@@ -41,12 +41,15 @@ function App() {
     style: styles.projectText(media, pages, currentPage)
   }
 
+  const navBarProps = {
+    mainPages: ['Landing', 'Projects', 'About'],
+    subPages: [0, 0, 0]
+  }
+
   // CONDITIONAL COMPONENTS
   const cNavBar = media.phone.large.portrait || media.phone.large.landscape
-  ? <NavBarMobile/>
-  : <NavBar
-    mainPages={['Landing', 'Projects', 'About']}
-    subPages={[0, 0, 0]}/>
+  ? null
+  : <NavBar {...navBarProps}/>
 
   return (
     <Routes className="App">
