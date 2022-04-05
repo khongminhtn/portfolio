@@ -78,7 +78,6 @@ const useSetMedia = () => {
     }
 
     if (!_.isEqual(media, newMedia)) { 
-      console.log('ran')
       setMedia(newMedia)
     } 
 

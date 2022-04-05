@@ -36,7 +36,14 @@ const styles =  {
       ? 2
       : phone.large.portrait
       ? 12
-      : null
+      : null,
+
+    // Animation
+    opacity: 0,
+    animationName: 'appearIn',
+    animationDuration: '1000ms',
+    animationDelay: '1000ms',
+    animationFillMode: 'forwards'
   })
 }
 

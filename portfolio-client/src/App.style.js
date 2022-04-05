@@ -9,7 +9,7 @@ const styles = {
     fontSize: '18vh',
     opacity: phone.large.portrait 
     && (currentPage === pages.projects)
-    ? '2%' 
+    ? '5%' 
     : 0,
 
     // Transition

@@ -54,14 +54,14 @@ function App() {
         path="/" 
         element={
           <>
+            { cNavBar }
+            <Social currentPage={currentPage}/> 
             <Header {...projectTextProps}/> 
             <Scrollable>
               <Landing/>
               <Projects {...projectProps}/>
               <About/>
             </Scrollable>
-            { cNavBar }
-            <Social currentPage={currentPage}/> 
           </>
         }
       />
