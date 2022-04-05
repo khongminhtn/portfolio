@@ -12,7 +12,7 @@ import { useStateValue } from './state/context'
 import useSetMedia from './hooks/useSetMedia'
 
 // Components
-import { Scrollable, NavBar, NavBarMobile, Social, Header } from './components/index'
+import { Scrollable, NavBar, Social, Header } from './components/index'
 import { About, Landing, Projects } from './views/index'
 
 // Assets
@@ -31,9 +31,10 @@ function App() {
     subject: 'PROJECTS',
     heading: data.zoenail.heading,
     subHeading: data.zoenail.subHeading,
-    paragraph: data.zoenail.paragraph,
+    paragraphs: [data.zoenail.paragraph],
     src: zoenail,
-    alt: 'zoenail'
+    alt: 'zoenail',
+    href: 'https://www.zoenail.com'
   }
 
   const projectTextProps = {

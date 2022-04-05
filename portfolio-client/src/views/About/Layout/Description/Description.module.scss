@@ -1,0 +1,33 @@
+@use '../../../../globalUi/util/media';
+
+@mixin media-query {
+  @include media.tablet-large(portrait) {
+    width: 60vw;
+    margin-left: 20vw;
+  }
+
+  @include media.phone-large(portrait) {
+    width: 66vw;
+    margin-left: 8vw;
+  }
+  @include media.phone-large(landscape) {
+    width: 70vw;
+    margin-left: 10vw;
+  }
+
+  @include media.phone-xsmall(portrait) {
+    margin-top: 10vh;
+  }
+}
+
+.Description {
+  width: 25vw;
+  margin-left: 12vw;
+  grid-column: 1;
+  grid-row: 1;
+  align-self: center;
+  z-index: 1;
+
+  // Media Query
+  @include media-query()
+}

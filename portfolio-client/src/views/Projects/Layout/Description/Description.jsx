@@ -7,7 +7,7 @@ import styles from './Description.style.js'
 import sass from './Description.module.scss'
 
 
-const Description = ({header, subHeading, paragraph, subject}) => {
+const Description = ({header, subHeading, paragraphs, subject}) => {
   const media = useSetMedia()
 
   const subjectProps = {
@@ -26,7 +26,7 @@ const Description = ({header, subHeading, paragraph, subject}) => {
   }
 
   const paragraphProps = {
-    content: paragraph,
+    contents: paragraphs,
     style: styles.paragraph(media)
   }
 
@@ -49,7 +49,7 @@ const Description = ({header, subHeading, paragraph, subject}) => {
 Description.propTypes = {
   heading: PropTypes.string,
   subHeading: PropTypes.string,
-  paragraph: PropTypes.string,
+  paragraph: PropTypes.array,
   subject: PropTypes.string
 }
 

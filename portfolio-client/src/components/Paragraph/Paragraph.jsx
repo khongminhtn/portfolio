@@ -2,25 +2,31 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import sass from './Paragraph.module.scss'
 
-const Paragraph = ({content, style}) => {
+const Paragraph = ({contents, style}) => {
   return (
     <p 
     className={sass.paragraph}
     style={style}
     data-testid='1'
     >
-      {content}
+      {
+        contents.length > 1 
+        ? contents.map((content, i) => <React.Fragment key={i}>
+          {content}<br/><br/>
+        </React.Fragment>)
+        : contents[0]
+      }
     </p>
   )
 }
 
 Paragraph.propTypes = {
-  content: PropTypes.string,
+  contents: PropTypes.array,
   style: PropTypes.object
 }
 
 Paragraph.defaultProps = {
-  content: 'Paragraph',
+  contents: ['Paragraph'],
   style: {
     fontSize: 16,
     fontFamily: 'Roboto Condensed',

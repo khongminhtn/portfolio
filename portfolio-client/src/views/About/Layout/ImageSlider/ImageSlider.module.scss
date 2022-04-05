@@ -1,0 +1,105 @@
+@use '../../../../globalUi/util/media';
+
+
+
+.ImageSlider {
+  // Positioning
+  grid-column: 1;
+  grid-row: 1;
+
+  // Container Display
+  display: grid;
+  grid-template-columns: 100vw;
+  grid-template-rows: 100vh;
+}
+
+
+@mixin imgQuery {
+  @include media.tablet-large(portrait) {
+    // Positioning
+    margin: 0;
+    align-self: center;
+    justify-self: center;
+
+    // Sizing
+    height: 100vh;
+
+    // Animation
+    animation-name: fade-in-30;
+  }
+
+  @include media.tablet-large(landscape) {
+    // Positioning
+    margin: 0;
+    align-self: center;
+    justify-self: center;
+
+    // Sizing
+    height: 100vh;
+
+    // Animation
+    animation-name: fade-in-30;
+  }
+}
+
+.ImageSlider img {
+  // Positioning
+  grid-column: 1;
+  grid-row: 1;
+  align-self: center;
+  margin-left: 40vw;
+
+  // Properties
+  height: 80vh;
+  opacity: 0;
+
+  // Animation
+  animation-name: fade-in;
+  animation-timing-function: ease-in-out;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+
+  // Media Query
+  @include imgQuery()
+}
+
+.ImageSlider img:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.ImageSlider img:nth-child(2) {
+  animation-delay: 5s;
+}
+
+.ImageSlider img:nth-child(3) {
+  animation-delay: 10s;
+}
+
+.ImageSlider img:nth-child(4) {
+  animation-delay: 15s;
+}
+
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  } 2% {
+    opacity: 1;
+  } 22% {
+    opacity: 1;
+  } 25% {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in-30 {
+  0% {
+    opacity: 0;
+  } 2% {
+    opacity: 30%;
+  } 22% {
+    opacity: 30%;
+  } 25% {
+    opacity: 0;
+  }
+}

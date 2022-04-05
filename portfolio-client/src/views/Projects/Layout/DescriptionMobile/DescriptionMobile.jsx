@@ -6,11 +6,11 @@ import { Paragraph, CallToAction } from '../../../../components'
 import sass from './DescriptionMobile.module.scss'
 import styles from './DescriptionMobile.style.js'
 
-const DescriptionMobile = ({header, subHeading, paragraph}) => {
+const DescriptionMobile = ({header, subHeading, paragraphs, href}) => {
   const media = useSetMedia()
 
   const paragraphProps = {
-    content: paragraph,
+    contents: paragraphs,
     style: styles.paragraph(media)
   }
 
@@ -22,7 +22,8 @@ const DescriptionMobile = ({header, subHeading, paragraph}) => {
       color: 'black',
       stroke: 2
     },
-    layout: styles.cta(media)
+    style: styles.cta(media),
+    href: href
   }
 
   return (
@@ -36,8 +37,9 @@ const DescriptionMobile = ({header, subHeading, paragraph}) => {
 DescriptionMobile.propTypes = {
   heading: PropTypes.string,
   subHeading: PropTypes.string,
-  paragraph: PropTypes.string,
-  layout: PropTypes.object
+  paragraphs: PropTypes.array,
+  layout: PropTypes.object,
+  href: PropTypes.string
 }
 
 export default DescriptionMobile

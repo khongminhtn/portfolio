@@ -25,9 +25,9 @@ const Description = () => {
   }
 
   const pProps = {
-    content: `Web developer with Architectural background.
+    contents: [`Web developer with Architectural background.
     Knowledge in React, Redux, Node.js, Express.js,
-    MongoDB, GraphQL and Typescript based in London.`,
+    MongoDB, GraphQL and Typescript based in London.`],
     style: styles.paragraph(media)
   }
 

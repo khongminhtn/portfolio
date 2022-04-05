@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import useSetMedia from '../../hooks/useSetMedia'
 
 // Style
-import sass from './projects.module.scss'
+import sass from './Projects.module.scss'
 
 // Layout
 import { Image, Description, DescriptionMobile } from './Layout'
@@ -14,8 +14,9 @@ const Projects = ({ alt, src, ...props }) => {
   const descriptionProps = {
     header: props.heading,
     subHeading: props.subHeading,
-    paragraph: props.paragraph,
-    subject: props.subject
+    paragraphs: props.paragraphs,
+    subject: props.subject,
+    href: props.href
   }
 
   // CONDITIONAL COMPONENTS
@@ -38,8 +39,9 @@ Projects.propTypes = {
   pageNumber: PropTypes.number,
   heading: PropTypes.string,
   subHeading: PropTypes.string,
-  paragraph: PropTypes.string,
-  cta: PropTypes.string
+  paragraphs: PropTypes.array,
+  cta: PropTypes.string,
+  href: PropTypes.string
 }
 
 export default Projects

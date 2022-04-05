@@ -1,5 +1,5 @@
 .container {
-
+  cursor: pointer;
   a {
     display: flex;
     align-items: center;
@@ -25,6 +25,10 @@
     text-align: end;
     font-size: 20px;
     font-weight: 100;
+  }
+
+  :hover {
+    opacity: 50%;
   }
 }
 

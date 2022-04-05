@@ -2,7 +2,6 @@ import Button from './Button/Button.jsx'
 import Scrollable from './Scrollable/Scrollable.jsx'
 import NavBar from './NavBar/NavBar.jsx'
 import NavBarMobile from './NavBarMobile/NavBarMobile.jsx'
-import Description3 from './Description3/Description3.jsx'
 import Social from './Social/Social.jsx'
 import Email from './Email/Email.jsx'
 import ArrowChev from './ArrowChev/ArrowChev.jsx'
@@ -18,7 +17,6 @@ export {
   Scrollable, 
   NavBar, 
   NavBarMobile,
-  Description3,
   Social,
   Email,
   MobileConsole,

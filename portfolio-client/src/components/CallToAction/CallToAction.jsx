@@ -17,7 +17,7 @@ const Arrow = ({stroke, color, size}) => (
   </svg>
 )
 
-const CallToAction = ({header, subHeading, arrow, layout}) => {
+const CallToAction = ({header, subHeading, arrow, style, href, handleClick, headerStyle, subHeadingStyle, lineColor}) => {
 
   const arrowProps = {
     size: arrow.size,
@@ -27,15 +27,24 @@ const CallToAction = ({header, subHeading, arrow, layout}) => {
 
   return (
     <div
-    href='www.zoenail.com'
     className={sass.container}
-    style={layout}
+    style={style}
+    onClick={handleClick}
     >
-      <a href='www.zoenails.com'>
-        <h1>{ header }</h1>
+      <a 
+        href={href}
+        target='_blank'
+        rel='noreferrer'
+      style={{borderBottom: `1px solid ${lineColor}`}}>
+
+        <h1 style={headerStyle}>
+            { header }
+        </h1>
+
         <Arrow {...arrowProps}/>
+
       </a>
-      <h6>{subHeading}</h6>
+      <h6 style={subHeadingStyle}>{subHeading}</h6>
     </div>
   )
 }
@@ -43,7 +52,28 @@ const CallToAction = ({header, subHeading, arrow, layout}) => {
 CallToAction.propTypes = {
   header: PropTypes.string,
   subHeading: PropTypes.string,
-  arrow: PropTypes.object
+  arrow: PropTypes.object,
+  href: PropTypes.string,
+  handleClick: PropTypes.func,
+  lineColor: PropTypes.string,
+  style: PropTypes.object,
+  headerStyle: PropTypes.object,
+  subHeadingStyle: PropTypes.object
+}
+
+CallToAction.defaultProps = {
+  header: 'Call To Action',
+  subHeading: 'Sub Heading',
+  arrow: {
+    size: 24,
+    color: 'black',
+    stroke: 2
+  },
+  style: {},
+  href: 'www.google.com',
+  handleClick: () => console.log('Call To Action executed'),
+  color: 'black',
+
 }
 
 export default CallToAction
