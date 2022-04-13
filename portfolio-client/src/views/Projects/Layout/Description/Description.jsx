@@ -1,13 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import useSetMedia from '../../../../hooks/useSetMedia'
-import { Header, Paragraph } from '../../../../components'
+import { Header, Paragraph, SimpleCTA } from '../../../../components'
 
 import styles from './Description.style.js'
 import sass from './Description.module.scss'
 
 
-const Description = ({header, subHeading, paragraphs, subject}) => {
+const Description = ({header, subHeading, paragraphs, subject, href}) => {
   const media = useSetMedia()
 
   const subjectProps = {
@@ -31,8 +31,10 @@ const Description = ({header, subHeading, paragraphs, subject}) => {
   }
 
   const ctaProps = {
-    content: 'Explore',
-    style: styles.cta(media)
+    href,
+    content: 'EXPLORE',
+    containerStyle: styles.cta(media),
+    textStyle: {},
   }
 
   return (
@@ -41,7 +43,7 @@ const Description = ({header, subHeading, paragraphs, subject}) => {
       <Header {...headerProps}/>
       <Header {...subHeadingProps}/>
       <Paragraph {...paragraphProps}/>
-      <Header {...ctaProps}/>
+      <SimpleCTA {...ctaProps}/>
     </section>
   )
 }

@@ -49,7 +49,7 @@ const styles = {
       ? '60vh'
       : tablet.large.portrait
       ? '50vh'
-      : '70vh',
+      : '60vh',
     }
   }
 }

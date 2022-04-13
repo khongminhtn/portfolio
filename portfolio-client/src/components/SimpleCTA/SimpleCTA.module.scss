@@ -1,0 +1,40 @@
+.container {
+  display: flex;
+  align-items: center;
+
+  .arrow { 
+    transform: rotate(-90deg);
+
+    // Animation
+    animation-name: bounce-right;
+    animation-duration: 500ms;
+    animation-timing-function: ease-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+
+  }
+  
+  .content {
+    text-decoration: none;
+    color: black;
+    font-size: 24px;
+
+    // Positioning
+    margin-right: 20px;
+
+    // Transition
+    transition: 500ms ease-out;
+  }
+
+  .content:hover {
+    opacity: 50%;
+  }
+}
+
+@keyframes bounce-right {
+  from {
+    transform: translateX(0px) rotate(-90deg);
+  } to {
+    transform: translateX(10px) rotate(-90deg);
+  }
+}

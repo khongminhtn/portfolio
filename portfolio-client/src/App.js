@@ -4,9 +4,6 @@ import {
   Route
 } from 'react-router-dom'
 
-// Data
-import data from './data' 
-
 // Hooks
 import { useStateValue } from './state/context'
 import useSetMedia from './hooks/useSetMedia'
@@ -23,18 +20,17 @@ import styles from './App.style.js'
 function App() {
   const media = useSetMedia()
   const { state } = useStateValue()
-  const { pages } = state
-  const { currentPage } = state.scroll
+  const { pages, projects, scroll } = state
+  const { currentPage } = scroll
 
   // PROPS
   const projectProps = {
-    subject: 'PROJECTS',
-    heading: data.zoenail.heading,
-    subHeading: data.zoenail.subHeading,
-    paragraphs: [data.zoenail.paragraph],
-    src: zoenail,
-    alt: 'zoenail',
-    href: 'https://www.zoenail.com'
+    heading: projects.cocktailNails.heading,
+    subHeading: projects.cocktailNails.subHeading,
+    paragraphs: [projects.cocktailNails.paragraph],
+    src: projects.cocktailNails.asset,
+    alt: projects.cocktailNails.alt,
+    href: projects.cocktailNails.href
   }
 
   const projectTextProps = {

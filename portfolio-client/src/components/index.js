@@ -8,8 +8,7 @@ import ArrowChev from './ArrowChev/ArrowChev.jsx'
 import Header from './Header/Header'
 import Paragraph from './Paragraph/Paragraph'
 import CallToAction from './CallToAction/CallToAction.jsx'
-
-import MobileConsole from './MobileConsole/MobileConsole.jsx'
+import SimpleCTA from './SimpleCTA/SimpleCTA.jsx'
 
 
 export { 
@@ -19,9 +18,9 @@ export {
   NavBarMobile,
   Social,
   Email,
-  MobileConsole,
   ArrowChev,
   Header,
   Paragraph,
-  CallToAction
+  CallToAction,
+  SimpleCTA
 }
