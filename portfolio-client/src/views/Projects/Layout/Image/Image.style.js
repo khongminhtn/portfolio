@@ -1,6 +1,7 @@
 const styles = {
   image: ({phone, tablet}, src) => {
     return {
+      imageRendering: '-webkit-optimize-contrast',
       // Default gridding
       gridColumn: 1,
       gridRow: 1,

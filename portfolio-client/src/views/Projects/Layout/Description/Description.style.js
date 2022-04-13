@@ -20,9 +20,6 @@ const styles = {
     justifySelf: tablet.large.portrait 
     ? 'center'
     : 'start',
-    
-    // Positioning
-    marginBottom: '0px',
 
     // Appearance
     fontSize: tablet.large.portrait 
