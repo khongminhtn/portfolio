@@ -1,9 +1,6 @@
 @use '../../../../globalUi/util/media';
 
 @mixin media-query {
-  @include media.phone-medium(portrait) {
-    margin-bottom: 16vh;
-  }
 
   @include media.phone-large(landscape) {
     // Positioning

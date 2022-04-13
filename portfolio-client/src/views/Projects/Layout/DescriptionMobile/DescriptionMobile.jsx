@@ -9,10 +9,11 @@ import styles from './DescriptionMobile.style.js'
 const DescriptionMobile = ({header, subHeading, paragraphs, href}) => {
   const media = useSetMedia()
 
-  const paragraphProps = {
-    contents: paragraphs,
-    style: styles.paragraph(media)
-  }
+  // DECPRECATED
+  // const paragraphProps = {
+  //   contents: paragraphs,
+  //   style: styles.paragraph(media)
+  // }
 
   const callToActionProps = {
     header,
@@ -28,7 +29,7 @@ const DescriptionMobile = ({header, subHeading, paragraphs, href}) => {
 
   return (
     <section className={sass.DescriptionMobile}>
-      <Paragraph {...paragraphProps}/>
+      {/* <Paragraph {...paragraphProps}/>  // DEPRECATED*/} 
       <CallToAction {...callToActionProps}/>
     </section>
   )
